@@ -14,4 +14,8 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    // Testing by Bhautik Sojitra
+    @Test
+    public void delete_later() { assertNotNull("Recipes should not be NULL");}
 }
