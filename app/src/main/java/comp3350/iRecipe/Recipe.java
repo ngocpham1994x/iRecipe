@@ -42,16 +42,18 @@ public class Recipe {
     public int getPrepTime(){ return prepTime;}
 
     //Return a copy of the ingredients, so that others don't mess around in the list we store
-    public ArrayList<String> getIngredients(){ return new ArrayList<String>(ingredients); }
+    public ArrayList<String> getIngredients(){ return new ArrayList<>(ingredients); }
 
-    public ArrayList<String> getKeyIngredients(){ return new ArrayList<String>(keyIngredients); }
+    public ArrayList<String> getKeyIngredients(){ return new ArrayList<>(keyIngredients); }
 
     public String getInstruction(){ return instruction; }
 
+    //Add ingredient to all ingredients
     public void addToIngredients(String ingred){
         ingredients.add(ingred);
     }
 
+    //Add key ingredients to Recipe
     public void addToKeyIngredients(String ingred){
         keyIngredients.add(ingred);
     }
