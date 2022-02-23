@@ -1,7 +1,10 @@
 package comp3350.iRecipe;
 
-import java.io.FileReader;
+
 import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class GetRecipeFromCSV {
@@ -26,18 +29,23 @@ public class GetRecipeFromCSV {
     public static ArrayList<Recipe> getRecipe(){
         ArrayList<Recipe> allRecipe = new ArrayList<>();
         try{
-            BufferedReader recipeReader = new BufferedReader(new FileReader("res/raw/recipe.csv"));
+
+            InputStream recipeIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/recipe.csv");
+            BufferedReader recipeReader = new BufferedReader(new InputStreamReader(recipeIn));
 
             //Read Recipe data line by line
             String line = recipeReader.readLine();  //Skip the first line, which is the header, not the data
             while( (line = recipeReader.readLine()) != null ){
+                //System.out.println(line);
+
                 String[] data = line.split(",");
                 String name = data[RECIPENAME];
                 String insturctions = "";
                 ArrayList<String> ingred = new ArrayList<>();
                 ArrayList<String> keyIngred = new ArrayList<>();
 
-                BufferedReader readInstruct = new BufferedReader(new FileReader("res/raw/instructions.csv"));
+                InputStream instrucIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/instructions.csv");
+                BufferedReader readInstruct = new BufferedReader(new InputStreamReader(instrucIn));
                 String instructLine = readInstruct.readLine();      //Skip first header line
                 while( (instructLine = readInstruct.readLine()) != null){
 
@@ -48,13 +56,15 @@ public class GetRecipeFromCSV {
                     }
                 }
                 readInstruct.close();
+                instrucIn.close();
 
                 Recipe recipe = new Recipe(data[RECIPENAME], data[CATEGORY], data[COOKINGLEVEL],
                         Integer.parseInt(data[PREPTIME]), Integer.parseInt(data[COOKINGTIME]),
                         Integer.parseInt(data[SERVING]), ingred, keyIngred, insturctions);
 
                 //Read ingredients and add to recipe
-                BufferedReader readIngred = new BufferedReader(new FileReader("res/raw/ingredients.csv"));
+                InputStream ingredIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/ingredients.csv");
+                BufferedReader readIngred = new BufferedReader(new InputStreamReader(ingredIn));
                 String ingredLine = readIngred.readLine();      //Skip first header line
                 while( (ingredLine = readIngred.readLine()) != null){
 
@@ -65,9 +75,11 @@ public class GetRecipeFromCSV {
                     }
                 }
                 readIngred.close();
+                ingredIn.close();
 
                 //Read Key ingredients and add to recipe
-                BufferedReader readKeyIngred = new BufferedReader(new FileReader("res/raw/keyingredients.csv"));
+                InputStream keyIngredIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/keyingredients.csv");
+                BufferedReader readKeyIngred = new BufferedReader(new InputStreamReader(keyIngredIn));
                 String keyIngredLine = readKeyIngred.readLine();    //Skip first header line
                 while( (keyIngredLine = readKeyIngred.readLine()) != null){
 
@@ -78,11 +90,12 @@ public class GetRecipeFromCSV {
                     }
                 }
                 readKeyIngred.close();
+                keyIngredIn.close();
 
                 allRecipe.add(recipe);
 
             }//End of reading Recipe.csv
-
+            recipeIn.close();
             recipeReader.close();
 
         }catch(Exception e){
