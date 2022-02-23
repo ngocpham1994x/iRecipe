@@ -74,7 +74,7 @@ public class GetRecipeFromCSV {
                     String[] keyIngredData = keyIngredLine.split(",");
                     //If the name matches, add to the Recipe object
                     if(keyIngredData[RECIPENAME].equals(name)){
-                        recipe.addToIngredients(keyIngredData[KEYINGREDIENTS]);
+                        recipe.addToKeyIngredients(keyIngredData[KEYINGREDIENTS]);
                     }
                 }
                 readKeyIngred.close();
