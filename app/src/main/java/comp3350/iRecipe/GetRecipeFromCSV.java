@@ -1,13 +1,17 @@
 package comp3350.iRecipe;
 
 
+import android.os.Bundle;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class GetRecipeFromCSV {
+public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInterface{
 
     //Column number in Recipe.csv
     static final int RECIPENAME = 0;
@@ -26,17 +30,26 @@ public class GetRecipeFromCSV {
     //Column number in Instructions.csv
     static final int INSTRUCTION = 1;
 
-    public static ArrayList<Recipe> getRecipe(){
+    // A list of all recipes
+    private ArrayList<Recipe> recipeList;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        recipeList = getRecipe();
+    }
+
+    public ArrayList<Recipe> getRecipe(){
         ArrayList<Recipe> allRecipe = new ArrayList<>();
         try{
 
-            InputStream recipeIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/recipe.csv");
+            InputStream recipeIn = getAssets().open("Recipe.csv");
             BufferedReader recipeReader = new BufferedReader(new InputStreamReader(recipeIn));
 
             //Read Recipe data line by line
             String line = recipeReader.readLine();  //Skip the first line, which is the header, not the data
             while( (line = recipeReader.readLine()) != null ){
-                //System.out.println(line);
+                //Log.i("Read recipe.csv")
 
                 String[] data = line.split(",");
                 String name = data[RECIPENAME];
@@ -44,7 +57,7 @@ public class GetRecipeFromCSV {
                 ArrayList<String> ingred = new ArrayList<>();
                 ArrayList<String> keyIngred = new ArrayList<>();
 
-                InputStream instrucIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/instructions.csv");
+                InputStream instrucIn = getAssets().open("Instructions.csv");
                 BufferedReader readInstruct = new BufferedReader(new InputStreamReader(instrucIn));
                 String instructLine = readInstruct.readLine();      //Skip first header line
                 while( (instructLine = readInstruct.readLine()) != null){
@@ -63,7 +76,7 @@ public class GetRecipeFromCSV {
                         Integer.parseInt(data[SERVING]), ingred, keyIngred, insturctions);
 
                 //Read ingredients and add to recipe
-                InputStream ingredIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/ingredients.csv");
+                InputStream ingredIn = getAssets().open("Ingredients.csv");
                 BufferedReader readIngred = new BufferedReader(new InputStreamReader(ingredIn));
                 String ingredLine = readIngred.readLine();      //Skip first header line
                 while( (ingredLine = readIngred.readLine()) != null){
@@ -78,7 +91,7 @@ public class GetRecipeFromCSV {
                 ingredIn.close();
 
                 //Read Key ingredients and add to recipe
-                InputStream keyIngredIn = GetRecipeFromCSV.class.getClassLoader().getResourceAsStream("res/raw/keyingredients.csv");
+                InputStream keyIngredIn = getAssets().open("KeyIngredients.csv");
                 BufferedReader readKeyIngred = new BufferedReader(new InputStreamReader(keyIngredIn));
                 String keyIngredLine = readKeyIngred.readLine();    //Skip first header line
                 while( (keyIngredLine = readKeyIngred.readLine()) != null){
@@ -103,4 +116,48 @@ public class GetRecipeFromCSV {
         }
         return allRecipe;
     }
+
+    @Override
+    public boolean addRecipe(Recipe newRecipe)
+    {
+        return recipeList.add(newRecipe);
+    } // will add a new recipe to the end of the list.
+
+    @Override
+    public boolean removeRecipe(Recipe toRemove)
+    {
+        return recipeList.remove(toRemove);
+    } // remove the recipe specified in the parameter
+
+    @Override
+    public Recipe searchByName(String nameOfRecipe)
+    {
+
+        for (Recipe retrieved_recipe : recipeList) {
+            if (nameOfRecipe.equals(retrieved_recipe.getName())) {
+                return retrieved_recipe;
+            }
+        }
+
+        return null;
+    } // search the recipe of the given name
+
+    @Override
+    public ArrayList<Recipe> getAllRecipes() {
+        return new ArrayList<>(recipeList);
+    } // return a deep copy of the recipe list.
+
+    @Override
+    public ArrayList<Recipe> getRecipesByCategory(String category) {
+
+        ArrayList<Recipe> recipeListByCategory = new ArrayList<>();
+
+        for (Recipe retrieved_recipe : recipeList) {
+            if (category.equals(retrieved_recipe.getCategory())) {
+                recipeListByCategory.add(retrieved_recipe);
+            }
+        }
+
+        return recipeListByCategory;
+    } // return a list of all recipe from the same category
 }
