@@ -85,7 +85,6 @@ public class GetRecipeFromCSV {
 
             recipeReader.close();
 
-
         }catch(Exception e){
             e.printStackTrace();
         }
