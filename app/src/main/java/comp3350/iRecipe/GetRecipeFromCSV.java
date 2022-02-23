@@ -27,7 +27,7 @@ public class GetRecipeFromCSV {
             BufferedReader recipeReader = new BufferedReader(new FileReader("Recipe.csv"));
 
             //Read Recipe data line by line
-            String line;
+            String line = recipeReader.readLine();  //Skip the first line, which is the header, not the data
             while( (line = recipeReader.readLine()) != null ){
                 String[] data = line.split(",");
                 String name = data[RECIPENAME];
@@ -40,7 +40,7 @@ public class GetRecipeFromCSV {
 
                 //Read ingredients and add to recipe
                 BufferedReader readIngred = new BufferedReader(new FileReader("Ingredients.csv"));
-                String ingredLine;
+                String ingredLine = readIngred.readLine();      //Skip first header line
                 while( (ingredLine = readIngred.readLine()) != null){
 
                     String[] ingredData = ingredLine.split(",");
@@ -53,7 +53,7 @@ public class GetRecipeFromCSV {
 
                 //Read Key ingredients and add to recipe
                 BufferedReader readKeyIngred = new BufferedReader(new FileReader("KeyIngredients.csv"));
-                String keyIngredLine;
+                String keyIngredLine = readKeyIngred.readLine();    //Skip first header line
                 while( (keyIngredLine = readKeyIngred.readLine()) != null){
 
                     String[] keyIngredData = keyIngredLine.split(",");
