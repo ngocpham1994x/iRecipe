@@ -29,6 +29,25 @@ public class Recipe {
         this.serving = serving;
     }
 
+    // second constructor - just to make testing a bit easier
+    public Recipe(String recipeName , String newCategory)
+    {
+        name = recipeName;
+        category = newCategory;
+        cookingLevel = "easy";
+        ingredients = new ArrayList<>();
+        instruction = "this is pretty easy recipe";
+        keyIngredients = new ArrayList<>();
+        ingredients.add("eggs");
+        ingredients.add("flour");
+        ingredients.add("sugar");
+        keyIngredients.add("flour");
+        this.prepTime = 10;
+        this.cookTime = 20;
+        this.serving = 2;
+
+    }
+
     public String getName(){ return name; }
 
     public String getCategory(){ return category; }
@@ -49,7 +68,7 @@ public class Recipe {
     public String getInstruction(){ return instruction; }
 
     //Add ingredient to all ingredients
-    public void addToIngredients(String ingred){
+    public void addToIngredients(String ingred) {
         ingredients.add(ingred);
     }
 
