@@ -26,7 +26,7 @@ public class GetRecipeFromCSV {
     public static ArrayList<Recipe> getRecipe(){
         ArrayList<Recipe> allRecipe = new ArrayList<>();
         try{
-            BufferedReader recipeReader = new BufferedReader(new FileReader("Recipe.csv"));
+            BufferedReader recipeReader = new BufferedReader(new FileReader("res/raw/Recipe.csv"));
 
             //Read Recipe data line by line
             String line = recipeReader.readLine();  //Skip the first line, which is the header, not the data
@@ -37,7 +37,7 @@ public class GetRecipeFromCSV {
                 ArrayList<String> ingred = new ArrayList<>();
                 ArrayList<String> keyIngred = new ArrayList<>();
 
-                BufferedReader readInstruct = new BufferedReader(new FileReader("Instructions.csv"));
+                BufferedReader readInstruct = new BufferedReader(new FileReader("res/raw/Instructions.csv"));
                 String instructLine = readInstruct.readLine();      //Skip first header line
                 while( (instructLine = readInstruct.readLine()) != null){
 
@@ -54,7 +54,7 @@ public class GetRecipeFromCSV {
                         Integer.parseInt(data[SERVING]), ingred, keyIngred, insturctions);
 
                 //Read ingredients and add to recipe
-                BufferedReader readIngred = new BufferedReader(new FileReader("Ingredients.csv"));
+                BufferedReader readIngred = new BufferedReader(new FileReader("res/raw/Ingredients.csv"));
                 String ingredLine = readIngred.readLine();      //Skip first header line
                 while( (ingredLine = readIngred.readLine()) != null){
 
@@ -67,7 +67,7 @@ public class GetRecipeFromCSV {
                 readIngred.close();
 
                 //Read Key ingredients and add to recipe
-                BufferedReader readKeyIngred = new BufferedReader(new FileReader("KeyIngredients.csv"));
+                BufferedReader readKeyIngred = new BufferedReader(new FileReader("res/raw/KeyIngredients.csv"));
                 String keyIngredLine = readKeyIngred.readLine();    //Skip first header line
                 while( (keyIngredLine = readKeyIngred.readLine()) != null){
 
