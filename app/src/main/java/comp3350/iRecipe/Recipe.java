@@ -48,37 +48,32 @@ public class Recipe {
 
     }
 
+    public String getName(){ return name; }
 
-    public String getName(){
-        return name;
-    }
+    public String getCategory(){ return category; }
 
-    public String getCategory(){
-        return category;
-    }
+    public String getLevel(){ return cookingLevel; }
 
-    public String getLevel(){
-        return cookingLevel;
-    }
+    public int getCookTime(){ return cookTime;}
 
-    public int getCookTime(){return cookTime;}
-
-    public int getServing() {
-        return serving;
-    }
+    public int getServing() { return serving; }
 
     public int getPrepTime(){ return prepTime;}
 
     //Return a copy of the ingredients, so that others don't mess around in the list we store
-    public ArrayList<String> getIngredients(){
-        return new ArrayList<String>(ingredients);
+    public ArrayList<String> getIngredients(){ return new ArrayList<>(ingredients); }
+
+    public ArrayList<String> getKeyIngredients(){ return new ArrayList<>(keyIngredients); }
+
+    public String getInstruction(){ return instruction; }
+
+    //Add ingredient to all ingredients
+    public void addToIngredients(String ingred) {
+        ingredients.add(ingred);
     }
 
-    public ArrayList<String> getKeyIngredients(){
-        return new ArrayList<String>(keyIngredients);
-    }
-
-    public String getInstruction(){
-        return instruction;
+    //Add key ingredients to Recipe
+    public void addToKeyIngredients(String ingred){
+        keyIngredients.add(ingred);
     }
 }
