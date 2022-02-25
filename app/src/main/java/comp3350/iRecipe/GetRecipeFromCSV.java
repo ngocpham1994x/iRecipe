@@ -1,17 +1,16 @@
 package comp3350.iRecipe;
 
 
-import android.os.Bundle;
-import android.util.Log;
+import android.content.Context;
+
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInterface{
+
+public class GetRecipeFromCSV implements RecipeListInterface{
 
     //Column number in Recipe.csv
     static final int RECIPENAME = 0;
@@ -32,10 +31,10 @@ public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInt
 
     // A list of all recipes
     private ArrayList<Recipe> recipeList;
+    Context context;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public GetRecipeFromCSV(Context context){
+        this.context = context;
         recipeList = getRecipe();
     }
 
@@ -43,7 +42,7 @@ public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInt
         ArrayList<Recipe> allRecipe = new ArrayList<>();
         try{
 
-            InputStream recipeIn = getAssets().open("Recipe.csv");
+            InputStream recipeIn = context.getAssets().open("Recipe.csv");
             BufferedReader recipeReader = new BufferedReader(new InputStreamReader(recipeIn));
 
             //Read Recipe data line by line
@@ -57,7 +56,7 @@ public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInt
                 ArrayList<String> ingred = new ArrayList<>();
                 ArrayList<String> keyIngred = new ArrayList<>();
 
-                InputStream instrucIn = getAssets().open("Instructions.csv");
+                InputStream instrucIn = context.getAssets().open("Instructions.csv");
                 BufferedReader readInstruct = new BufferedReader(new InputStreamReader(instrucIn));
                 String instructLine = readInstruct.readLine();      //Skip first header line
                 while( (instructLine = readInstruct.readLine()) != null){
@@ -76,7 +75,7 @@ public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInt
                         Integer.parseInt(data[SERVING]), ingred, keyIngred, insturctions);
 
                 //Read ingredients and add to recipe
-                InputStream ingredIn = getAssets().open("Ingredients.csv");
+                InputStream ingredIn = context.getAssets().open("Ingredients.csv");
                 BufferedReader readIngred = new BufferedReader(new InputStreamReader(ingredIn));
                 String ingredLine = readIngred.readLine();      //Skip first header line
                 while( (ingredLine = readIngred.readLine()) != null){
@@ -91,7 +90,7 @@ public class GetRecipeFromCSV extends AppCompatActivity implements RecipeListInt
                 ingredIn.close();
 
                 //Read Key ingredients and add to recipe
-                InputStream keyIngredIn = getAssets().open("KeyIngredients.csv");
+                InputStream keyIngredIn = context.getAssets().open("KeyIngredients.csv");
                 BufferedReader readKeyIngred = new BufferedReader(new InputStreamReader(keyIngredIn));
                 String keyIngredLine = readKeyIngred.readLine();    //Skip first header line
                 while( (keyIngredLine = readKeyIngred.readLine()) != null){
