@@ -19,5 +19,7 @@ public interface RecipeListInterface {
     //returns a list of recipes based on the category
     public ArrayList<Recipe> getRecipesByCategory(String category);
 
+    public ArrayList<Recipe> searchByIngredients(String category);
+
 
 }
