@@ -60,4 +60,26 @@ public class RecipeList implements RecipeListInterface {
         return recipeListByCategory;
     } // return a list of all recipe from the same category
 
+    //Return a list recipe if those recipe use this ingredient, case insensitive
+    @Override
+    public ArrayList<Recipe> searchByIngredients(String ingredient){
+
+        ArrayList<Recipe> result = new ArrayList<>();
+        for(Recipe retrieved : recipeList){
+
+            ArrayList<String> allKeyIngredients = retrieved.getKeyIngredients();
+            for(String toCheck : allKeyIngredients){
+
+                //If found one match, exit this loop and check next recipe
+                if(ingredient.equalsIgnoreCase(toCheck)){
+                    result.add(retrieved);
+                    break;
+                }
+            }
+
+        }
+
+        return result;
+    }
+
 }

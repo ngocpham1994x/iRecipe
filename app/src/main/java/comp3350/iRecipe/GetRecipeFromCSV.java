@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class GetRecipeFromCSV implements RecipeListInterface{
@@ -38,7 +39,7 @@ public class GetRecipeFromCSV implements RecipeListInterface{
         recipeList = getRecipe();
     }
 
-    public ArrayList<Recipe> getRecipe(){
+    private ArrayList<Recipe> getRecipe(){
         ArrayList<Recipe> allRecipe = new ArrayList<>();
         try{
 
@@ -128,12 +129,13 @@ public class GetRecipeFromCSV implements RecipeListInterface{
         return recipeList.remove(toRemove);
     } // remove the recipe specified in the parameter
 
+    //Get recipe by name, case insensitive
     @Override
     public Recipe searchByName(String nameOfRecipe)
     {
 
         for (Recipe retrieved_recipe : recipeList) {
-            if (nameOfRecipe.equals(retrieved_recipe.getName())) {
+            if (nameOfRecipe.equalsIgnoreCase(retrieved_recipe.getName())) {
                 return retrieved_recipe;
             }
         }
@@ -152,11 +154,33 @@ public class GetRecipeFromCSV implements RecipeListInterface{
         ArrayList<Recipe> recipeListByCategory = new ArrayList<>();
 
         for (Recipe retrieved_recipe : recipeList) {
-            if (category.equals(retrieved_recipe.getCategory())) {
+            if ( category.equalsIgnoreCase(retrieved_recipe.getCategory())) {
                 recipeListByCategory.add(retrieved_recipe);
             }
         }
 
         return recipeListByCategory;
     } // return a list of all recipe from the same category
+
+    //Return a list recipe if those recipe use this ingredient, case insensitive
+    @Override
+    public ArrayList<Recipe> searchByIngredients(String ingredient){
+
+        ArrayList<Recipe> result = new ArrayList<>();
+        for(Recipe retrieved : recipeList){
+
+            ArrayList<String> allKeyIngredients = retrieved.getKeyIngredients();
+            for(String toCheck : allKeyIngredients){
+
+                //If found one match, exit this loop and check next recipe
+                if(ingredient.equalsIgnoreCase(toCheck)){
+                    result.add(retrieved);
+                    break;
+                }
+            }
+
+        }
+
+        return result;
+    }
 }

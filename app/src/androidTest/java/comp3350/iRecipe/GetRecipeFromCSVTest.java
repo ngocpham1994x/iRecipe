@@ -21,7 +21,7 @@ public class GetRecipeFromCSVTest {
     GetRecipeFromCSV recipeGetter;
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<DummyActivity> activityRule = new ActivityTestRule<>(DummyActivity.class);
 
     @Before
     public void setUp() throws Exception {
@@ -46,6 +46,8 @@ public class GetRecipeFromCSVTest {
 
     @Test
     public void getAllRecipes() {
+        //There are 10 default recipe in the CSV file, so it should be equal to size 10 after we get all recipe for the first time.
+        //If you added any other recipe before this test, it might fail!
         ArrayList<Recipe> all = recipeGetter.getAllRecipes();
         assertEquals(10,all.size());
     }
