@@ -1,36 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#25F783AF"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/edit_message"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/searchbar"
+        android:layout_height="50dp"
+        android:id="@+id/layout1"
+        tools:ignore="UseAppTint">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backarrow"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp"
+            android:tint="#807D7D"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/searchicon"
+            android:layout_centerVertical="true"
+            android:paddingRight="20dp"
+            android:layout_alignParentRight="true"
+            android:tint="#807D7D"
+            />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:fontFamily="@font/baloo2_semibold"
+            android:minHeight="48dp"
+            android:text="@string/search_message"
+            android:textAlignment="center"
+            android:textColor="#807D7D"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:onClick="sendMessage"
-        android:text="@string/button_send"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        android:layout_marginLeft="30dp"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"
+        android:text="@string/app_name"
+        android:textColor="#000000"
+        android:id="@+id/app_name"
+        android:fontFamily="@font/baloo2_semibold" >
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/main_backdrop"
+        android:id="@+id/layout2" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="200dp"
+            tools:ignore="MissingConstraints" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:id="@+id/recyclerView"
+                />
+        </RelativeLayout>
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="250dp"-->
+<!--            app:cardCornerRadius="25dp"-->
+<!--            app:cardElevation="10dp"-->
+<!--            app:cardBackgroundColor="#E53935"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="30dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_height="50dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Donate"-->
+<!--                android:textColor="#F0FFFFFF"-->
+<!--                android:drawableLeft="@drawable/donate"-->
+<!--                android:drawablePadding="10dp"-->
+<!--                android:drawableTint="#E8FFFFFF"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center|center_vertical"-->
+<!--                android:fontFamily="@font/baloo2_semibold"-->
+<!--                android:textSize="17sp"-->
+<!--                />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+    </RelativeLayout>
+
+    <!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="@string/edit_message"-->
+<!--        android:textSize="24sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button2"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:onClick="sendMessage"-->
+<!--        android:text="@string/button_send"-->
+<!--        android:textSize="24sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName" />-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
