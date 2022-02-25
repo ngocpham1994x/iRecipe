@@ -18,11 +18,14 @@ import java.util.ArrayList;
 @RunWith(AndroidJUnit4.class)
 public class GetRecipeFromCSVTest {
 
+    GetRecipeFromCSV recipeGetter;
+
     @Rule
-    public ActivityTestRule<GetRecipeFromCSV> activityRule = new ActivityTestRule<>(GetRecipeFromCSV.class);
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
 
     @Before
     public void setUp() throws Exception {
+        recipeGetter = new GetRecipeFromCSV(activityRule.getActivity());
     }
 
     @After
@@ -43,8 +46,7 @@ public class GetRecipeFromCSVTest {
 
     @Test
     public void getAllRecipes() {
-        GetRecipeFromCSV activity = activityRule.getActivity();
-        ArrayList<Recipe> all = activity.getAllRecipes();
+        ArrayList<Recipe> all = recipeGetter.getAllRecipes();
         assertEquals(10,all.size());
     }
 
