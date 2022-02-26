@@ -58,14 +58,14 @@
         android:layout_marginTop="20dp"
         android:text="@string/welcome"
         android:textColor="#000000"
-        android:id="@+id/app_name"
+        android:id="@+id/welcome"
         android:fontFamily="@font/baloo2_semibold" >
     </TextView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        app:layout_constraintTop_toBottomOf="@+id/welcome"
         android:layout_marginTop="190dp"
         android:background="@drawable/main_backdrop"
         android:id="@+id/layout2" >
@@ -86,31 +86,6 @@
                 android:id="@+id/recyclerView"
                 />
         </RelativeLayout>
-
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:layout_width="250dp"-->
-<!--            app:cardCornerRadius="25dp"-->
-<!--            app:cardElevation="10dp"-->
-<!--            app:cardBackgroundColor="#E53935"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_marginBottom="30dp"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_height="50dp">-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Donate"-->
-<!--                android:textColor="#F0FFFFFF"-->
-<!--                android:drawableLeft="@drawable/donate"-->
-<!--                android:drawablePadding="10dp"-->
-<!--                android:drawableTint="#E8FFFFFF"-->
-<!--                android:gravity="center"-->
-<!--                android:layout_gravity="center|center_vertical"-->
-<!--                android:fontFamily="@font/baloo2_semibold"-->
-<!--                android:textSize="17sp"-->
-<!--                />-->
-
-<!--        </androidx.cardview.widget.CardView>-->
 
     </RelativeLayout>
 

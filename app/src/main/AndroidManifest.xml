@@ -9,16 +9,23 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
-        <activity android:name=".DisplayMessageActivity"
+        <activity
+            android:name=".RecipeDetail"
+            android:exported="false" />
+        <activity
+            android:name=".ListRecipe"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayMessageActivity"
             android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-        </activity>
-<!--        <activity-->
-<!--            android:name=".DisplayMessageActivity"-->
-<!--            android:exported="false" />-->
+        </activity> <!-- <activity -->
+        <!-- android:name=".DisplayMessageActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".MainActivity"
             android:exported="true">

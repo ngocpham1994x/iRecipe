@@ -1,6 +1,7 @@
 package comp3350.iRecipe;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyAdapter> {
+public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdapter> {
     Context context;
 
-    public Adapter(Context context) {
+    public AdapterMainPage(Context context) {
         this.context = context;
     }
 
@@ -34,6 +35,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyAdapter> {
             holder.image1.setImageResource(R.drawable.round_fork_knife);
             holder.text.setText("View all recipes");
             holder.back.setBackgroundColor(Color.parseColor("#D6E53935"));
+
+            holder.card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ListRecipe.class);
+                    context.startActivity(intent);
+                }
+            });
         }
         if(position == 1)
         {
@@ -74,12 +83,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyAdapter> {
         ImageView image, image1;
         TextView text;
         RelativeLayout back;
+        RelativeLayout card;
         public MyAdapter(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.image);
             image1 = itemView.findViewById(R.id.image1);
             text = itemView.findViewById(R.id.text);
             back = itemView.findViewById(R.id.back);
+            card = itemView.findViewById(R.id.card);
         }
     }
 }

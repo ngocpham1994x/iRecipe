@@ -18,12 +18,11 @@
         android:id="@+id/card">
 
         <ImageView
+            android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/backdrop_ingredients"
             android:scaleType="centerCrop"
-            android:id="@+id/image">
-        </ImageView>
+            android:src="@drawable/backdrop_ingredients"></ImageView>
     </RelativeLayout>
 
     <RelativeLayout
@@ -38,19 +37,20 @@
             android:layout_height="70dp"
             android:src="@drawable/round_fork_knife">
         </ImageView>
+
         <TextView
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:lineSpacingExtra="-8dp"
-            android:text="View all recipes"
-            android:textSize="30sp"
             android:fontFamily="@font/baloo2_regular"
+            android:lineSpacingExtra="-8dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="View all recipes"
             android:textColor="#000000"
-            android:id="@+id/text">
+            android:textSize="30sp">
 
         </TextView>
 
