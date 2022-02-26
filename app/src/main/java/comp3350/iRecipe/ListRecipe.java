@@ -21,16 +21,16 @@ public class ListRecipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_recipe);
 
-        recyclerView_recipe = findViewById(R.id.recyclerView_recipe);
-        recyclerView_recipe.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView_recipe.setHasFixedSize(true);
-        AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list);
-        recyclerView_recipe.setAdapter(adapter_recipe);
-
-
-
-        recipe_list = new ArrayList<>();
-        recipe_list.add("recipe1");
-        recipe_list.add("recipe2");
+//        recyclerView_recipe = findViewById(R.id.recyclerView_recipe);
+//        recyclerView_recipe.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView_recipe.setHasFixedSize(true);
+//        AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list);
+//        recyclerView_recipe.setAdapter(adapter_recipe);
+//
+//
+//
+//        recipe_list = new ArrayList<>();
+//        recipe_list.add("recipe1");
+//        recipe_list.add("recipe2");
     }
 }
