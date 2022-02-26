@@ -3,4 +3,5 @@
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="search_message">Enter recipe name here</string>
+    <string name="welcome">Welcome to your favourite recipe book!</string>
 </resources>

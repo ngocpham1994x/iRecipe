@@ -47,7 +47,7 @@
             android:paddingLeft="10dp"
             android:lineSpacingExtra="-8dp"
             android:text="View all recipes"
-            android:textSize="15sp"
+            android:textSize="30sp"
             android:fontFamily="@font/baloo2_regular"
             android:textColor="#000000"
             android:id="@+id/text">

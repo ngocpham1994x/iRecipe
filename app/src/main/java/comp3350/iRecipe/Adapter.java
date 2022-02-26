@@ -33,35 +33,35 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyAdapter> {
             holder.image.setImageResource(R.drawable.backdrop_ingredients);
             holder.image1.setImageResource(R.drawable.round_fork_knife);
             holder.text.setText("View all recipes");
-            holder.back.setBackgroundColor(Color.parseColor("#E6E53935"));
+            holder.back.setBackgroundColor(Color.parseColor("#D6E53935"));
         }
         if(position == 1)
         {
             holder.image.setImageResource(R.drawable.backdrop_main_dishes);
             holder.image1.setImageResource(R.drawable.round_fish);
             holder.text.setText("Main dishes");
-            holder.back.setBackgroundColor(Color.parseColor("#F236883A"));
+            holder.back.setBackgroundColor(Color.parseColor("#D236883A"));
         }
         if(position == 2)
         {
             holder.image.setImageResource(R.drawable.backdrop_soups);
             holder.image1.setImageResource(R.drawable.round_spaguetti);
             holder.text.setText("Soups");
-            holder.back.setBackgroundColor(Color.parseColor("#F2AF4576"));
+            holder.back.setBackgroundColor(Color.parseColor("#D2AF4576"));
         }
         if(position == 3)
         {
             holder.image.setImageResource(R.drawable.backdrop_desserts);
             holder.image1.setImageResource(R.drawable.round_birthday_cake);
             holder.text.setText("Desserts");
-            holder.back.setBackgroundColor(Color.parseColor("#F2EEAA45"));
+            holder.back.setBackgroundColor(Color.parseColor("#D2EEAA45"));
         }
         if(position == 4)
         {
             holder.image.setImageResource(R.drawable.backdrop_drinks);
             holder.image1.setImageResource(R.drawable.round_cocktail);
             holder.text.setText("Drinks");
-            holder.back.setBackgroundColor(Color.parseColor("#E6E53935"));
+            holder.back.setBackgroundColor(Color.parseColor("#D6E53935"));
         }
     }
 
