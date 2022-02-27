@@ -1,6 +1,8 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Persistence;
 
 import java.util.ArrayList;
+
+import comp3350.iRecipe.Objects.Recipe;
 
 public interface RecipeListInterface {
 

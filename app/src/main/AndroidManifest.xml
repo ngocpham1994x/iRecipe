@@ -10,24 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
         <activity
-            android:name=".RecipeDetail"
+            android:name=".Presentation.RecipeDetail"
             android:exported="false" />
         <activity
-            android:name=".ListRecipe"
+            android:name=".Presentation.ListRecipe"
             android:exported="false" />
         <activity
-            android:name=".DisplayMessageActivity"
-            android:parentActivityName=".MainActivity">
+            android:name=".Presentation.DisplayMessageActivity"
+            android:parentActivityName=".Presentation.MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Presentation.MainActivity" />
         </activity> <!-- <activity -->
         <!-- android:name=".DisplayMessageActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

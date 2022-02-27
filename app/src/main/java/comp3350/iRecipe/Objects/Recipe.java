@@ -1,4 +1,4 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Objects;
 
 import java.util.ArrayList;
 

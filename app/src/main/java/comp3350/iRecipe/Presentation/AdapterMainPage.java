@@ -1,4 +1,4 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Presentation;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import comp3350.iRecipe.R;
 
 public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdapter> {
     Context context;
