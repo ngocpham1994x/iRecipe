@@ -1,4 +1,4 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Business;
 
 
 import android.content.Context;
@@ -8,10 +8,12 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Locale;
+
+import comp3350.iRecipe.Objects.Recipe;
+import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 
-public class GetRecipeFromCSV implements RecipeListInterface{
+public class GetRecipeFromCSV implements RecipeListInterface {
 
     //Column number in Recipe.csv
     static final int RECIPENAME = 0;

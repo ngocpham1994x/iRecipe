@@ -1,7 +1,10 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Business;
 
 
 import java.util.ArrayList;
+
+import comp3350.iRecipe.Objects.Recipe;
+import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 // Implements arrayList data structure and it's methods.
 public class RecipeList implements RecipeListInterface {

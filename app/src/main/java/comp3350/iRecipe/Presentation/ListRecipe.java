@@ -1,15 +1,17 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import comp3350.iRecipe.Business.GetRecipeFromCSV;
+import comp3350.iRecipe.R;
+import comp3350.iRecipe.Objects.Recipe;
+import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 public class ListRecipe extends AppCompatActivity {
 

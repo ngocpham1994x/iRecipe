@@ -1,4 +1,4 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Presentation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import comp3350.iRecipe.R;
+import comp3350.iRecipe.Objects.Recipe;
 
 public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHolder> {
 
