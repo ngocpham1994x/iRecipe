@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioApplication/irecipe/app/src/main/res/layout/activity_dummy.xml" value="0.4510416666666667" />
+        <entry key="..\:/app/app/src/main/res/drawable/main_backdrop.xml" value="0.1015" />
+        <entry key="..\:/app/app/src/main/res/layout/activity_list_recipe.xml" value="0.33" />
+        <entry key="..\:/app/app/src/main/res/layout/activity_list_recipte.xml" value="0.36666666666666664" />
+        <entry key="..\:/app/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/app/app/src/main/res/layout/card.xml" value="0.25" />
+        <entry key="..\:/app/app/src/main/res/layout/card_recipe.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
