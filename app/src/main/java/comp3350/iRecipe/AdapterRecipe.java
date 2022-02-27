@@ -8,12 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHolder> {
 
-    List<String> recipe_list;
-    public AdapterRecipe(List<String> recipe_list) {
+    ArrayList<Recipe> recipe_list;  // [(Chicken Fried Rice, easy),(Noodle, easy)]
+    public AdapterRecipe(ArrayList<Recipe> recipe_list) {
         this.recipe_list = recipe_list;
     }
 
@@ -27,7 +28,7 @@ public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHold
 
     @Override
     public void onBindViewHolder(@NonNull AdapterRecipe.RecipeHolder holder, int position) {
-        holder.recipe_name.setText(recipe_list.get(position));
+        holder.recipe_name.setText(recipe_list.get(position).getName());
     }
 
     @Override
