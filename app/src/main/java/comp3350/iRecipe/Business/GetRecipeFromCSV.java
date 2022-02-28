@@ -34,14 +34,22 @@ public class GetRecipeFromCSV implements RecipeListInterface {
 
     // A list of all recipes
     private ArrayList<Recipe> recipeList;
-    Context context;
+
 
     public GetRecipeFromCSV(Context context){
-        this.context = context;
-        recipeList = getRecipe();
+        recipeList = readRecipesFromCSV(context);
     }
 
-    private ArrayList<Recipe> getRecipe(){
+
+    // for unit tests purpose. Because we are creating fake objects, no need to read the file.
+    public GetRecipeFromCSV()
+    {
+        recipeList = new ArrayList<Recipe>();
+    }
+
+
+
+    private ArrayList<Recipe> readRecipesFromCSV(Context context){
         ArrayList<Recipe> allRecipe = new ArrayList<>();
         try{
 
