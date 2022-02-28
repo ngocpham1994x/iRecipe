@@ -16,16 +16,17 @@ import java.util.ArrayList;
 
 import comp3350.iRecipe.Business.GetRecipeFromCSV;
 import comp3350.iRecipe.Objects.Recipe;
+import comp3350.iRecipe.Persistence.RecipeListInterface;
 import comp3350.iRecipe.Presentation.DummyActivity;
+import comp3350.iRecipe.Presentation.MainActivity;
 
 
 @RunWith(AndroidJUnit4.class)
 public class GetRecipeFromCSVTest {
 
-    GetRecipeFromCSV recipeGetter;
-
+    RecipeListInterface recipeGetter;
     @Rule
-    public ActivityTestRule<DummyActivity> activityRule = new ActivityTestRule<>(DummyActivity.class);
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
 
     @Before
     public void setUp() throws Exception {
