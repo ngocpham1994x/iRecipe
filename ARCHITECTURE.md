@@ -10,4 +10,4 @@ Recipe.java is the class used to make objects and store them in Array List. this
 RecipeListInterface.java is the interface of recipelist class and have signature of all the required methods
 
 
-![https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/80c75184bd4a2ae64f169f1f944ebae7ec1fb55d/graphical.png](graphical.png"graphical representation")
+![](graphical.png)
