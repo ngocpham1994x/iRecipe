@@ -12,6 +12,6 @@ THE ARCHITECTURE.md file is [here](ARCHITECTURE.md)
 
 we used gitflow and [here] is the overview
 
-##Worksheet
+## Worksheet
 
 Iteration1 worksheet is [here]
