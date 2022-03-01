@@ -6,4 +6,4 @@ The vision.md file is [here](vision.md)
 
 ## ARCHITECTURE.md
 
-here is the link [link](ARCHITECTURE.md)
+THE ARCHITECTURE.md file is [here](ARCHITECTURE.md)
