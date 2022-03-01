@@ -4,12 +4,21 @@ Iteration 1 Worksheet
 Adding a feature
 -----------------
 
-Tell the story of how one of your features was added to the project.
-Provide links to the
-feature, user stories, and merge requests (if used), associated tests, and merge commit
-that was used complete the feature.
+Feature: List of all the recipes. (https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/1)
 
-Use one or two paragraphs which can have point-form within them.
+User Stories: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/9
+
+Dev taks: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/23
+
+- To add this feature to our project, we first need to create the Object of Recipe, and decide what should one single recipe have. Our design was that, a Recipe should have its name, its category (Main dishes, drinks, soup, etc.), its ingredients and its instructions on how to cook. And also expected cooking time, cooking level and the expected number of serving people. Then we should have some default recipes to work as a fake database. For this, we decided to write some default recipe and store it inside CSV Files and read it to set up a fake database. We have an interface that define the method to acquire/search that returns an ArrayList of Recipe. Then we have a class that read from CSV File and implement all the function from this interface, this sets up our business layer and provide logic support for this feature.
+
+- In the GUI design that implement this feature, we use Adapter to fetch info according to the button we clicked to show a List of Recipe. We can choose to show all recipe (Using the function from the interface to get all recipe), or show a list of recipe according to its category (Using the search recipe by category function from the interface). Then the listing of the overview of the Recipe would just be the name of the Recipe and its category. This is how we added this feature to our project.
+
+Link of merge request related to this implementation: 
+
+interface: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/2
+ReadingCSVFile: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/3 https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/4
+GUI: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/7 https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/8
 
 Exceptional code
 ----------------
