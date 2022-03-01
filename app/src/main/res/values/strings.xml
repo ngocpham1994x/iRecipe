@@ -5,4 +5,5 @@
     <string name="welcome">Welcome to your favourite recipe book!</string>
     <string name="all_recipes">All recipes</string>
     <string name="recipe_name">Chicken Fried Rice</string>
+    <string name="category">Main Dish</string>
 </resources>

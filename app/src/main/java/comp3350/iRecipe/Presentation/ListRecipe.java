@@ -28,10 +28,6 @@ public class ListRecipe extends AppCompatActivity {
         recyclerView_recipe.setHasFixedSize(true);
 
 
-//        recipe_list = new ArrayList<>();
-//        recipe_list.add("recipe1");
-//        recipe_list.add("recipe2");
-
         list = new GetRecipeFromCSV(this);
         ArrayList<Recipe> recipe_list = list.getAllRecipes();
 

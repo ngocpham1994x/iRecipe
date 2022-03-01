@@ -7,60 +7,61 @@
     android:layout_height="match_parent"
     android:background="#25F783AF"
     tools:context=".Presentation.MainActivity">
+<!--DO NOT DELETE-->
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:background="@drawable/searchbar"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:id="@+id/layout1"-->
+<!--        tools:ignore="UseAppTint">-->
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/backarrow"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:tint="#807D7D"-->
+<!--            />-->
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/searchicon"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:paddingRight="20dp"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:tint="#807D7D"-->
+<!--            />-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/searchbar"
-        android:layout_height="50dp"
-        android:id="@+id/layout1"
-        tools:ignore="UseAppTint">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/backarrow"
-            android:layout_centerVertical="true"
-            android:paddingLeft="20dp"
-            android:tint="#807D7D"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/searchicon"
-            android:layout_centerVertical="true"
-            android:paddingRight="20dp"
-            android:layout_alignParentRight="true"
-            android:tint="#807D7D"
-            />
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:background="@null"-->
+<!--            android:fontFamily="@font/baloo2_semibold"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:text="@string/search_message"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="#807D7D"-->
+<!--            android:textSize="16sp" />-->
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:fontFamily="@font/baloo2_semibold"
-            android:minHeight="48dp"
-            android:text="@string/search_message"
-            android:textAlignment="center"
-            android:textColor="#807D7D"
-            android:textSize="16sp" />
-
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
+<!--    FOR CONSTRAIN BELOW CODES-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/layout1"-->
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layout1"
-        android:gravity="center"
-        android:textSize="30sp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="center"
         android:text="@string/welcome"
         android:textColor="#000000"
-        android:id="@+id/welcome"
-        android:fontFamily="@font/baloo2_semibold" >
-    </TextView>
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <RelativeLayout
         android:layout_width="match_parent"
