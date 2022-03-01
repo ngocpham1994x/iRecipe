@@ -10,20 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
         <activity
+            android:name=".Presentation.Drink"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.Dessert"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.Soup"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.MainDish"
+            android:exported="false" />
+        <activity
             android:name=".Presentation.RecipeDetail"
             android:exported="false" />
         <activity
             android:name=".Presentation.ListRecipe"
-            android:exported="false" />
-        <activity
-            android:name=".Presentation.DisplayMessageActivity"
-            android:parentActivityName=".Presentation.MainActivity">
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Presentation.MainActivity" />
-        </activity> <!-- <activity -->
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".DisplayMessageActivity" -->
         <!-- android:exported="false" /> -->
         <activity

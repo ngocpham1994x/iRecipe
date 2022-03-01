@@ -52,6 +52,14 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.image1.setImageResource(R.drawable.round_fish);
             holder.text.setText("Main dishes");
             holder.back.setBackgroundColor(Color.parseColor("#D236883A"));
+
+            holder.card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, MainDish.class);
+                    context.startActivity(intent);
+                }
+            });
         }
         if(position == 2)
         {
@@ -59,6 +67,14 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.image1.setImageResource(R.drawable.round_spaguetti);
             holder.text.setText("Soups");
             holder.back.setBackgroundColor(Color.parseColor("#D2AF4576"));
+
+            holder.card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, Soup.class);
+                    context.startActivity(intent);
+                }
+            });
         }
         if(position == 3)
         {
@@ -66,6 +82,14 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.image1.setImageResource(R.drawable.round_birthday_cake);
             holder.text.setText("Desserts");
             holder.back.setBackgroundColor(Color.parseColor("#D2EEAA45"));
+
+            holder.card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, Dessert.class);
+                    context.startActivity(intent);
+                }
+            });
         }
         if(position == 4)
         {
@@ -73,6 +97,14 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.image1.setImageResource(R.drawable.round_cocktail);
             holder.text.setText("Drinks");
             holder.back.setBackgroundColor(Color.parseColor("#D6E53935"));
+
+            holder.card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, Drink.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

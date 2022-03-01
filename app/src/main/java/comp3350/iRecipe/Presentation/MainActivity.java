@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     AdapterMainPage adapter;
 
-    public static final String EXTRA_MESSAGE = "comp3350.iRecipe.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +23,5 @@ public class MainActivity extends AppCompatActivity {
         adapter = new AdapterMainPage(this);
         recyclerView.setAdapter(adapter);
     }
-
-
-    /** Called when the user taps the Send button */
-//    public void sendMessage(View view) {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        TextView editText = (TextView) findViewById(R.id.text);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
-//    }
 
 }
