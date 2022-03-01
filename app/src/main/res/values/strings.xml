@@ -3,7 +3,11 @@
     <string name="edit_message">Enter a message</string>
     <string name="search_message">Enter recipe name here</string>
     <string name="welcome">Welcome to your favourite recipe book!</string>
-    <string name="all_recipes">All recipes</string>
+    <string name="all_recipes">All Recipes</string>
     <string name="recipe_name">Chicken Fried Rice</string>
     <string name="category">Main Dish</string>
+    <string name="all_main_dish">All Main Dishes</string>
+    <string name="all_soup">All Soups</string>
+    <string name="all_drink">All Drinks</string>
+    <string name="all_dessert">All Desserts</string>
 </resources>

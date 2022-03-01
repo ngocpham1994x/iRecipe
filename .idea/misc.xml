@@ -11,9 +11,13 @@
         <entry key="..\:/app/app/src/main/res/layout/card.xml" value="0.25" />
         <entry key="..\:/app/app/src/main/res/layout/card_recipe.xml" value="0.36666666666666664" />
         <entry key="..\:/irecipe/app/src/main/res/drawable/main_backdrop.xml" value="0.1875" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/activity_dessert.xml" value="0.36666666666666664" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_display_message.xml" value="0.18802083333333333" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/activity_drink.xml" value="0.36666666666666664" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_list_recipe.xml" value="0.22" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/activity_main_dish.xml" value="0.18802083333333333" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/activity_soup.xml" value="0.18802083333333333" />
         <entry key="..\:/irecipe/app/src/main/res/layout/card_recipe.xml" value="0.33" />
       </map>
     </option>

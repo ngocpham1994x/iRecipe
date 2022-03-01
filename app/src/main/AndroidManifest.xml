@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
         <activity
+            android:name=".Presentation.Drink"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.Dessert"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.Soup"
+            android:exported="false" />
+        <activity
             android:name=".Presentation.MainDish"
             android:exported="false" />
         <activity
