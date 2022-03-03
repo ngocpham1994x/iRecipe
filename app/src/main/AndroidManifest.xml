@@ -9,26 +9,14 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
-        <activity
-            android:name=".Presentation.DrinkActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Presentation.DessertActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Presentation.SoupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Presentation.MainDishActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Presentation.RecipeDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Presentation.ListRecipeActivity"
             android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".DisplayMessageActivity" -->
-        <!-- android:exported="false" /> -->
+
         <activity
             android:name=".Presentation.MainActivity"
             android:exported="true">

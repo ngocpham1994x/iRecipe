@@ -42,6 +42,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ListRecipeActivity.class);
+                    intent.putExtra("type","All");
                     context.startActivity(intent);
                 }
             });
@@ -56,7 +57,8 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, MainDishActivity.class);
+                    Intent intent = new Intent(context, ListRecipeActivity.class);
+                    intent.putExtra("type","Main dishes");
                     context.startActivity(intent);
                 }
             });
@@ -71,7 +73,8 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, SoupActivity.class);
+                    Intent intent = new Intent(context, ListRecipeActivity.class);
+                    intent.putExtra("type","Soup");
                     context.startActivity(intent);
                 }
             });
@@ -86,7 +89,8 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, DessertActivity.class);
+                    Intent intent = new Intent(context, ListRecipeActivity.class);
+                    intent.putExtra("type","Dessert");
                     context.startActivity(intent);
                 }
             });
@@ -101,7 +105,8 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, DrinkActivity.class);
+                    Intent intent = new Intent(context, ListRecipeActivity.class);
+                    intent.putExtra("type","Drink");
                     context.startActivity(intent);
                 }
             });
