@@ -2,16 +2,16 @@
 
 ## VISION STATEMENT
 
-The vision.md file is [here](vision.md)
+[vision.md](vision.md)
 
 ## ARCHITECTURE.md
 
-THE ARCHITECTURE.md file is [here](ARCHITECTURE.md)
+[Architecture.md](ARCHITECTURE.md)
 
 ## Branching strategy
 
-we used gitflow and [here] is the overview
+we used gitflow in [Branching strategy](BranchingStrategy.md)
 
 ## Worksheet
 
-Iteration1 worksheet is [here]
+Iteration1 [Worksheet](i1_worksheet.md)
