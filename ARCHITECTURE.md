@@ -35,4 +35,4 @@ MainActivity.java is used for all the widgets on main page
 
 
 
-![]( img_source/chart.jpg)
+![flow chart]( img_source/chart.jpg)
