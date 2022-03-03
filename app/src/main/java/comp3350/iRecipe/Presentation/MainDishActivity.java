@@ -13,25 +13,26 @@ import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
 import comp3350.iRecipe.R;
 
-public class Dessert extends AppCompatActivity {
-    
-    RecyclerView recyclerView_dessert;
+public class MainDishActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView_maindish;
     RecipeListInterface list;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dessert);
+        setContentView(R.layout.activity_main_dish);
 
-        recyclerView_dessert = findViewById(R.id.recyclerView_dessert);
-        recyclerView_dessert.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView_dessert.setHasFixedSize(true);
+        recyclerView_maindish = findViewById(R.id.recyclerView_maindish);
+        recyclerView_maindish.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView_maindish.setHasFixedSize(true);
 
 
         list = new GetRecipeFromCSV(this);
-        ArrayList<Recipe> recipe_list = list.getRecipesByCategory("Dessert");
+        ArrayList<Recipe> recipe_list = list.getRecipesByCategory("Main dishes");
 
         AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list);
-        recyclerView_dessert.setAdapter(adapter_recipe);
+        recyclerView_maindish.setAdapter(adapter_recipe);
+
     }
 }

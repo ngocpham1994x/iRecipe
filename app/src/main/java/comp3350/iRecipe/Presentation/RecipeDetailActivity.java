@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import comp3350.iRecipe.R;
 
-public class RecipeDetail extends AppCompatActivity {
+public class RecipeDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

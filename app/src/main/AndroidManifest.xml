@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
         <activity
-            android:name=".Presentation.Drink"
+            android:name=".Presentation.DrinkActivity"
             android:exported="false" />
         <activity
-            android:name=".Presentation.Dessert"
+            android:name=".Presentation.DessertActivity"
             android:exported="false" />
         <activity
-            android:name=".Presentation.Soup"
+            android:name=".Presentation.SoupActivity"
             android:exported="false" />
         <activity
-            android:name=".Presentation.MainDish"
+            android:name=".Presentation.MainDishActivity"
             android:exported="false" />
         <activity
-            android:name=".Presentation.RecipeDetail"
+            android:name=".Presentation.RecipeDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Presentation.ListRecipe"
+            android:name=".Presentation.ListRecipeActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".DisplayMessageActivity" -->
         <!-- android:exported="false" /> -->

@@ -9,30 +9,30 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import comp3350.iRecipe.Business.GetRecipeFromCSV;
+import comp3350.iRecipe.R;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
-import comp3350.iRecipe.R;
 
-public class MainDish extends AppCompatActivity {
+public class ListRecipeActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView_maindish;
+    RecyclerView recyclerView_recipe;
     RecipeListInterface list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_dish);
+        setContentView(R.layout.activity_list_recipe);
 
-        recyclerView_maindish = findViewById(R.id.recyclerView_maindish);
-        recyclerView_maindish.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView_maindish.setHasFixedSize(true);
+        recyclerView_recipe = findViewById(R.id.recyclerView_recipe);
+        recyclerView_recipe.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView_recipe.setHasFixedSize(true);
 
 
         list = new GetRecipeFromCSV(this);
-        ArrayList<Recipe> recipe_list = list.getRecipesByCategory("Main dishes");
+        ArrayList<Recipe> recipe_list = list.getAllRecipes();
 
         AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list);
-        recyclerView_maindish.setAdapter(adapter_recipe);
+        recyclerView_recipe.setAdapter(adapter_recipe);
 
     }
 }

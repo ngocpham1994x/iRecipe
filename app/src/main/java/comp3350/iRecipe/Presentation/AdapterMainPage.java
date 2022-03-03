@@ -41,7 +41,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, ListRecipe.class);
+                    Intent intent = new Intent(context, ListRecipeActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -56,7 +56,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, MainDish.class);
+                    Intent intent = new Intent(context, MainDishActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -71,7 +71,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, Soup.class);
+                    Intent intent = new Intent(context, SoupActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -86,7 +86,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, Dessert.class);
+                    Intent intent = new Intent(context, DessertActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -101,7 +101,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             holder.card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, Drink.class);
+                    Intent intent = new Intent(context, DrinkActivity.class);
                     context.startActivity(intent);
                 }
             });
