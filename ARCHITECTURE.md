@@ -21,18 +21,14 @@ This file implements the home page GUI of this application.
 ## AdapterRecipe.java
 This file implements second page GUI according to category, and s all the recipes according to the category. 
 
-## AdapterMainPage
-
-## AdapterRecipe
-
 ## DummyActivity.java
-
+DummyActivity.java is used for testing in AndroidTest
 
 ## ListRecipeActivity.java
 
 
 ## MainActivity.java
-
+MainActivity.java is used for all the widgets on main page 
 
 ## RecipeDetailActivity.java
 
