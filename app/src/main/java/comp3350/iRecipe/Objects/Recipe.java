@@ -75,5 +75,9 @@ public class Recipe {
     //Add key ingredients to Recipe
     public void addToKeyIngredients(String ingred){
         keyIngredients.add(ingred);
+
+        if(!ingredients.contains(ingred))
+            ingredients.add(ingred); // because key ingredients also should be all ingredients list.
+
     }
 }
