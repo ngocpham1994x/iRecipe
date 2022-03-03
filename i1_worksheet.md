@@ -57,6 +57,13 @@ or User Stories.
 Iteration1 went almost as expected. Some of the features are pushed to Iteration2 and are listed below:<br />
 Group recipe by category : [GroupRecipeByCategory](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/2) <br />
 View Recipe description : [ViewRecipeDescription](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/7)<br />
+Search Recipes by keyword : [SearchRecipesbykeyword](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/3) <br />
+View complete description of a recipe : [ViewCompleteDescriptionOfARecipe](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/22) <br />
+View recipe estimate time : [ViewRecipeEstimateTime](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/8) <br />
+View recipe ingredients : [ViewRecipeIngredients](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/10) <br />
+
+
+
 
 
 
