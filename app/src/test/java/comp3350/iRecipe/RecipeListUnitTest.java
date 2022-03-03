@@ -123,6 +123,24 @@ public class RecipeListUnitTest {
         assertFalse(listByIngredient.contains(r3));
     }
 
+    @Test
+    public void getRecipesTest()
+    {
+        Recipe r1 = new Recipe("eggs" , "breakfast");
+        Recipe r2 = new Recipe("pancakes" , "dinner");
+        Recipe r3 = new Recipe("pancakes 2" , "breakfast");
+
+        recipeList.addRecipe(r1);
+        recipeList.addRecipe(r2);
+
+        assertEquals(2 , recipeList.getAllRecipes().size());
+        recipeList.removeRecipe(r1);
+        assertTrue(recipeList.getAllRecipes().contains(r2) && !recipeList.getAllRecipes().contains(r1));
+
+
+    }
+
+
 
 
 

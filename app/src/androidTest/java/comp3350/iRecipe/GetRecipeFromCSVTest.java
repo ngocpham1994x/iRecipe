@@ -33,22 +33,6 @@ public class GetRecipeFromCSVTest {
         recipeGetter = new GetRecipeFromCSV(activityRule.getActivity());
     }
 
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    @Test
-    public void addRecipe() {
-    }
-
-    @Test
-    public void removeRecipe() {
-    }
-
-    @Test
-    public void searchByName() {
-    }
-
     @Test
     public void getAllRecipes() {
         //There are 10 default recipe in the CSV file, so it should be equal to size 10 after we get all recipe for the first time.
@@ -57,8 +41,6 @@ public class GetRecipeFromCSVTest {
         assertEquals(10,all.size());
     }
 
-    @Test
-    public void getRecipesByCategory() {
-    }
+
 
 }
