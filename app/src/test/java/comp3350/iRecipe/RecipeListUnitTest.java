@@ -46,6 +46,22 @@ public class RecipeListUnitTest {
     }
 
     @Test
+    public void addRecipe_Test_Exception()
+    {
+        RecipeList newList = new RecipeList();
+        newList.addRecipeWithException(null);
+
+        ArrayList<Recipe> retrieved_list = newList.getAllRecipes();
+
+        // This test shows that list contains null recipe if we add using addRecipeException ,
+        // However , it shouldn't be. So, we need to check for null objects before we add anything
+        // to  arrayList
+        assertNull(retrieved_list.get(0));
+
+    }
+
+
+    @Test
     public void removeRecipeTest()
     {
         Recipe r1 = new Recipe("eggs" , "breakfast");
