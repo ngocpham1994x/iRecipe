@@ -55,6 +55,6 @@ of any Features or User Stories? Have links to any changed or pushed Features
 or User Stories.
 
 Iteration1 went almost as expected. Some of the features are pushed to Iteration2 and are listed below:<br />
-Group recipe by category : https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/2
+Group recipe by category : https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/2 
 
 
