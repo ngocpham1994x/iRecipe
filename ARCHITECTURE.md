@@ -4,7 +4,7 @@
 This file inplements the all different types of search, like search by Ingredients or by category or by name.
 
 ## Recipe.java
-Recipe.java is the object file which contains all the basic information of Recipe
+Recipe.java is the object file which contains all the basic information of Recipe.
 
 ## GetRecipeFromCVS.java
 This file load all the information about recipes and ingredients of recipes form CSV files.
@@ -22,16 +22,16 @@ This file implements the home page GUI of this application.
 This file implements second page GUI according to category, and s all the recipes according to the category. 
 
 ## DummyActivity.java
-DummyActivity.java is used for testing in AndroidTest
+DummyActivity.java is used for testing in AndroidTest.
 
 ## ListRecipeActivity.java
-
+ListRecipeActivity.java is used to list all recipes according to category on second page.
 
 ## MainActivity.java
-MainActivity.java is used for all the widgets on main page 
+MainActivity.java is used for all the widgets on main page.
 
 ## RecipeDetailActivity.java
-
+RecipeDetailActivity is for recipe Ingredients and instrucitons. It will be implemented in Iteration2.
 
 
 
