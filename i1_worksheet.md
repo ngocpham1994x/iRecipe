@@ -45,7 +45,19 @@ Provide a link to the issue you created here.
 Agile Planning
 --------------
 
-Write a paragraph about any plans that were changed. Did you
-'push' any features to iteration 2? Did you change the description
-of any Features or User Stories? Have links to any changed or pushed Features
-or User Stories.
+Iteration1 went almost as expected.For some of the features/user stories, logic layer was complete but GUI was not done in given period of time. So these features was pushed for Iteration2. Other features like Search recipe by keyword was pushed because it was not time permitting.<br />
+
+Some of the features are pushed to Iteration2 and are listed below:<br />
+[GroupRecipeByCategory](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/2) <br />
+[ViewRecipeDescription](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/7)<br />
+[SearchRecipesbykeyword](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/3) <br />
+[ViewCompleteDescriptionOfARecipe](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/22) <br />
+[ViewRecipeEstimateTime](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/8) <br />
+[ViewRecipeIngredients](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/10) <br />
+
+
+
+
+
+
+
