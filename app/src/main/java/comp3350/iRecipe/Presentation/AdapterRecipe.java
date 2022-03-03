@@ -15,7 +15,7 @@ import comp3350.iRecipe.Objects.Recipe;
 
 public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHolder> {
 
-    ArrayList<Recipe> recipe_list;  // [(Chicken Fried Rice, easy),(Noodle, easy)]
+    ArrayList<Recipe> recipe_list;
     public AdapterRecipe(ArrayList<Recipe> recipe_list) {
         this.recipe_list = recipe_list;
     }
