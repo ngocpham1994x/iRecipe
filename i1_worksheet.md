@@ -49,7 +49,7 @@ Provide a link to the issue you created here.
 Agile Planning
 --------------
 
-Iteration1 went almost as expected.For some of the features/user stories, logic layer was complete but GUI was not done in given period of time. So these features was pushed for Iteration2. Other features like Search recipe by keyword was pushed because it was not time permitting.<br /><br />
+Iteration1 went almost as expected.For some of the features/user stories, logic layer was complete but GUI was not done in given period of time. So these features was pushed for Iteration2. Other features like Search recipe by keyword was pushed because it was not time permitting.<br />
 
 Some of the features are pushed to Iteration2 and are listed below:<br />
 Group recipe by category : [GroupRecipeByCategory](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/2) <br />
