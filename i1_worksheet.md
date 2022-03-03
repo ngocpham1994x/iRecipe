@@ -46,7 +46,7 @@ your links in the issues are to **specific commits** (not to `main`, or `develop
 
 Provide a link to the issue you created here.
 
-Group 11 Solid Violation: 
+Group 11 Solid Violation:
 
 Agile Planning
 --------------
