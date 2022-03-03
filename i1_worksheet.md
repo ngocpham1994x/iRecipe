@@ -36,7 +36,6 @@ Provide screen shot of a feature being added using your branching strategy
 successfully. The [GitLab Graph tool can do this](https://code.cs.umanitoba.ca/comp3350-summer2019/cook-eBook/-/network/develop),
 as well as using `git log --graph`.
 
-Our group is using git flow for the branching strategy. Every member of the group has their own branch and then commits to the remote branch. After 
 
 SOLID
 -----
@@ -47,8 +46,6 @@ clearly explaining the SOLID violation - specifying the type, provide a link to 
 your links in the issues are to **specific commits** (not to `main`, or `develop` as those will be changed).
 
 Provide a link to the issue you created here.
-
-Group 11 Solid Violation: [SOLID Violation](https://code.cs.umanitoba.ca/winter-2022-a02/group-11/3350-project-group11/-/issues/20)
 
 Agile Planning
 --------------
