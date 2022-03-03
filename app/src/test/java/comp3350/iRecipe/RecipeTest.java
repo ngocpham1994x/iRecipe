@@ -1,6 +1,7 @@
 package comp3350.iRecipe;
 
 import org.junit.Before;
+import org.junit.Test;
 
 import comp3350.iRecipe.Objects.Recipe;
 
@@ -13,4 +14,11 @@ public class RecipeTest {
     {
         recipe =  new Recipe("Banana" , "snack");
     }
+
+    @Test
+    public void addIngredientTest()
+    {
+
+    }
+
 }

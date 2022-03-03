@@ -10,11 +10,13 @@ public class RecipeList implements RecipeListInterface{
 
     private ArrayList<Recipe> recipeList;
 
+    // when we have fake object instances of recipes
     public RecipeList()
     {
         recipeList = new ArrayList<>();
     }
 
+    // when we are reading data files from asset folder
     public RecipeList(Context context)
     {
         recipeList = readRecipesFromCSV(context);
@@ -29,8 +31,23 @@ public class RecipeList implements RecipeListInterface{
     @Override
     public boolean addRecipe(Recipe newRecipe)
     {
-        return recipeList.add(newRecipe);
+        // will handle Null Pointer exception
+        if(newRecipe != null)
+            return recipeList.add(newRecipe);
+        else
+            return false;
     } // will add a new recipe to the end of the list.
+
+
+    // arraylist add method won't directly throw NullPointer exception
+    // So, you can add Null object to arraylist at first
+    // However , it gives exception when you use that "NULL" Object somewhere else
+    // It is Tested in RecipeListUnitTest file
+    public boolean addRecipeWithException(Recipe newRecipe)
+    {
+        return recipeList.add(newRecipe);
+    }
+
 
     @Override
     public boolean removeRecipe(Recipe toRemove)
