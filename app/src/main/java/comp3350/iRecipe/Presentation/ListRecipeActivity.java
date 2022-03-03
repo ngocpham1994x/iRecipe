@@ -8,7 +8,8 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import comp3350.iRecipe.Business.GetRecipeFromCSV;
+import comp3350.iRecipe.Persistence.GetRecipeFromCSV;
+import comp3350.iRecipe.Persistence.RecipeList;
 import comp3350.iRecipe.R;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
@@ -28,7 +29,7 @@ public class ListRecipeActivity extends AppCompatActivity {
         recyclerView_recipe.setHasFixedSize(true);
 
 
-        list = new GetRecipeFromCSV(this);
+        list = new RecipeList(this);
         ArrayList<Recipe> recipe_list = list.getAllRecipes();
 
         AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list);
