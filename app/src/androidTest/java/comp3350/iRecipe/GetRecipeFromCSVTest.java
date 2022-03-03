@@ -2,7 +2,6 @@ package comp3350.iRecipe;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -14,10 +13,10 @@ import android.support.test.runner.AndroidJUnit4;
 
 import java.util.ArrayList;
 
-import comp3350.iRecipe.Business.GetRecipeFromCSV;
+import comp3350.iRecipe.Persistence.GetRecipeFromCSV;
 import comp3350.iRecipe.Objects.Recipe;
+import comp3350.iRecipe.Persistence.RecipeList;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
-import comp3350.iRecipe.Presentation.DummyActivity;
 import comp3350.iRecipe.Presentation.MainActivity;
 
 
@@ -30,7 +29,7 @@ public class GetRecipeFromCSVTest {
 
     @Before
     public void setUp() throws Exception {
-        recipeGetter = new GetRecipeFromCSV(activityRule.getActivity());
+        recipeGetter = new RecipeList(activityRule.getActivity());
     }
 
     @Test

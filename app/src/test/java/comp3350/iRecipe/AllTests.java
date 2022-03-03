@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         RecipeListUnitTest.class,
-        RecipeTest.class
+        RecipeTest.class,
+        SearchRecipeTest.class
 })
 
 public class AllTests {
