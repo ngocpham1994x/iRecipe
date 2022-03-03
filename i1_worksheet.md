@@ -46,6 +46,8 @@ your links in the issues are to **specific commits** (not to `main`, or `develop
 
 Provide a link to the issue you created here.
 
+Group 11 Solid Violation: [SOLID Violation](https://code.cs.umanitoba.ca/winter-2022-a02/group-11/3350-project-group11/-/issues/20)
+
 Agile Planning
 --------------
 
