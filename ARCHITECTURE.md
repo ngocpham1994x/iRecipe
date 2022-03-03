@@ -36,4 +36,4 @@ This file implements second page GUI according to category, and s all the recipe
 ## Soup.java
 
 
-![](graphical.png)
+![](graphal.png)
