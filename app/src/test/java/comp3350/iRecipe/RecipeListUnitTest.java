@@ -30,16 +30,18 @@ public class RecipeListUnitTest {
         Recipe r1 = new Recipe("eggs" , "breakfast");
         Recipe r2 = new Recipe("pancakes" , "dinner");
         Recipe r3 = new Recipe("pancakes 2" , "breakfast");
-        recipeList.addRecipe(r1);
-        recipeList.addRecipe(r2);
-        recipeList.addRecipe(r3);
 
-        ArrayList<Recipe> categoryList = recipeList.getRecipesByCategory("breakfast");
+        // typical cases
+        assertTrue(recipeList.addRecipe(r1));
+        assertTrue(recipeList.addRecipe(r2));
+        assertTrue(recipeList.addRecipe(r3));
 
-        assertEquals(r1 , recipeList.searchByName("eggs"));
-        assertTrue(categoryList.contains(r1));
-        assertTrue(categoryList.contains(r3));
-        assertFalse(categoryList.contains(r2));
+        // will allow duplicate recipes because everyone can add their own choice of recipes
+        assertTrue(recipeList.addRecipe(r1));
+
+        assertEquals(recipeList.getAllRecipes().size() , 4);
+
+
     }
 
 
