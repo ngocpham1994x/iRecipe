@@ -4,11 +4,11 @@ Iteration 1 Worksheet
 Adding a feature
 -----------------
 
-Feature: List of all the recipes. (https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/1)
+Feature: List of all the recipes. [FeatureIssue](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/1)
 
-User Stories: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/9
+User Stories: [UserStory](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/9)
 
-Dev taks: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/23
+Dev taks: [Task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/23)
 
 - To add this feature to our project, we first need to create the Object of Recipe, and decide what should one single recipe have. Our design was that, a Recipe should have its name, its category (Main dishes, drinks, soup, etc.), its ingredients and its instructions on how to cook. And also expected cooking time, cooking level and the expected number of serving people. Then we should have some default recipes to work as a fake database. For this, we decided to write some default recipe and store it inside CSV Files and read it to set up a fake database. We have an interface that define the method to acquire/search that returns an ArrayList of Recipe. Then we have a class that read from CSV File and implement all the function from this interface, this sets up our business layer and provide logic support for this feature.
 
@@ -16,9 +16,11 @@ Dev taks: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues
 
 Link of merge request related to this implementation: 
 
-interface: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/2
-ReadingCSVFile: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/3 https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/4
-GUI: https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/7 https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/8
+interface: [interface](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/2)
+ReadingCSVFile: [First_Implementation](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/3) 
+[Implementation_Changes](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/4)
+GUI: [MainPageGUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/7) 
+[ListAllRecipeGUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/merge_requests/8)
 
 Exceptional code
 ----------------
