@@ -28,7 +28,7 @@ Exceptional code
 Link to an Exceptional code : [Exceptional_code](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java)
 Testing of Exceptional code : [Exception_testing](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/test/java/comp3350/iRecipe/RecipeListUnitTest.java)
 
-- For our project, we are using an ArrayList Data structure. we found out that a built-in "add" method of ArrayList does not throw exception when adding null object to the list. That allows a null object to be in a list of recipes, which causes NULL pointer exception, Whenever we try to access the recipes and its methods through the list. To resolve that, we are checking for a null object before adding a recipe in the list. [Exceptional_code][line 32]
+- For our project, we are using an ArrayList Data structure. we found out that a built-in "add" method of ArrayList does not throw exception when adding null object to the list. That allows a null object to be in a list of recipes and causes NULL pointer exception, Whenever we try to access the recipes and its methods from ArrayList. To resolve that, we are checking for a null object before adding a recipe in the list. [Exceptional_code][line 32]
 
 - For testing purpose, we kept one add method in RecipeList.java, which does not check for null object. [Exceptional_code][line 46]
 When we execute a unit test [Exception_testing][line 49] about getting a recipe from the list after adding a null object, unsurprisingly it returns us a null object causing an exception. That shows that ArrayList add method accepts null object so we need to check for that before using that method.
@@ -53,7 +53,7 @@ Agile Planning
 Iteration1 went almost as expected.For some of the features/user stories, logic layer was complete but GUI was not done in given period of time. So these features was pushed for Iteration2. Other features like Search recipe by keyword was pushed because it was not time permitting.<br />
 
 Some of the features are pushed to Iteration2 and are listed below:<br />
-[GroupRecipeByCategory](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/2) <br />
+
 [ViewRecipeDescription](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/7)<br />
 [SearchRecipesbykeyword](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/3) <br />
 [ViewCompleteDescriptionOfARecipe](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/22) <br />
