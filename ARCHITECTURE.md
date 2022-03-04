@@ -36,3 +36,7 @@ RecipeDetailActivity is for recipe Ingredients and instrucitons. It will be impl
 
 
 ![flow chart]( img_source/chart.jpg)
+
+## GUI templates
+
+[templates](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/28) Used for designing pages
