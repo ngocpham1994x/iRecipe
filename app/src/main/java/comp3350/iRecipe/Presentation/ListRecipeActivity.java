@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import comp3350.iRecipe.Business.SearchRecipe;
 import comp3350.iRecipe.Persistence.GetRecipeFromCSV;
 import comp3350.iRecipe.Persistence.RecipeList;
+import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
 import comp3350.iRecipe.R;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
@@ -31,7 +32,7 @@ public class ListRecipeActivity extends AppCompatActivity {
         recyclerView_recipe.setLayoutManager(new LinearLayoutManager(this));
         recyclerView_recipe.setHasFixedSize(true);
 
-        list = new RecipeList(this);
+        list = new RecipeListHSQLDB(MainActivity.getDBPathName());
         ArrayList<Recipe> recipe_list;
         ArrayList<Recipe> allRecipe = list.getAllRecipes();
 
