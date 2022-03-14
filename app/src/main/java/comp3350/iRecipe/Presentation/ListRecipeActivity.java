@@ -46,7 +46,7 @@ public class ListRecipeActivity extends AppCompatActivity {
             recipe_list = allRecipe;
             tv.setText("All Recipes");
         }else{
-            SearchRecipe searching = new SearchRecipe(list);
+            SearchRecipe searching = new SearchRecipe(allRecipe);
             recipe_list = searching.getRecipesByCategory(category);
             tv.setText("All " + category);
         }

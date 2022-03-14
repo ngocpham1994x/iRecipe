@@ -36,7 +36,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
    Intent intent = getIntent();
         String recipeName = intent.getStringExtra("name");
 
-        SearchRecipe searching = new SearchRecipe(list);
+        SearchRecipe searching = new SearchRecipe(list.getAllRecipes());
         recipe = searching.searchByName(recipeName);
         TextView tv = (TextView)findViewById(R.id.recipe);
         tv.setText(recipe.getName());
