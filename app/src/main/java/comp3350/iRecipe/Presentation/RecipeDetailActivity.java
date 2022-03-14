@@ -33,11 +33,11 @@ public class RecipeDetailActivity extends AppCompatActivity {
         list = new RecipeListHSQLDB(MainActivity.getDBPathName());
 
 
-   Intent intent = getIntent();
+        Intent intent = getIntent();
         String recipeName = intent.getStringExtra("name");
 
-        SearchRecipe searching = new SearchRecipe(list);
-        recipe = searching.searchByName(recipeName);
+
+        recipe = SearchRecipe.searchByName(recipeName,list.getAllRecipes());
         TextView tv = (TextView)findViewById(R.id.recipe);
         tv.setText(recipe.getName());
 

@@ -7,18 +7,11 @@ import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 public class SearchRecipe {
 
-    private RecipeListInterface recipeList;
 
-    public SearchRecipe(RecipeListInterface newList)
-    {
-        recipeList = newList;
-    }
-
-
-    public Recipe searchByName(String nameOfRecipe)
+    public static Recipe searchByName(String nameOfRecipe, ArrayList<Recipe> recipeList)
     {
 
-        for (Recipe retrieved_recipe : recipeList.getAllRecipes()) {
+        for (Recipe retrieved_recipe : recipeList) {
             if (nameOfRecipe.equalsIgnoreCase(retrieved_recipe.getName())) {
                 return retrieved_recipe;
             }
@@ -27,11 +20,11 @@ public class SearchRecipe {
         return null;
     } // search the recipe of the given name
 
-    public ArrayList<Recipe> getRecipesByCategory(String category) {
+    public static ArrayList<Recipe> getRecipesByCategory(String category, ArrayList<Recipe> recipeList) {
 
         ArrayList<Recipe> recipeListByCategory = new ArrayList<>();
 
-        for (Recipe retrieved_recipe : recipeList.getAllRecipes()) {
+        for (Recipe retrieved_recipe : recipeList) {
             if ( category.equalsIgnoreCase(retrieved_recipe.getCategory())) {
                 recipeListByCategory.add(retrieved_recipe);
             }
@@ -40,10 +33,10 @@ public class SearchRecipe {
         return recipeListByCategory;
     } // return a list of all recipe from the same category
 
-    public ArrayList<Recipe> searchByIngredients(String ingredient){
+    public static ArrayList<Recipe> searchByIngredients(String ingredient, ArrayList<Recipe> recipeList){
 
         ArrayList<Recipe> result = new ArrayList<>();
-        for(Recipe retrieved : recipeList.getAllRecipes()){
+        for(Recipe retrieved : recipeList){
 
             ArrayList<String> allKeyIngredients = retrieved.getKeyIngredients();
             for(String toCheck : allKeyIngredients){
@@ -56,7 +49,6 @@ public class SearchRecipe {
             }
 
         }
-
         return result;
     }
 }
