@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import comp3350.iRecipe.Objects.Recipe;
 
 public class RecipeListHSQLDB implements RecipeListInterface{
-    private ArrayList<Recipe> recipeList;
+
 
     private String dbPath;
 
     public RecipeListHSQLDB(final String dbPath){
-        recipeList = new ArrayList<>();
+
         this.dbPath = dbPath;
     }
 
@@ -27,6 +27,8 @@ public class RecipeListHSQLDB implements RecipeListInterface{
     }
 
     public ArrayList<Recipe> getAllRecipes(){
+
+        ArrayList<Recipe> recipeList = new ArrayList<>();
 
         try(Connection con = connection()){
             Statement st = con.createStatement();
@@ -94,7 +96,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
             st.executeUpdate();
 
-            recipeList.add(newRecipe);
+            //recipeList.add(newRecipe);
         }catch(SQLException e){
             return false;
         }
@@ -115,16 +117,16 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st3.setString(1,toRemove.getName());
             st3.executeUpdate();
 
-            int indexToRemove = -1;
-            for(int i=0; i<recipeList.size() && indexToRemove == -1; i++){
-
-                if(recipeList.get(i).getName().equalsIgnoreCase(toRemove.getName())){
-                    indexToRemove = -1;
-                }
-            }
-            if(indexToRemove != -1){
-                recipeList.remove(indexToRemove);
-            }
+//            int indexToRemove = -1;
+//            for(int i=0; i<recipeList.size() && indexToRemove == -1; i++){
+//
+//                if(recipeList.get(i).getName().equalsIgnoreCase(toRemove.getName())){
+//                    indexToRemove = -1;
+//                }
+//            }
+//            if(indexToRemove != -1){
+//                //recipeList.remove(indexToRemove);
+//            }
 
         }catch(SQLException e){
             return false;

@@ -7,9 +7,9 @@ import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 public class SearchRecipe {
 
-    private ArrayList<Recipe> recipeList;
+    private RecipeListInterface recipeList;
 
-    public SearchRecipe(ArrayList<Recipe> newList)
+    public SearchRecipe(RecipeListInterface newList)
     {
         recipeList = newList;
     }
@@ -18,7 +18,7 @@ public class SearchRecipe {
     public Recipe searchByName(String nameOfRecipe)
     {
 
-        for (Recipe retrieved_recipe : recipeList) {
+        for (Recipe retrieved_recipe : recipeList.getAllRecipes()) {
             if (nameOfRecipe.equalsIgnoreCase(retrieved_recipe.getName())) {
                 return retrieved_recipe;
             }
@@ -31,7 +31,7 @@ public class SearchRecipe {
 
         ArrayList<Recipe> recipeListByCategory = new ArrayList<>();
 
-        for (Recipe retrieved_recipe : recipeList) {
+        for (Recipe retrieved_recipe : recipeList.getAllRecipes()) {
             if ( category.equalsIgnoreCase(retrieved_recipe.getCategory())) {
                 recipeListByCategory.add(retrieved_recipe);
             }
@@ -43,7 +43,7 @@ public class SearchRecipe {
     public ArrayList<Recipe> searchByIngredients(String ingredient){
 
         ArrayList<Recipe> result = new ArrayList<>();
-        for(Recipe retrieved : recipeList){
+        for(Recipe retrieved : recipeList.getAllRecipes()){
 
             ArrayList<String> allKeyIngredients = retrieved.getKeyIngredients();
             for(String toCheck : allKeyIngredients){

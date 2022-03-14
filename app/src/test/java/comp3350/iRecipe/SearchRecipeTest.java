@@ -22,7 +22,7 @@ public class SearchRecipeTest {
     public void setUp()
     {
         recipeList = new RecipeList();
-        searching = new SearchRecipe(recipeList.getAllRecipes());
+        searching = new SearchRecipe(recipeList);
 
     }
 
