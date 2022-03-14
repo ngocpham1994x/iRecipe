@@ -16,9 +16,11 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
 
     private String dbPath;
+    // A data structure holding all the recipes
+    ArrayList<Recipe> recipeList;
 
     public RecipeListHSQLDB(final String dbPath){
-
+        recipeList = new ArrayList<>();
         this.dbPath = dbPath;
     }
 
@@ -28,7 +30,8 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
     public ArrayList<Recipe> getAllRecipes(){
 
-        ArrayList<Recipe> recipeList = new ArrayList<>();
+        // will return all the recipes present in the database
+        ArrayList<Recipe> list_from_database = new ArrayList<>();
 
         try(Connection con = connection()){
             Statement st = con.createStatement();
@@ -58,7 +61,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
                 rs3.close();
                 st3.close();
 
-                recipeList.add(recipe);
+                list_from_database.add(recipe);
 
             }
             rs.close();
@@ -67,7 +70,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             e.printStackTrace();
         }
 
-        return recipeList;
+        return list_from_database;
     }
 
     private Recipe fromResultSet(ResultSet rs) throws  SQLException{
@@ -96,7 +99,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
             st.executeUpdate();
 
-            //recipeList.add(newRecipe);
+            recipeList.add(newRecipe);
         }catch(SQLException e){
             return false;
         }
@@ -117,16 +120,16 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st3.setString(1,toRemove.getName());
             st3.executeUpdate();
 
-//            int indexToRemove = -1;
-//            for(int i=0; i<recipeList.size() && indexToRemove == -1; i++){
-//
-//                if(recipeList.get(i).getName().equalsIgnoreCase(toRemove.getName())){
-//                    indexToRemove = -1;
-//                }
-//            }
-//            if(indexToRemove != -1){
-//                //recipeList.remove(indexToRemove);
-//            }
+            int indexToRemove = -1;
+            for(int i=0; i<recipeList.size() && indexToRemove == -1; i++){
+
+                if(recipeList.get(i).getName().equalsIgnoreCase(toRemove.getName())){
+                    indexToRemove = -1;
+                }
+            }
+            if(indexToRemove != -1){
+                recipeList.remove(indexToRemove);
+            }
 
         }catch(SQLException e){
             return false;
