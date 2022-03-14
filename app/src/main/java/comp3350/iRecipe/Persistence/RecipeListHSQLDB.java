@@ -13,9 +13,11 @@ import java.util.ArrayList;
 import comp3350.iRecipe.Objects.Recipe;
 
 public class RecipeListHSQLDB implements RecipeListInterface{
-    private ArrayList<Recipe> recipeList;
+
 
     private String dbPath;
+    // A data structure holding all the recipes
+    ArrayList<Recipe> recipeList;
 
     public RecipeListHSQLDB(final String dbPath){
         recipeList = new ArrayList<>();
@@ -27,6 +29,9 @@ public class RecipeListHSQLDB implements RecipeListInterface{
     }
 
     public ArrayList<Recipe> getAllRecipes(){
+
+        // will return all the recipes present in the database
+        ArrayList<Recipe> list_from_database = new ArrayList<>();
 
         try(Connection con = connection()){
             Statement st = con.createStatement();
@@ -56,7 +61,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
                 rs3.close();
                 st3.close();
 
-                recipeList.add(recipe);
+                list_from_database.add(recipe);
 
             }
             rs.close();
@@ -65,7 +70,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             e.printStackTrace();
         }
 
-        return recipeList;
+        return list_from_database;
     }
 
     private Recipe fromResultSet(ResultSet rs) throws  SQLException{
