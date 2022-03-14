@@ -51,7 +51,7 @@ public class ListRecipeActivity extends AppCompatActivity {
             tv.setText("All " + category);
         }
 
-        AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list);
+        AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list , this);
         recyclerView_recipe.setAdapter(adapter_recipe);
 
     }

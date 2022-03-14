@@ -1,5 +1,7 @@
 package comp3350.iRecipe.Presentation;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +18,10 @@ import comp3350.iRecipe.Objects.Recipe;
 public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHolder> {
 
     ArrayList<Recipe> recipe_list;
-    public AdapterRecipe(ArrayList<Recipe> recipe_list) {
+    Context context;
+    public AdapterRecipe(ArrayList<Recipe> recipe_list , Context context) {
         this.recipe_list = recipe_list;
+        this.context = context;
     }
 
     @NonNull
@@ -32,6 +36,15 @@ public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHold
     public void onBindViewHolder(@NonNull AdapterRecipe.RecipeHolder holder, int position) {
         holder.recipe_name.setText(recipe_list.get(position).getName());
         holder.category.setText(recipe_list.get(position).getCategory());
+
+        holder.recipe_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ListRecipeActivity.class);
+                intent.putExtra("name","hello");
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
