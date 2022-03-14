@@ -2,12 +2,16 @@ package comp3350.iRecipe.Presentation;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -37,11 +41,13 @@ public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHold
         holder.recipe_name.setText(recipe_list.get(position).getName());
         holder.category.setText(recipe_list.get(position).getCategory());
 
-        holder.recipe_name.setOnClickListener(new View.OnClickListener() {
+
+
+        holder.card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ListRecipeActivity.class);
-                intent.putExtra("name","hello");
+                Intent intent = new Intent(context, RecipeDetailActivity.class);
+                intent.putExtra("name",recipe_list.get(holder.getBindingAdapterPosition()).getName());
                 context.startActivity(intent);
             }
         });
@@ -55,10 +61,12 @@ public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHold
     public class RecipeHolder extends RecyclerView.ViewHolder {
         TextView recipe_name;
         TextView category;
+        RelativeLayout card_view;
         public RecipeHolder(@NonNull View itemView) {
             super(itemView);
             recipe_name = itemView.findViewById(R.id.recipe_name);
             category = itemView.findViewById(R.id.category);
+            card_view = itemView.findViewById(R.id.card_recipe);
         }
     }
 }
