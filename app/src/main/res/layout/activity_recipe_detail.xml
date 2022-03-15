@@ -1,24 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".Presentation.RecipeDetailActivity"
-    android:background="#25F783AF"
-    android:orientation="vertical">
+    android:background="#25F783AF">
 
 
     <TextView
         android:id="@+id/recipe"
-        android:layout_width="match_parent"
+        android:layout_width="195dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/baloo2_semibold"
         android:gravity="center"
         android:text="@string/recipe_name"
         android:textColor="#000000"
-        android:textSize="30sp"></TextView>
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="16dp"></TextView>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/recipe_image"
+        android:layout_width="105dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="288dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ImageContrastCheck,MissingConstraints"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredients"
+        android:layout_width="85dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/detail_disc"
+        android:layout_width="408dp"
+        android:layout_height="181dp"
+        android:text="actual_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/title_desc"
+        android:layout_width="250dp"
+        android:layout_height="22dp"
+        android:text="Description"
+        app:layout_constraintBottom_toTopOf="@+id/detail_disc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="87dp"
+        android:layout_height="50dp"
+        android:text="Ingredients"
+        app:layout_constraintBottom_toTopOf="@+id/ingredients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipe"
+        app:layout_constraintVertical_bias="0.767" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

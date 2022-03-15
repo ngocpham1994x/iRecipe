@@ -48,6 +48,7 @@ public class AdapterRecipe extends RecyclerView.Adapter<AdapterRecipe.RecipeHold
             public void onClick(View view) {
                 Intent intent = new Intent(context, RecipeDetailActivity.class);
                 intent.putExtra("name",recipe_list.get(holder.getBindingAdapterPosition()).getName());
+                intent.putExtra("image" , R.drawable.round_cocktail);
                 context.startActivity(intent);
             }
         });
