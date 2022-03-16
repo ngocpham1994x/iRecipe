@@ -86,6 +86,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         return new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, instruction);
     }
 
+    //Return false when we already have a Recipe with the same name
     public boolean addRecipe(Recipe newRecipe){
         try(Connection con = connection()){
             PreparedStatement st = con.prepareStatement("INSERT INTO Recipe VALUES(?,?,?,?,?,?,?)");
