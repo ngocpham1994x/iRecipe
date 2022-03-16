@@ -3,13 +3,13 @@ package comp3350.iRecipe.Business;
 import java.util.ArrayList;
 
 import comp3350.iRecipe.Objects.Recipe;
-import comp3350.iRecipe.Persistence.RecipeListInterface;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SearchRecipe {
 
 
-    public static Recipe searchByName(String nameOfRecipe, ArrayList<Recipe> recipeList)
-    {
+    public static Recipe searchByName(String nameOfRecipe, ArrayList<Recipe> recipeList){
 
         for (Recipe retrieved_recipe : recipeList) {
             if (nameOfRecipe.equalsIgnoreCase(retrieved_recipe.getName())) {
@@ -18,6 +18,21 @@ public class SearchRecipe {
         }
 
         return null;
+    } // search the recipe of the given name
+
+    public static ArrayList<Recipe> matchByName(String nameOfRecipe, ArrayList<Recipe> recipeList){
+
+        ArrayList<Recipe> list = new ArrayList<>();
+        Pattern pattern = Pattern.compile(nameOfRecipe, Pattern.CASE_INSENSITIVE);
+
+        for (Recipe retrieved_recipe : recipeList) {
+            Matcher matcher = pattern.matcher(retrieved_recipe.getName());
+            if(matcher.find()){
+                list.add(retrieved_recipe);
+            }
+        }
+
+        return list;
     } // search the recipe of the given name
 
     public static ArrayList<Recipe> getRecipesByCategory(String category, ArrayList<Recipe> recipeList) {
