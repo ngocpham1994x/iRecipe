@@ -41,7 +41,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String recipeName = intent.getStringExtra("name");
-        String image1 = intent.getStringExtra("image");
+
 
         recipe = SearchRecipe.searchByName(recipeName,list.getAllRecipes());
         TextView name = (TextView)findViewById(R.id.recipe);
@@ -50,7 +50,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         name.setText(recipe.getName());
         desc.setText(recipe.getInstruction());
-        image.setImageDrawable(Drawable.createFromPath(String.valueOf(R.drawable.round_cocktail)));
+        image.setImageResource(R.drawable.round_cocktail);
 
 
 

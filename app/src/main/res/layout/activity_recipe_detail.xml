@@ -1,78 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Presentation.RecipeDetailActivity"
-    android:background="#25F783AF">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#25F783AF"
+    tools:context=".Presentation.RecipeDetailActivity">
 
 
     <TextView
-        android:id="@+id/recipe"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/title_ing"
+        android:layout_width="168dp"
+        android:layout_height="39dp"
         android:fontFamily="@font/baloo2_semibold"
         android:gravity="center"
-        android:text="@string/recipe_name"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="16dp"></TextView>
+        android:text="Ingredients"
+        android:textColor="#00001F"
+        android:textSize="25sp"
 
-    <ImageView
-        android:id="@+id/recipe_image"
-        android:layout_width="105dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="288dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ImageContrastCheck,MissingConstraints"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ingredients"
-        android:layout_width="85dp"
-        android:layout_height="267dp"
-        android:layout_marginStart="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438"
+        app:layout_constraintVertical_bias="0.251"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/title_desc"
+        android:layout_width="337dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="center"
+        android:text="Description"
+        android:textColor="#00001F"
+        android:textSize="25sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/detail_disc"
         android:layout_width="408dp"
         android:layout_height="181dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="left"
         android:text="actual_description"
+        android:textColor="#001F1F"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/title_desc"
-        android:layout_width="250dp"
-        android:layout_height="22dp"
-        android:text="Description"
-        app:layout_constraintBottom_toTopOf="@+id/detail_disc"
+        android:id="@+id/recipe"
+        android:layout_width="221dp"
+        android:layout_height="128dp"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="center"
+        android:text="@string/recipe_name"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredients" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        tools:ignore="MissingConstraints"></TextView>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="87dp"
-        android:layout_height="50dp"
-        android:text="Ingredients"
-        app:layout_constraintBottom_toTopOf="@+id/ingredients"
+    <ImageView
+        android:id="@+id/recipe_image"
+        android:layout_width="165dp"
+        android:layout_height="209dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredients"
+        android:layout_width="89dp"
+        android:layout_height="226dp"
+        android:textColor="#001F1F"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
