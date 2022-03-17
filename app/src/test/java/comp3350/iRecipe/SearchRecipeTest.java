@@ -15,14 +15,14 @@ import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 public class SearchRecipeTest {
 
-    private SearchRecipe searching;
+
     private RecipeListInterface recipeList;
 
     @Before
     public void setUp()
     {
         recipeList = new RecipeList();
-        searching = new SearchRecipe(recipeList);
+
 
     }
 
@@ -37,12 +37,12 @@ public class SearchRecipeTest {
         recipeList.addRecipe(r2);
 
          //typical test , returns the recipe
-        assertEquals(r1 , searching.searchByName("eggs"));
+        assertEquals(r1 ,  SearchRecipe.searchByName("eggs" , recipeList.getAllRecipes()));
 
         // case sensitivity test - should ignore case
-        assertEquals(r1 , searching.searchByName("Eggs"));
+        assertEquals(r1 , SearchRecipe.searchByName("Eggs" , recipeList.getAllRecipes()));
 
-        assertNotNull(searching.searchByName("Pancakes"));
+        assertNotNull(SearchRecipe.searchByName("Pancakes" , recipeList.getAllRecipes()));
     }
 
     @Test
@@ -56,10 +56,10 @@ public class SearchRecipeTest {
         recipeList.addRecipe(r2);
         recipeList.addRecipe(r3);
 
-        ArrayList<Recipe> category_list = searching.getRecipesByCategory("Main dishes");
+        ArrayList<Recipe> category_list = SearchRecipe.getRecipesByCategory("Main dishes" , recipeList.getAllRecipes());
         assertEquals(0 , category_list.size());
 
-        ArrayList<Recipe> category_list_2 = searching.getRecipesByCategory("Breakfast");
+        ArrayList<Recipe> category_list_2 = SearchRecipe.getRecipesByCategory("Breakfast" , recipeList.getAllRecipes());
         assertEquals(2 , category_list_2.size());
         assertTrue(category_list_2.contains(r1) && !category_list_2.contains(r2));
     }
@@ -80,7 +80,7 @@ public class SearchRecipeTest {
         r1.addToKeyIngredients("item 2");
         r3.addToIngredients("item 2");
 
-        ArrayList<Recipe> listByIngredient = searching.searchByIngredients("Item 2");
+        ArrayList<Recipe> listByIngredient = SearchRecipe.searchByIngredients("Item 2" , recipeList.getAllRecipes());
         assertEquals(2 , listByIngredient.size());
 
         // Item 2 is not key ingredient in r3
