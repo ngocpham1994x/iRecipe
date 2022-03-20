@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class ListRecipeActivity extends AppCompatActivity {
 
     RecyclerView recyclerView_recipe;
     RecipeListInterface list;
+    String[] searchByList = {"Recipe Name", "Ingredients", "Category"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,18 +40,19 @@ public class ListRecipeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String category = intent.getStringExtra("type");
-        String recipeName = intent.getStringExtra("recipeName");
+        String searchBy = intent.getStringExtra("searchBy");
+        String searchString = intent.getStringExtra("searchString");
 
         TextView tv = (TextView)findViewById(R.id.titleText);
 
 
-        if(category != null){
+        if(category != null)    // category buttons
             recipe_list = showRecipeByCategory(category, allRecipe, tv);
-        }
-        else if (recipeName != null)
-        {
-            recipe_list = showRecipeBySearchResult(recipeName,allRecipe, tv);
-        }
+        else if (searchBy != null)  // search icon button
+            recipe_list = showRecipeBySearchResult(searchBy, searchString ,allRecipe, tv);
+        else                        // in case no "search by" input from dropdown menu
+            recipe_list = new ArrayList<Recipe>();  // empty recipe list
+
 
         AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list , this);
         recyclerView_recipe.setAdapter(adapter_recipe);
@@ -70,12 +73,18 @@ public class ListRecipeActivity extends AppCompatActivity {
         return recipe_list;
     }
 
-    public ArrayList<Recipe> showRecipeBySearchResult(String recipeName, ArrayList<Recipe> allRecipe, TextView tv)
+    public ArrayList<Recipe> showRecipeBySearchResult(String searchBy, String searchString, ArrayList<Recipe> allRecipe, TextView tv)
     {
-        ArrayList<Recipe> recipe_list;
+        ArrayList<Recipe> recipe_list = null;
 
-        recipe_list = SearchRecipe.matchByName(recipeName, allRecipe);
-        tv.setText("Search result by Recipe Name: \"" + recipeName + "\"");
+        if (searchBy.equalsIgnoreCase(searchByList[0]))         // search by Recipe Name
+            recipe_list = SearchRecipe.matchByName(searchString, allRecipe);
+        else if (searchBy.equalsIgnoreCase(searchByList[1]))    // search by Ingredients
+            recipe_list = SearchRecipe.searchByIngredients(searchString,allRecipe);
+        else if (searchBy.equalsIgnoreCase(searchByList[2]))    // search by Category
+            recipe_list = SearchRecipe.getRecipesByCategory(searchString,allRecipe);
+
+        tv.setText("Search result by " + searchBy + ":\n \"" + searchString + "\"");
 
         return recipe_list;
     }

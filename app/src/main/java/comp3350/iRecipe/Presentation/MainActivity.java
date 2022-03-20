@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static String dbPathName;
 
     String[] searchByList = {"Recipe Name", "Ingredients", "Category"};
+    String searchBy;
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
 
@@ -44,20 +45,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         copyDatabaseToDevice();
+
+        // widget, view by category cards
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
         adapter = new AdapterMainPage(this);
         recyclerView.setAdapter(adapter);
 
+        // search dropdown menu
         autoCompleteTextView = findViewById(R.id.auto_complete_txt);
         adapterItems = new ArrayAdapter<String>(this, R.layout.search_by_dropdown,searchByList);
         autoCompleteTextView.setAdapter(adapterItems);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), "Item: " + item, Toast.LENGTH_SHORT).show();
+                searchBy = parent.getItemAtPosition(position).toString();
             }
         });
     }
@@ -127,12 +130,16 @@ public class MainActivity extends AppCompatActivity {
         return dbPathName;
     }
 
-    public void showSearchResult(View view)
+    public void showSearchResult(View view)     // search icon button onClick()
     {
         Intent intent = new Intent(this, ListRecipeActivity.class);
+
         EditText searchText = (EditText) findViewById(R.id.searchText);
         String searchString = searchText.getText().toString();
-        intent.putExtra("recipeName", searchString);
+
+        intent.putExtra("searchString", searchString);
+        intent.putExtra("searchBy", searchBy);
+
         startActivity(intent);
     }
 }
