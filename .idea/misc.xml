@@ -20,15 +20,20 @@
         <entry key="..\:/COMP_3350/Comp 3350 project/Iteration 1/app/src/main/res/layout/activity_recipe_detail.xml" value="0.16666666666666666" />
         <entry key="..\:/COMP_3350/Comp 3350 project/Iteration 1/app/src/main/res/layout/card.xml" value="0.11666666666666667" />
         <entry key="..\:/COMP_3350/Comp 3350 project/Iteration 1/app/src/main/res/layout/card_recipe.xml" value="0.11666666666666667" />
+        <entry key="..\:/irecipe/app/src/main/res/drawable/back_arrow.xml" value="0.2645" />
         <entry key="..\:/irecipe/app/src/main/res/drawable/main_backdrop.xml" value="0.1875" />
+        <entry key="..\:/irecipe/app/src/main/res/drawable/search_bar.xml" value="0.3335" />
+        <entry key="..\:/irecipe/app/src/main/res/drawable/search_icon.xml" value="0.2645" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_dessert.xml" value="0.36666666666666664" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_display_message.xml" value="0.18802083333333333" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_drink.xml" value="0.36666666666666664" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_list_recipe.xml" value="0.22" />
-        <entry key="..\:/irecipe/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_main_dish.xml" value="0.18802083333333333" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/activity_recipe_detail.xml" value="0.18802083333333333" />
         <entry key="..\:/irecipe/app/src/main/res/layout/activity_soup.xml" value="0.18802083333333333" />
         <entry key="..\:/irecipe/app/src/main/res/layout/card_recipe.xml" value="0.33" />
+        <entry key="..\:/irecipe/app/src/main/res/layout/search_by_dropdown.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
