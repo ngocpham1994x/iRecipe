@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">iRecipe</string>
     <string name="edit_message">Enter a message</string>
-    <string name="search_message">Enter recipe name here</string>
+    <string name="search_message">Enter search key here</string>
     <string name="welcome">Welcome to your favourite recipe book!</string>
     <string name="all_recipes">All Recipes</string>
     <string name="recipe_name">Chicken Fried Rice</string>
@@ -10,4 +10,5 @@
     <string name="all_soup">All Soups</string>
     <string name="all_drink">All Drinks</string>
     <string name="all_dessert">All Desserts</string>
+    <string name="search_by">Search By</string>
 </resources>

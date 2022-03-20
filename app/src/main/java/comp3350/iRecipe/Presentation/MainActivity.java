@@ -5,15 +5,26 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
+import comp3350.iRecipe.Business.SearchRecipe;
+import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,18 +34,35 @@ public class MainActivity extends AppCompatActivity {
     public static final String dbName="SC";
     private static String dbPathName;
 
+    String[] searchByList = {"Recipe Name", "Ingredients", "Category"};
+    String searchBy;
+    AutoCompleteTextView autoCompleteTextView;
+    ArrayAdapter<String> adapterItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         copyDatabaseToDevice();
+
+        // widget, view by category cards
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
         adapter = new AdapterMainPage(this);
         recyclerView.setAdapter(adapter);
 
+        // search dropdown menu
+        autoCompleteTextView = findViewById(R.id.auto_complete_txt);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.search_by_dropdown,searchByList);
+        autoCompleteTextView.setAdapter(adapterItems);
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                searchBy = parent.getItemAtPosition(position).toString();
+            }
+        });
     }
 
     private void copyDatabaseToDevice() {
@@ -102,4 +130,16 @@ public class MainActivity extends AppCompatActivity {
         return dbPathName;
     }
 
+    public void showSearchResult(View view)     // search icon button onClick()
+    {
+        Intent intent = new Intent(this, ListRecipeActivity.class);
+
+        EditText searchText = (EditText) findViewById(R.id.searchText);
+        String searchString = searchText.getText().toString();
+
+        intent.putExtra("searchString", searchString);
+        intent.putExtra("searchBy", searchBy);
+
+        startActivity(intent);
+    }
 }

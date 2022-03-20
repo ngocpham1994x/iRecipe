@@ -56,7 +56,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
                 ResultSet rs3 = st3.executeQuery();
                 while(rs3.next()){
                     String keyIngred = rs3.getString("KEYINGREDIENT");
-                    recipe.addToIngredients(keyIngred);
+                    recipe.addToKeyIngredients(keyIngred);
                 }
                 rs3.close();
                 st3.close();
