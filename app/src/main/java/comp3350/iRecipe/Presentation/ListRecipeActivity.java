@@ -46,12 +46,12 @@ public class ListRecipeActivity extends AppCompatActivity {
         TextView tv = (TextView)findViewById(R.id.titleText);
 
 
-        if(category != null)    // category buttons
+        if(category != null)        // category buttons
             recipe_list = showRecipeByCategory(category, allRecipe, tv);
         else if (searchBy != null)  // search icon button
             recipe_list = showRecipeBySearchResult(searchBy, searchString ,allRecipe, tv);
-        else                        // in case no "search by" input from dropdown menu
-            recipe_list = new ArrayList<Recipe>();  // empty recipe list
+        else                        // in case no "search by" selection from dropdown menu
+            recipe_list = allRecipe;  // show all recipes
 
 
         AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list , this);
