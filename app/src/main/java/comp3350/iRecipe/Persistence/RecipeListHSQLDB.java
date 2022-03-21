@@ -81,9 +81,10 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         int cookingTime = rs.getInt("COOKINGTIME");
         int serving = rs.getInt("SERVING");
         String instruction = rs.getString("INSTRUCTIONS");
+        String newInstr = instruction.replace("\\n" , "\n");
         ArrayList<String> ingred = new ArrayList<>();
         ArrayList<String> keyIngred = new ArrayList<>();
-        return new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, instruction);
+        return new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, newInstr);
     }
 
     //Return false when we already have a Recipe with the same name

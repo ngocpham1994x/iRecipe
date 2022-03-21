@@ -16,6 +16,8 @@ public class Recipe {
     private ArrayList<String> keyIngredients;
     private ArrayList<String> ingredients;
     private String instruction;
+    int image_code;
+
 
     public Recipe(String newName, String newCate, String newLevel, int prepTime, int cookTime, int serving, ArrayList<String> newIngred, ArrayList<String> newKeyIngred, String newInstruct){
         name = newName;
@@ -27,6 +29,7 @@ public class Recipe {
         this.prepTime = prepTime;
         this.cookTime = cookTime;
         this.serving = serving;
+        image_code =  - 1;
     }
 
     // second constructor - just to make testing a bit easier
@@ -80,4 +83,15 @@ public class Recipe {
             ingredients.add(ingred); // because key ingredients also should be all ingredients list.
 
     }
+
+    public void set_image_code(int code)
+    {
+        image_code = code;
+    }
+    public int get_image_code()
+    {
+        return image_code;
+    }
+
+
 }
