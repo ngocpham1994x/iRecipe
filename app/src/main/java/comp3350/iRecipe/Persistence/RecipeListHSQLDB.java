@@ -16,11 +16,9 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
 
     private String dbPath;
-    // A data structure holding all the recipes
-    ArrayList<Recipe> recipeList;
 
     public RecipeListHSQLDB(final String dbPath){
-        recipeList = new ArrayList<>();
+
         this.dbPath = dbPath;
     }
 
@@ -101,7 +99,6 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
             st.executeUpdate();
 
-            recipeList.add(newRecipe);
         }catch(SQLException e){
             return false;
         }
@@ -121,17 +118,6 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             PreparedStatement st3 = con.prepareStatement("DELETE FROM Recipe WHERE RecipeName = ?");
             st3.setString(1,toRemove.getName());
             st3.executeUpdate();
-
-            int indexToRemove = -1;
-            for(int i=0; i<recipeList.size() && indexToRemove == -1; i++){
-
-                if(recipeList.get(i).getName().equalsIgnoreCase(toRemove.getName())){
-                    indexToRemove = i;
-                }
-            }
-            if(indexToRemove != -1){
-                recipeList.remove(indexToRemove);
-            }
 
         }catch(SQLException e){
             return false;
