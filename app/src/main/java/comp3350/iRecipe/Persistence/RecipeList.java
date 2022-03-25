@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.ArrayList;
 
+import comp3350.iRecipe.Business.SearchRecipe;
 import comp3350.iRecipe.Objects.Recipe;
 
 public class RecipeList implements RecipeListInterface{
@@ -59,4 +60,24 @@ public class RecipeList implements RecipeListInterface{
     public ArrayList<Recipe> getAllRecipes() {
         return new ArrayList<>(recipeList);
     } // return a deep copy of the recipe list.
+
+    @Override
+    public Recipe searchByName(String nameOfRecipe){
+        return SearchRecipe.searchByName(nameOfRecipe, getAllRecipes());
+    }
+
+    @Override
+    public ArrayList<Recipe> matchByName(String nameOfRecipe){
+        return SearchRecipe.matchByName(nameOfRecipe, getAllRecipes());
+    }
+
+    @Override
+    public ArrayList<Recipe> getRecipesByCategory(String category){
+        return SearchRecipe.getRecipesByCategory(category, getAllRecipes());
+    }
+
+    @Override
+    public ArrayList<Recipe> searchByIngredients(String ingredient){
+        return SearchRecipe.searchByIngredients(ingredient, getAllRecipes());
+    }
 }

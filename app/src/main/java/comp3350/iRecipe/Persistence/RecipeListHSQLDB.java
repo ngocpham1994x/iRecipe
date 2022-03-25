@@ -125,7 +125,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             for(int i=0; i<recipeList.size() && indexToRemove == -1; i++){
 
                 if(recipeList.get(i).getName().equalsIgnoreCase(toRemove.getName())){
-                    indexToRemove = -1;
+                    indexToRemove = i;
                 }
             }
             if(indexToRemove != -1){
@@ -136,5 +136,90 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             return false;
         }
         return true;
+    }
+
+
+    public Recipe searchByName(String nameOfRecipe){
+        Recipe recipe = null;
+        try(Connection con = connection()){
+
+            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE UPPER(RECIPENAME)=?");
+            st.setString(1, nameOfRecipe.toUpperCase());
+            ResultSet rs = st.executeQuery();
+            recipe = fromResultSet(rs);
+
+            rs.close();
+            st.close();
+
+        }catch(SQLException e){
+            Log.e("ERROR:",e.getMessage());
+        }
+        return recipe;
+    }
+
+    public ArrayList<Recipe> matchByName(String nameOfRecipe){
+        ArrayList<Recipe> list = new ArrayList<>();
+        try(Connection con = connection()){
+
+            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE UPPER(RECIPENAME) LIKE ?");
+            st.setString(1, "%"+nameOfRecipe.toUpperCase()+"%");
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Recipe recipe = fromResultSet(rs);
+                list.add(recipe);
+            }
+
+            rs.close();
+            st.close();
+
+        }catch(SQLException e){
+            Log.e("ERROR:",e.getMessage());
+        }
+
+        return list;
+    }
+
+    public ArrayList<Recipe> getRecipesByCategory(String category){
+        ArrayList<Recipe> list = new ArrayList<>();
+        try(Connection con = connection()){
+
+            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE UPPER(CATEGORY)=?");
+            st.setString(1, category.toUpperCase());
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Recipe recipe = fromResultSet(rs);
+                list.add(recipe);
+            }
+
+            rs.close();
+            st.close();
+
+        }catch(SQLException e){
+            Log.e("ERROR:",e.getMessage());
+        }
+
+        return list;
+    }
+
+    public ArrayList<Recipe> searchByIngredients(String ingredient){
+        ArrayList<Recipe> list = new ArrayList<>();
+        try(Connection con = connection()){
+
+            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE,KEYINGREDIENTS WHERE RECIPE.RECIPENAME=KEYINGREDIENTS.RECIPENAME AND UPPER(KEYINGREDIENT)=?");
+            st.setString(1, ingredient.toUpperCase());
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Recipe recipe = fromResultSet(rs);
+                list.add(recipe);
+            }
+
+            rs.close();
+            st.close();
+
+        }catch(SQLException e){
+            Log.e("ERROR:",e.getMessage());
+        }
+
+        return list;
     }
 }

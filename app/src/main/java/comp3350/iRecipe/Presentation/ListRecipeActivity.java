@@ -66,7 +66,7 @@ public class ListRecipeActivity extends AppCompatActivity {
             recipe_list = allRecipe;
             tv.setText("All Recipes");
         }else{
-            recipe_list = SearchRecipe.getRecipesByCategory(category,allRecipe);
+            recipe_list = list.getRecipesByCategory(category);
             tv.setText("All " + category);
         }
 
@@ -78,11 +78,11 @@ public class ListRecipeActivity extends AppCompatActivity {
         ArrayList<Recipe> recipe_list = null;
 
         if (searchBy.equalsIgnoreCase(searchByList[0]))         // search by Recipe Name
-            recipe_list = SearchRecipe.matchByName(searchString, allRecipe);
+            recipe_list = list.matchByName(searchString);
         else if (searchBy.equalsIgnoreCase(searchByList[1]))    // search by Ingredients
-            recipe_list = SearchRecipe.searchByIngredients(searchString,allRecipe);
+            recipe_list = list.searchByIngredients(searchString);
         else if (searchBy.equalsIgnoreCase(searchByList[2]))    // search by Category
-            recipe_list = SearchRecipe.getRecipesByCategory(searchString,allRecipe);
+            recipe_list = list.getRecipesByCategory(searchString);
 
         tv.setText("Search result by " + searchBy + ":\n \"" + searchString + "\"");
 
