@@ -12,6 +12,14 @@ public interface RecipeListInterface {
     // remove the recipe
     public boolean removeRecipe(Recipe toRemove);
 
+    public Recipe searchByName(String nameOfRecipe);
+
+    public ArrayList<Recipe> matchByName(String nameOfRecipe);
+
+    public ArrayList<Recipe> getRecipesByCategory(String category);
+
+    public ArrayList<Recipe> searchByIngredients(String ingredient);
+
     // returns the entire list
     public ArrayList<Recipe> getAllRecipes();
 
