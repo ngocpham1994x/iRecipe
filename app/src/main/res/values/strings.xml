@@ -5,6 +5,7 @@
     <string name="welcome">Welcome to your favourite recipe book!</string>
     <string name="all_recipes">All Recipes</string>
     <string name="recipe_name">Chicken Fried Rice</string>
+    <string name= "serving">Serving data</string>
     <string name="category">Main Dish</string>
     <string name="all_main_dish">All Main Dishes</string>
     <string name="all_soup">All Soups</string>

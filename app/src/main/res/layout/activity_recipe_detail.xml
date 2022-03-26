@@ -9,60 +9,103 @@
 
 
     <TextView
-        android:id="@+id/title_ing"
-        android:layout_width="168dp"
-        android:layout_height="39dp"
+        android:id="@+id/prep_time"
+        android:layout_width="236dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="8dp"
+        android:text="prep_time"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="center"
+        android:gravity="left"
+        android:textColor="#001F1F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/serving"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_image"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/cook_level"
+        android:layout_width="236dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:text="Level:easy"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="left"
+        android:textColor="#001F1F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/prep_time"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_image"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipe"
+        app:layout_constraintVertical_bias="0.258" />
+
+    <TextView
+        android:id="@+id/title_ing"
+        android:layout_width="157dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="left"
         android:text="Ingredients"
         android:textColor="#00001F"
         android:textSize="25sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251"
+        app:layout_constraintVertical_bias="0.322"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/title_desc"
-        android:layout_width="337dp"
-        android:layout_height="35dp"
+        android:layout_width="530dp"
+        android:layout_height="49dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="center"
-        android:text="Description"
+        android:gravity="left"
+        android:text="Directions"
         android:textColor="#00001F"
         android:textSize="25sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677"
+        app:layout_constraintVertical_bias="0.685"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/detail_disc"
-        android:layout_width="408dp"
-        android:layout_height="181dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
-        android:text="actual_description"
-        android:textColor="#001F1F"
-        android:textSize="20sp"
+    <ScrollView
+        android:layout_width="487dp"
+        android:layout_height="244dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/title_desc"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/detail_disc"
+            android:layout_width="408dp"
+            android:layout_height="181dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/baloo2_semibold"
+            android:gravity="left"
+            android:text="actual_description"
+            android:textColor="#001F1F"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </ScrollView>
 
     <TextView
         android:id="@+id/recipe"
-        android:layout_width="221dp"
-        android:layout_height="128dp"
+        android:layout_width="513dp"
+        android:layout_height="74dp"
         android:fontFamily="@font/baloo2_semibold"
         android:gravity="center"
         android:text="@string/recipe_name"
@@ -70,22 +113,22 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064"
+        app:layout_constraintVertical_bias="0.019"
         tools:ignore="MissingConstraints"></TextView>
 
     <ImageView
         android:id="@+id/recipe_image"
-        android:layout_width="165dp"
-        android:layout_height="209dp"
+        android:layout_width="218dp"
+        android:layout_height="267dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
+        app:layout_constraintVertical_bias="0.172"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -98,12 +141,53 @@
 
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43">
+        app:layout_constraintVertical_bias="0.499">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/cook_time"
+        android:layout_width="236dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="44dp"
+        android:text="cook_time"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="left"
+        android:textColor="#001F1F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/serving"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_image"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/serving"
+        android:layout_width="236dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/serving"
+        android:fontFamily="@font/baloo2_semibold"
+        android:gravity="left"
+        android:textColor="#001F1F"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/title_ing"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_image"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="526dp"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/title_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

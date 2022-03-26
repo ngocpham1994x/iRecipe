@@ -42,35 +42,42 @@ public class RecipeDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String recipeName = intent.getStringExtra("name");
 
-        final int[] image_array = {R.drawable.app_icon,R.drawable.round_cocktail ,
-                                    R.drawable.round_fish , R.drawable.round_spaguetti};
+
 
 
         recipe = SearchRecipe.searchByName(recipeName,list.getAllRecipes());
         TextView name = (TextView)findViewById(R.id.recipe);
         TextView desc = (TextView)findViewById(R.id.detail_disc);
+        TextView level = (TextView)findViewById(R.id.cook_level);
+        TextView prep_time = (TextView)findViewById(R.id.prep_time);
+        TextView cook_time = (TextView)findViewById(R.id.cook_time);
+        TextView serving = (TextView)findViewById(R.id.serving);
+
+        String level_text = "Difficulty Level: " +  recipe.getLevel();
+        String prep_text = "Preparation Time: " + recipe.getPrepTime() + " Min";
+        String cook_text = "Cooking Time: " + recipe.getCookTime() + " Min" ;
+        String serving_text = "Serving: " + recipe.getServing() ;
+        level.setText(level_text);
+        prep_time.setText(prep_text );
+        cook_time.setText(cook_text);
+        serving.setText(serving_text);
+
         ImageView image = (ImageView)findViewById(R.id.recipe_image);
 
         name.setText(recipe.getName());
         desc.setText(recipe.getInstruction());
-
-//        Random random_index = new Random();
-//        if(recipe.get_image_code() != -1)
-//            image.setImageResource(image_array[random_index.nextInt(4)]);
-//        else
-//            image.setImageResource(R.drawable.no_image);
-
-
-
-        String fmn = recipe.getName().replace(" ", "_"); //  this is image file name
-        String fmn2 = fmn.toLowerCase();
-        Log.e(fmn2 , "DONE!");
+        String recipe_name_with__ = recipe.getName().replace(" ", "_"); //  this is image file name
+        String  recipeLower = recipe_name_with__.toLowerCase();
         String PACKAGE_NAME = getApplicationContext().getPackageName();
-        int imgId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+ fmn2 , null, null);
-        System.out.println("IMG ID :: "+imgId);
-        System.out.println("PACKAGE_NAME :: "+PACKAGE_NAME);
-        //     Bitmap bitmap = BitmapFactory.decodeResource(getResources(),imgId);
-        image.setImageBitmap(BitmapFactory.decodeResource(getResources(),imgId));
+
+        int recipeImg = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+ recipeLower , null, null);
+
+        if(recipeImg > 0)
+            image.setImageBitmap(BitmapFactory.decodeResource(getResources(),recipeImg));
+        else
+            image.setImageResource(R.drawable.no_image);
+
+
 
 
 
