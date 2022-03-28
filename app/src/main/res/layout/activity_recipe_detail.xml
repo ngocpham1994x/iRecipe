@@ -12,10 +12,10 @@
         android:id="@+id/prep_time"
         android:layout_width="213dp"
         android:layout_height="31dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
-        android:text="prep_time"
+        android:gravity="start"
+        android:text="@string/prep_time"
         android:textColor="#001F1F"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/serving"
@@ -31,24 +31,24 @@
 
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
-        android:text="Level:easy"
+        android:gravity="start"
+        android:text="@string/cook_level"
         android:textColor="#001F1F"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/cook_time"
         app:layout_constraintEnd_toStartOf="@+id/recipe_image"
-        app:layout_constraintHorizontal_bias="0.329"
+        app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipe"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/title_ing"
         android:layout_width="157dp"
         android:layout_height="42dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
-        android:text="Ingredients"
+        android:gravity="start"
+        android:text="@string/ingredients"
         android:textColor="#00001F"
         android:textSize="25sp"
 
@@ -65,8 +65,8 @@
         android:layout_width="265dp"
         android:layout_height="45dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
-        android:text="Directions"
+        android:gravity="start"
+        android:text="@string/directions"
         android:textColor="#00001F"
         android:textSize="25sp"
 
@@ -94,8 +94,8 @@
             android:layout_height="181dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/baloo2_semibold"
-            android:gravity="left"
-            android:text="actual_description"
+            android:gravity="start"
+            android:text="@string/actual_description"
             android:textColor="#001F1F"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -106,8 +106,8 @@
 
     <TextView
         android:id="@+id/recipe"
-        android:layout_width="513dp"
-        android:layout_height="74dp"
+        android:layout_width="525dp"
+        android:layout_height="78dp"
         android:fontFamily="@font/baloo2_semibold"
         android:gravity="center"
         android:text="@string/recipe_name"
@@ -115,11 +115,11 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/recipe_image"
@@ -131,14 +131,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/recipe_image" />
 
     <android.widget.ListView
         android:id="@+id/ingredients"
         android:layout_width="286dp"
         android:layout_height="214dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
+        android:gravity="start"
 
 
         android:textColor="#001F1F"
@@ -155,26 +156,26 @@
 
     <TextView
         android:id="@+id/cook_time"
-        android:layout_width="212dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="214dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
-        android:text="cook_time"
+        android:gravity="start"
+        android:text="@string/cook_time"
         android:textColor="#001F1F"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/prep_time"
         app:layout_constraintEnd_toStartOf="@+id/recipe_image"
-        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/serving"
         android:layout_width="213dp"
         android:layout_height="31dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/baloo2_semibold"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/serving"
         android:textColor="#001F1F"
         android:textSize="20sp"
