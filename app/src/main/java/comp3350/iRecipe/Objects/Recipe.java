@@ -24,6 +24,8 @@ public class Recipe {
 
     private ArrayList<Comment> comments;
 
+
+
     public Recipe(String newName, String newCate, String newLevel, int prepTime, int cookTime, int serving, ArrayList<String> newIngred, ArrayList<String> newKeyIngred, String newInstruct){
         name = newName;
         category = newCate;
@@ -40,19 +42,16 @@ public class Recipe {
     // second constructor - just to make testing a bit easier
     public Recipe(String recipeName , String newCategory)
     {
-        name = recipeName;
-        category = newCategory;
-        cookingLevel = "easy";
-        ingredients = new ArrayList<>();
-        instruction = "this is pretty easy recipe";
-        keyIngredients = new ArrayList<>();
-        ingredients.add("eggs");
-        ingredients.add("flour");
-        ingredients.add("sugar");
-        keyIngredients.add("flour");
-        this.prepTime = 10;
-        this.cookTime = 20;
-        this.serving = 2;
+
+        this(   recipeName ,
+                newCategory ,
+                "easy" ,
+                10 ,
+                20 ,
+                2 ,
+                new ArrayList<String>(){{ add("eggs") ; add("water") ; add("salt"); }},
+                new ArrayList<String>(){{ add("eggs") ; }} ,
+                "this is pretty easy recipe" );
 
     }
 
