@@ -57,7 +57,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         TextView cook_time = (TextView)findViewById(R.id.cook_time);
         TextView serving = (TextView)findViewById(R.id.serving);
 
-        String level_text = "Difficulty Level: " +  recipe.getLevel();
+        String level_text = "Level: " +  recipe.getLevel();
         String prep_text = "Preparation Time: " + recipe.getPrepTime() + " Min";
         String cook_text = "Cooking Time: " + recipe.getCookTime() + " Min" ;
         String serving_text = "Serving: " + recipe.getServing() ;
