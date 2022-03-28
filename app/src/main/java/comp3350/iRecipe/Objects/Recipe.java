@@ -2,6 +2,9 @@ package comp3350.iRecipe.Objects;
 
 import java.util.ArrayList;
 
+import comp3350.iRecipe.Persistence.CommentHSQLDB;
+import comp3350.iRecipe.Presentation.MainActivity;
+
 public class Recipe {
     private String name;            //name of the recipe
 
@@ -18,6 +21,8 @@ public class Recipe {
     private String instruction;
     int image_code;
 
+
+    private ArrayList<Comment> comments;
 
     public Recipe(String newName, String newCate, String newLevel, int prepTime, int cookTime, int serving, ArrayList<String> newIngred, ArrayList<String> newKeyIngred, String newInstruct){
         name = newName;
