@@ -40,53 +40,66 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
 
+        //setting the database in the list
         list = new RecipeListHSQLDB(MainActivity.getDBPathName());
 
 
+        // get the intent from ListRecipeActivity as a recipe name
         Intent intent = getIntent();
         String recipeName = intent.getStringExtra("name");
 
 
+        // searching  the recipe from the database
+        recipe = SearchRecipe.searchByName(recipeName , list.getAllRecipes());
+
+        if(recipe != null) {
+
+            // getting all the text box from xml file to set text according to recipe values.
+            TextView name = (TextView) findViewById(R.id.recipe);
+            TextView desc = (TextView) findViewById(R.id.detail_disc);
+            TextView level = (TextView) findViewById(R.id.cook_level);
+            TextView prep_time = (TextView) findViewById(R.id.prep_time);
+            TextView cook_time = (TextView) findViewById(R.id.cook_time);
+            TextView serving = (TextView) findViewById(R.id.serving);
+
+            String level_text = "Level: " + recipe.getLevel();
+            String prep_text = "Preparation Time: " + recipe.getPrepTime() + " Min";
+            String cook_text = "Cooking Time: " + recipe.getCookTime() + " Min";
+            String serving_text = "Serving: " + recipe.getServing();
+            level.setText(level_text);
+            prep_time.setText(prep_text);
+            cook_time.setText(cook_text);
+            serving.setText(serving_text);
 
 
-        recipe = SearchRecipe.searchByName(recipeName,list.getAllRecipes());
-        TextView name = (TextView)findViewById(R.id.recipe);
-        TextView desc = (TextView)findViewById(R.id.detail_disc);
-        TextView level = (TextView)findViewById(R.id.cook_level);
-        TextView prep_time = (TextView)findViewById(R.id.prep_time);
-        TextView cook_time = (TextView)findViewById(R.id.cook_time);
-        TextView serving = (TextView)findViewById(R.id.serving);
+            // setting an image - find the image based on the recipe name
+            // if image not found - set the default image as no_image.
+            ImageView image = (ImageView) findViewById(R.id.recipe_image);
 
-        String level_text = "Level: " +  recipe.getLevel();
-        String prep_text = "Preparation Time: " + recipe.getPrepTime() + " Min";
-        String cook_text = "Cooking Time: " + recipe.getCookTime() + " Min" ;
-        String serving_text = "Serving: " + recipe.getServing() ;
-        level.setText(level_text);
-        prep_time.setText(prep_text );
-        cook_time.setText(cook_text);
-        serving.setText(serving_text);
+            name.setText(recipe.getName());
+            desc.setText(recipe.getInstruction());
 
-        ImageView image = (ImageView)findViewById(R.id.recipe_image);
+            String recipe_name_with__ = recipe.getName().replace(" ", "_");
+            recipe_name_with__ = recipe_name_with__.replace("-", "_");//  this is image file name
+            String recipeLower = recipe_name_with__.toLowerCase();
+            String PACKAGE_NAME = getApplicationContext().getPackageName();
 
-        name.setText(recipe.getName());
-        desc.setText(recipe.getInstruction());
-        String recipe_name_with__ = recipe.getName().replace(" ", "_"); //  this is image file name
-        String  recipeLower = recipe_name_with__.toLowerCase();
-        String PACKAGE_NAME = getApplicationContext().getPackageName();
+            int recipeImg = getResources().getIdentifier(PACKAGE_NAME + ":drawable/" + recipeLower, null, null);
 
-        int recipeImg = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+ recipeLower , null, null);
+            if (recipeImg > 0)
+                image.setImageBitmap(BitmapFactory.decodeResource(getResources(), recipeImg));
+            else
+                image.setImageResource(R.drawable.no_image);
 
-        if(recipeImg > 0)
-            image.setImageBitmap(BitmapFactory.decodeResource(getResources(),recipeImg));
-        else
-            image.setImageResource(R.drawable.no_image);
 
-        String[] list = recipe.getIngredients().toArray(new String[0]);
+            // list of ingredients
+            String[] list = recipe.getIngredients().toArray(new String[0]);
 
-        ListView ingredients_list = (ListView) findViewById(R.id.ingredients);
-        ArrayAdapter<String> ingredients = new ArrayAdapter<String>(this, R.layout.listitem , list);
-        ingredients_list.setAdapter(ingredients);
+            ListView ingredients_list = (ListView) findViewById(R.id.ingredients);
+            ArrayAdapter<String> ingredients = new ArrayAdapter<String>(this, R.layout.listitem, list);
+            ingredients_list.setAdapter(ingredients);
 
+        }
 
 
 

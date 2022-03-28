@@ -43,7 +43,7 @@ public class Recipe {
     public Recipe(String recipeName , String newCategory)
     {
 
-        this(   recipeName ,
+        this(recipeName ,
                 newCategory ,
                 "easy" ,
                 10 ,

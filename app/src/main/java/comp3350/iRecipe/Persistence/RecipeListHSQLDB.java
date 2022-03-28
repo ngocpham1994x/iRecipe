@@ -130,7 +130,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         Recipe recipe = null;
         try(Connection con = connection()){
 
-            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE UPPER(RECIPENAME)=?");
+            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE UPPER(RECIPENAME) = ?");
             st.setString(1, nameOfRecipe.toUpperCase());
             ResultSet rs = st.executeQuery();
             recipe = fromResultSet(rs);
