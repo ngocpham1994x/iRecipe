@@ -15,12 +15,14 @@ import comp3350.iRecipe.Persistence.RecipeListInterface;
 
 public class SearchRecipeTest {
 
+
     private RecipeListInterface recipeList;
 
     @Before
     public void setUp()
     {
         recipeList = new RecipeList();
+
 
     }
 

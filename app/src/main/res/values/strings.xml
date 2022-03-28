@@ -5,10 +5,18 @@
     <string name="welcome">Welcome to your favourite recipe book!</string>
     <string name="all_recipes">All Recipes</string>
     <string name="recipe_name">Chicken Fried Rice</string>
+    <string name= "serving">Serving data</string>
     <string name="category">Main Dish</string>
     <string name="all_main_dish">All Main Dishes</string>
     <string name="all_soup">All Soups</string>
     <string name="all_drink">All Drinks</string>
     <string name="all_dessert">All Desserts</string>
     <string name="search_by">Search By</string>
+    <string name="cook_level">cook_level</string>
+    <string name="prep_time">prep_time</string>
+    <string name="ingredients">ingredients</string>
+    <string name="directions">directions</string>
+    <string name="actual_description">actual_description</string>
+    <string name="cook_time">cook_time</string>
+    <string name="recipe_image">recipe_image</string>
 </resources>
