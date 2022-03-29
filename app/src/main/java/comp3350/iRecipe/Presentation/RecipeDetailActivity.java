@@ -50,7 +50,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
         // searching  the recipe from the database
-        recipe = SearchRecipe.searchByName(recipeName , list.getAllRecipes());
+        recipe = list.searchByName(recipeName);
 
         if(recipe != null) {
 
