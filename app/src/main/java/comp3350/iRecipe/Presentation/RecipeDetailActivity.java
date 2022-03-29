@@ -1,27 +1,15 @@
 package comp3350.iRecipe.Presentation;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Locale;
-import java.util.Random;
-
-import comp3350.iRecipe.Business.SearchRecipe;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
@@ -96,7 +84,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             String[] list = recipe.getIngredients().toArray(new String[0]);
 
             ListView ingredients_list = (ListView) findViewById(R.id.ingredients);
-            ArrayAdapter<String> ingredients = new ArrayAdapter<String>(this, R.layout.listitem, list);
+            ArrayAdapter<String> ingredients = new ArrayAdapter<String>(this, R.layout.simple_list_view, list);
             ingredients_list.setAdapter(ingredients);
 
         }catch(Exception e)
