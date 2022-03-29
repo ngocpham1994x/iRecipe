@@ -35,7 +35,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM Recipe");
             while(rs.next()){
-                Recipe recipe = fromResultSet(rs);
+                Recipe recipe = fromResultSet(rs,con);
                 PreparedStatement st2 = con.prepareStatement("SELECT * FROM INGREDIENTS WHERE RECIPENAME=?");
                 st2.setString(1,recipe.getName());
 
@@ -46,7 +46,6 @@ public class RecipeListHSQLDB implements RecipeListInterface{
                 }
                 rs2.close();
                 st2.close();
-
 
                 PreparedStatement st3 = con.prepareStatement("SELECT * FROM KEYINGREDIENTS WHERE RECIPENAME=?");
                 st3.setString(1,recipe.getName());
@@ -71,7 +70,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         return list_from_database;
     }
 
-    private Recipe fromResultSet(ResultSet rs) throws  SQLException{
+    private Recipe fromResultSet(ResultSet rs, Connection con) throws  SQLException{
         String name = rs.getString("RECIPENAME");
         String category = rs.getString("CATEGORY");
         String cookingLevel = rs.getString("COOKINGLEVEL");
@@ -82,39 +81,28 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         String newInstr = instruction.replace("\\n" , "\n");
         ArrayList<String> ingred = new ArrayList<>();
         ArrayList<String> keyIngred = new ArrayList<>();
-
-        try(Connection con = connection()){
-
-            // to get ingredients
-            PreparedStatement stIng = con.prepareStatement("SELECT * FROM INGREDIENTS WHERE RECIPENAME = ?");
-            stIng.setString(1, name);
-            ResultSet rsIng = stIng.executeQuery();
-            while(rsIng.next()){
-                String ingredient = rsIng.getString("INGREDIENT");
-                ingred.add(ingredient);
-            }
-
-            // to get key ingredients
-            PreparedStatement stKeyIng = con.prepareStatement("SELECT * FROM KEYINGREDIENTS WHERE RECIPENAME = ?");
-            stKeyIng.setString(1, name);
-            ResultSet rsKeyIng = stKeyIng.executeQuery();
-            while(rsKeyIng.next()){
-                String ingredient = rsKeyIng.getString("KEYINGREDIENT");
-                keyIngred.add(ingredient);
-            }
-
-            rsIng.close();
-            stIng.close();
-
-            rsKeyIng.close();
-            stKeyIng.close();
-
-        }catch(SQLException e){
-            Log.e("ERROR:",e.getMessage());
+        PreparedStatement st2 = con.prepareStatement("SELECT * FROM INGREDIENTS WHERE RECIPENAME=?");
+        st2.setString(1,name);
+        Recipe recipe = new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, newInstr);
+        ResultSet rs2 = st2.executeQuery();
+        while(rs2.next()){
+            String ingredStr = rs2.getString("INGREDIENT");
+            recipe.addToIngredients(ingredStr);
         }
+        rs2.close();
+        st2.close();
 
+        PreparedStatement st3 = con.prepareStatement("SELECT * FROM KEYINGREDIENTS WHERE RECIPENAME=?");
+        st3.setString(1,recipe.getName());
 
-        return new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, newInstr);
+        ResultSet rs3 = st3.executeQuery();
+        while(rs3.next()){
+            String keyIngredStr = rs3.getString("KEYINGREDIENT");
+            recipe.addToKeyIngredients(keyIngredStr);
+        }
+        rs3.close();
+        st3.close();
+        return recipe;
     }
 
     //Return false when we already have a Recipe with the same name
@@ -128,8 +116,27 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.setInt(5,newRecipe.getCookTime());
             st.setInt(6,newRecipe.getServing());
             st.setString(7,newRecipe.getInstruction());
-
             st.executeUpdate();
+
+            ArrayList<String> ingres = newRecipe.getIngredients();
+            for(int i=0; i<ingres.size(); i++){
+                PreparedStatement st2 = con.prepareStatement("INSERT INTO INGREDIENTS VALUES(?,?)");
+                st2.setString(1, newRecipe.getName());
+                st2.setString(2,ingres.get(i));
+                st2.executeUpdate();
+                st2.close();
+            }
+
+            ArrayList<String> keyIngres = newRecipe.getKeyIngredients();
+            for(int i=0; i<keyIngres.size(); i++){
+                PreparedStatement st3 = con.prepareStatement("INSERT INTO KEYINGREDIENTS VALUES(?,?)");
+                st3.setString(1, newRecipe.getName());
+                st3.setString(2,keyIngres.get(i));
+                st3.executeUpdate();
+                st3.close();
+            }
+
+            st.close();
 
         }catch(SQLException e){
             return false;
@@ -166,7 +173,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.setString(1, nameOfRecipe);
             ResultSet rs = st.executeQuery();
             rs.next();
-            recipe = fromResultSet(rs);
+            recipe = fromResultSet(rs,con);
             rs.close();
             st.close();
 
@@ -184,7 +191,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.setString(1, "%"+nameOfRecipe.toUpperCase()+"%");
             ResultSet rs = st.executeQuery();
             while(rs.next()){
-                Recipe recipe = fromResultSet(rs);
+                Recipe recipe = fromResultSet(rs,con);
                 list.add(recipe);
             }
 
@@ -206,7 +213,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.setString(1, category.toUpperCase());
             ResultSet rs = st.executeQuery();
             while(rs.next()){
-                Recipe recipe = fromResultSet(rs);
+                Recipe recipe = fromResultSet(rs,con);
                 list.add(recipe);
             }
 
@@ -228,7 +235,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.setString(1, ingredient.toUpperCase());
             ResultSet rs = st.executeQuery();
             while(rs.next()){
-                Recipe recipe = fromResultSet(rs);
+                Recipe recipe = fromResultSet(rs,con);
                 list.add(recipe);
             }
 

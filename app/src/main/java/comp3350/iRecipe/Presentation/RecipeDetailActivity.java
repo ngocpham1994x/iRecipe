@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
@@ -54,6 +57,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             String prep_text = "Preparation Time: " + recipe.getPrepTime() + " Min";
             String cook_text = "Cooking Time: " + recipe.getCookTime() + " Min";
             String serving_text = "Serving: " + recipe.getServing();
+
             level.setText(level_text);
             prep_time.setText(prep_text);
             cook_time.setText(cook_text);
@@ -81,7 +85,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
 
             // list of ingredients
-            String[] list = recipe.getIngredients().toArray(new String[0]);
+            ArrayList<String> tempList = recipe.getIngredients();
+            //Log.d("ErrorHere","Size: "+ tempList.size());
+            String[] list = tempList.toArray(new String[tempList.size()]);
 
             ListView ingredients_list = (ListView) findViewById(R.id.ingredients);
             ArrayAdapter<String> ingredients = new ArrayAdapter<String>(this, R.layout.simple_list_view, list);
