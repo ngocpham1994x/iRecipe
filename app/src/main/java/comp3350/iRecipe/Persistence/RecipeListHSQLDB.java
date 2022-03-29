@@ -82,6 +82,38 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         String newInstr = instruction.replace("\\n" , "\n");
         ArrayList<String> ingred = new ArrayList<>();
         ArrayList<String> keyIngred = new ArrayList<>();
+
+        try(Connection con = connection()){
+
+            // to get ingredients
+            PreparedStatement stIng = con.prepareStatement("SELECT * FROM INGREDIENTS WHERE RECIPENAME = ?");
+            stIng.setString(1, name);
+            ResultSet rsIng = stIng.executeQuery();
+            while(rsIng.next()){
+                String ingredient = rsIng.getString("INGREDIENT");
+                ingred.add(ingredient);
+            }
+
+            // to get key ingredients
+            PreparedStatement stKeyIng = con.prepareStatement("SELECT * FROM KEYINGREDIENTS WHERE RECIPENAME = ?");
+            stKeyIng.setString(1, name);
+            ResultSet rsKeyIng = stKeyIng.executeQuery();
+            while(rsKeyIng.next()){
+                String ingredient = rsKeyIng.getString("KEYINGREDIENT");
+                keyIngred.add(ingredient);
+            }
+
+            rsIng.close();
+            stIng.close();
+
+            rsKeyIng.close();
+            stKeyIng.close();
+
+        }catch(SQLException e){
+            Log.e("ERROR:",e.getMessage());
+        }
+
+
         return new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, newInstr);
     }
 

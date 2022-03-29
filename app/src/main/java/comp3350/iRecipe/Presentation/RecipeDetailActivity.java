@@ -52,7 +52,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
         // searching  the recipe from the database
         recipe = list.searchByName(recipeName);
 
-        if(recipe != null) {
+        try{
 
             // getting all the text box from xml file to set text according to recipe values.
             TextView name = (TextView) findViewById(R.id.recipe);
@@ -98,6 +98,11 @@ public class RecipeDetailActivity extends AppCompatActivity {
             ListView ingredients_list = (ListView) findViewById(R.id.ingredients);
             ArrayAdapter<String> ingredients = new ArrayAdapter<String>(this, R.layout.listitem, list);
             ingredients_list.setAdapter(ingredients);
+
+        }catch(Exception e)
+        {
+            System.out.println(e);
+            System.out.println("Couldn't find Valid recipe ! Try again !");
 
         }
 
