@@ -33,8 +33,12 @@ Links to project where we use a well-known design pattern:
 - Dependency Injection: mostly everywhere in the source codes. Examples: 
     - we use it most in Presentation Layer, where we pass the list of all recipes and filter based on category. (Line 27)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/AdapterRecipe.java/#L27] in AdapterRecipe.java, (Line 57)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57] in ListRecipeActivity.java
     - where we pass the searchByList to limit what we search by (name, ingredients, category). (Line 58)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58] in MainActivity.java
-
-
+- Facade: we used Facade where we can search and add recipe easily
+    - (searchByName() )[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java#L12]
+    - (addRecipe())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33] to the end of the list
+    - (addToIngredients())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Objects/Recipe.java#L78]
+    - (removeRecipe())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33] using specified in parameter
+  
 Iteration 1 Feedback fixes
 --------------
 
