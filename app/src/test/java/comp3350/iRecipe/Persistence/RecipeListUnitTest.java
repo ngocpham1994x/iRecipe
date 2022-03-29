@@ -1,4 +1,4 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Persistence;
 
 import org.junit.Before;
 import org.junit.Test;
