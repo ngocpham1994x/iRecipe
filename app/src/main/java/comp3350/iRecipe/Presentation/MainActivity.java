@@ -142,4 +142,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void showAddRecipe(View view)     // add recipe button onClick()
+    {
+        Intent intent = new Intent(this, AddRecipe.class);
+        startActivity(intent);
+    }
 }

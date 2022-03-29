@@ -19,4 +19,28 @@
     <string name="actual_description">actual_description</string>
     <string name="cook_time">cook_time</string>
     <string name="recipe_image">recipe_image</string>
+    <string name="add_recipe">Add your own recipe here!</string>
+    <string name="add_recipe_name">Enter recipe name</string>
+    <string name="add_category">Select the category</string>
+    <string name="add_level">Select the level</string>
+    <string name="add_prepT">Enter prep time in minutes</string>
+    <string name="add_cookingT">Enter cooking time in minutes</string>
+    <string name="add_servings">Enter number of servings</string>
+    <string name="add_ingredients">Enter ingredients of the recipe with only commas between each (eg- chicken,rice,salt)</string>
+    <string name="add_keyIng">Enter the key ingredients of this recipe with only commas between each</string>
+    <string name="add_instructions">Enter the instructions</string>
+    <string name="submit">Add my recipe!</string>
+    <string-array name="categories">
+        <item>Select the category</item>
+        <item>Main Dish</item>
+        <item>Soup</item>
+        <item>Dessert</item>
+        <item>Drink</item>
+    </string-array>
+    <string-array name="levels">
+        <item>Select the level</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
 </resources>
