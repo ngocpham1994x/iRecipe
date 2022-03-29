@@ -49,7 +49,7 @@ public class AddRecipe extends AppCompatActivity implements OnItemSelectedListen
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
-                cat = (EditText) adapterView.getItemAtPosition(pos);
+                category = (String) adapterView.getItemAtPosition(pos);
                 if(pos>0){
                     Toast.makeText(adapterView.getContext(), (CharSequence) cat, Toast.LENGTH_SHORT).show();
                 }
@@ -70,7 +70,7 @@ public class AddRecipe extends AppCompatActivity implements OnItemSelectedListen
         two.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
-                lev = (EditText) adapterView.getItemAtPosition(pos);
+                level = (String) adapterView.getItemAtPosition(pos);
                 if(pos>0) {
                     Toast.makeText(adapterView.getContext(), (CharSequence) lev, Toast.LENGTH_SHORT).show();
                 }
@@ -97,8 +97,8 @@ public class AddRecipe extends AppCompatActivity implements OnItemSelectedListen
                 startActivity(intent);
 
                 recipeName = rName.getText().toString();
-                category = cat.getText().toString();
-                level = lev.getText().toString();
+                //category = cat.getText().toString();
+                //level = lev.getText().toString();
                 prepTime = Integer.parseInt(pt.getText().toString());
                 cookTime = Integer.parseInt(ct.getText().toString());
                 serving = Integer.parseInt(serv.getText().toString());
