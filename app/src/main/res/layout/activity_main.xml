@@ -46,8 +46,8 @@
             android:layout_toStartOf="@+id/search_icon"
             android:background="@drawable/search_bar"
             android:fontFamily="@font/baloo2_semibold"
-            android:minHeight="48dp"
             android:hint="@string/search_message"
+            android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#807D7D"
             android:textSize="25sp" />
