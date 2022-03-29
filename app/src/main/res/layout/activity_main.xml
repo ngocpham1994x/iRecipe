@@ -47,7 +47,7 @@
             android:background="@drawable/search_bar"
             android:fontFamily="@font/baloo2_semibold"
             android:minHeight="48dp"
-            android:text="@string/search_message"
+            android:hint="@string/search_message"
             android:textAlignment="center"
             android:textColor="#807D7D"
             android:textSize="25sp" />

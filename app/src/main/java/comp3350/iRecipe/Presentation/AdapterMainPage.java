@@ -13,10 +13,53 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Arrays;
+
 import comp3350.iRecipe.R;
 
 public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdapter> {
     Context context;
+
+    int card_image[] = {
+        R.drawable.backdrop_ingredients,
+        R.drawable.backdrop_main_dishes,
+        R.drawable.backdrop_soups,
+        R.drawable.backdrop_desserts,
+        R.drawable.backdrop_drinks,
+    };
+
+    int card_image1[] = {
+        R.drawable.round_fork_knife,
+        R.drawable.round_fish,
+        R.drawable.round_spaguetti,
+        R.drawable.round_birthday_cake,
+        R.drawable.round_cocktail,
+    };
+
+    String card_text[] = {
+            "View all recipes",
+            "Main dishes",
+            "Soups",
+            "Desserts",
+            "Drinks"
+    };
+
+    String card_back[] = {      // color
+            "#D6E53935",
+            "#D236883A",
+            "#D2AF4576",
+            "#D2EEAA45",
+            "#D6E53935"
+    };
+
+    String card_type[] = {
+            "All",
+            "Main dishes",
+            "Soup",
+            "Dessert",
+            "Drink"
+    };
+
 
     public AdapterMainPage(Context context) {
         this.context = context;
@@ -31,91 +74,32 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
 
     @Override
     public void onBindViewHolder(@NonNull MyAdapter holder, int position) {
-        if(position == 0)
+        for (int i = 0; i < getItemCount(); i++)
         {
-            holder.image.setImageResource(R.drawable.backdrop_ingredients);
-            holder.image1.setImageResource(R.drawable.round_fork_knife);
-            holder.text.setText("View all recipes");
-            holder.back.setBackgroundColor(Color.parseColor("#D6E53935"));
+            if(position == i)
+            {
+                holder.image.setImageResource(card_image[i]);
+                holder.image1.setImageResource(card_image1[i]);
+                holder.text.setText(card_text[i]);
+                holder.back.setBackgroundColor(Color.parseColor(card_back[i]));
 
-            holder.card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context, ListRecipeActivity.class);
-                    intent.putExtra("type","All");
-                    context.startActivity(intent);
-                }
-            });
+                int finalI = i;
+                holder.card.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, ListRecipeActivity.class);
+                        intent.putExtra("type",card_type[finalI]);
+                        context.startActivity(intent);
+                    }
+                });
+            }
         }
-        if(position == 1)
-        {
-            holder.image.setImageResource(R.drawable.backdrop_main_dishes);
-            holder.image1.setImageResource(R.drawable.round_fish);
-            holder.text.setText("Main dishes");
-            holder.back.setBackgroundColor(Color.parseColor("#D236883A"));
 
-            holder.card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context, ListRecipeActivity.class);
-                    intent.putExtra("type","Main dishes");
-                    context.startActivity(intent);
-                }
-            });
-        }
-        if(position == 2)
-        {
-            holder.image.setImageResource(R.drawable.backdrop_soups);
-            holder.image1.setImageResource(R.drawable.round_spaguetti);
-            holder.text.setText("Soups");
-            holder.back.setBackgroundColor(Color.parseColor("#D2AF4576"));
-
-            holder.card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context, ListRecipeActivity.class);
-                    intent.putExtra("type","Soup");
-                    context.startActivity(intent);
-                }
-            });
-        }
-        if(position == 3)
-        {
-            holder.image.setImageResource(R.drawable.backdrop_desserts);
-            holder.image1.setImageResource(R.drawable.round_birthday_cake);
-            holder.text.setText("Desserts");
-            holder.back.setBackgroundColor(Color.parseColor("#D2EEAA45"));
-
-            holder.card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context, ListRecipeActivity.class);
-                    intent.putExtra("type","Dessert");
-                    context.startActivity(intent);
-                }
-            });
-        }
-        if(position == 4)
-        {
-            holder.image.setImageResource(R.drawable.backdrop_drinks);
-            holder.image1.setImageResource(R.drawable.round_cocktail);
-            holder.text.setText("Drinks");
-            holder.back.setBackgroundColor(Color.parseColor("#D6E53935"));
-
-            holder.card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context, ListRecipeActivity.class);
-                    intent.putExtra("type","Drink");
-                    context.startActivity(intent);
-                }
-            });
-        }
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return card_image.length;
     }
 
     public class MyAdapter extends RecyclerView.ViewHolder {
