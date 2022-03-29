@@ -1,17 +1,26 @@
 package comp3350.iRecipe.Presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import comp3350.iRecipe.Objects.Recipe;
+import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
 import comp3350.iRecipe.R;
 
-public class AddRecipe extends AppCompatActivity {
+public class AddRecipe extends AppCompatActivity implements OnItemSelectedListener {
     String recipeName, category, level;
     int prepTime, cookTime, serving;
     String ingredients, keyIng, instructions;
@@ -24,19 +33,54 @@ public class AddRecipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
+
+
         rName = findViewById(R.id.recipeName);
 
         /**Spinner for categories*/
         cats = getResources().getStringArray(R.array.categories);
         one = findViewById(R.id.recipeCategory);
-        ArrayAdapter<CharSequence>adapter = ArrayAdapter.createFromResource(this, R.array.categories, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         one.setAdapter(adapter);
+        one.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
+                cat = (EditText) adapterView.getItemAtPosition(pos);
+                if(pos>0){
+                    Toast.makeText(adapterView.getContext(), (CharSequence) cat, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         /**Spinner for levels*/
         levs = getResources().getStringArray(R.array.levels);
         two = findViewById(R.id.recipeLevel);
-        ArrayAdapter<CharSequence>adapter2 = ArrayAdapter.createFromResource(this, R.array.levels, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.levels, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         two.setAdapter(adapter2);
+        two.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
+                lev = (EditText) adapterView.getItemAtPosition(pos);
+                if(pos>0) {
+                    Toast.makeText(adapterView.getContext(), (CharSequence) lev, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         pt = findViewById(R.id.prep_time);
         ct = findViewById(R.id.cook_time);
@@ -49,15 +93,37 @@ public class AddRecipe extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recipeName = rName.getText().toString();
+                Intent intent = new Intent(getApplicationContext(), AddRecipe.class);
+                startActivity(intent);
 
+                recipeName = rName.getText().toString();
+                category = cat.getText().toString();
+                level = lev.getText().toString();
                 prepTime = Integer.parseInt(pt.getText().toString());
                 cookTime = Integer.parseInt(ct.getText().toString());
                 serving = Integer.parseInt(serv.getText().toString());
                 ingredients = ingr.getText().toString();
                 keyIng = key.getText().toString();
                 instructions = instr.getText().toString();
+
+                String[] ingredTokens = ingredients.split("\\+");
+                ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
+
+                String[] keyTokens = ingredients.split("\\+");
+                ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
+
+                Recipe newR = new Recipe(recipeName,category,level,prepTime,cookTime,serving,ingred,key,instructions );
+                addRecipe(newR);
             }
         });
+    }
+
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){}
+
+    public void onNothingSelected(AdapterView<?> parent){}
+
+    public void addRecipe(Recipe r){
+        RecipeListHSQLDB  rl = new RecipeListHSQLDB(MainActivity.getDBPathName());
+        rl.addRecipe(r);
     }
 }

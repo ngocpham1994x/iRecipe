@@ -38,12 +38,11 @@
 
         <Spinner
             android:id="@+id/recipeCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="148dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@android:drawable/btn_dropdown"
             android:contentDescription="@string/add_category"
-            android:entries="4"
             android:spinnerMode="dropdown"
             android:textSize="30sp" />
 
@@ -54,7 +53,6 @@
             android:layout_marginTop="20dp"
             android:background="@android:drawable/btn_dropdown"
             android:contentDescription="@string/add_level"
-            android:entries="3"
             android:spinnerMode="dropdown"
             android:textSize="30sp" />
 

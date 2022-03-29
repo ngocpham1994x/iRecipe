@@ -26,19 +26,18 @@
     <string name="add_prepT">Enter prep time in minutes</string>
     <string name="add_cookingT">Enter cooking time in minutes</string>
     <string name="add_servings">Enter number of servings</string>
-    <string name="add_ingredients">Enter ingredients of the recipe with only commas between each (eg- chicken,rice,salt)</string>
-    <string name="add_keyIng">Enter the key ingredients of this recipe with only commas between each</string>
+    <string name="add_ingredients">Enter ingredients of the recipe with space between each (eg- chicken rice salt)</string>
+    <string name="add_keyIng">Enter the key ingredients of this recipe with space between each</string>
     <string name="add_instructions">Enter the instructions</string>
     <string name="submit">Add my recipe!</string>
     <string-array name="categories">
-        <item>Select the category</item>
         <item>Main Dish</item>
-        <item>Soup</item>
+        <item>Soup/Salad</item>
         <item>Dessert</item>
         <item>Drink</item>
+        <item>Appetizers</item>
     </string-array>
     <string-array name="levels">
-        <item>Select the level</item>
         <item>Easy</item>
         <item>Medium</item>
         <item>Hard</item>
