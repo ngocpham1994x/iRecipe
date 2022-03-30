@@ -74,26 +74,23 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
 
     @Override
     public void onBindViewHolder(@NonNull MyAdapter holder, int position) {
-        for (int i = 0; i < getItemCount(); i++)
-        {
-            if(position == i)
-            {
-                holder.image.setImageResource(card_image[i]);
-                holder.image1.setImageResource(card_image1[i]);
-                holder.text.setText(card_text[i]);
-                holder.back.setBackgroundColor(Color.parseColor(card_back[i]));
 
-                int finalI = i;
-                holder.card.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(context, ListRecipeActivity.class);
-                        intent.putExtra("type",card_type[finalI]);
-                        context.startActivity(intent);
-                    }
-                });
+        holder.image.setImageResource(card_image[position]);
+        holder.image1.setImageResource(card_image1[position]);
+        holder.text.setText(card_text[position]);
+        holder.back.setBackgroundColor(Color.parseColor(card_back[position]));
+
+        int finalI = position;
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ListRecipeActivity.class);
+                intent.putExtra("type",card_type[finalI]);
+                context.startActivity(intent);
             }
-        }
+        });
+
+
 
     }
 
