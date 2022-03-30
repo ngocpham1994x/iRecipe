@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String dbName="SC";
     private static String dbPathName;
 
-    String[] searchByList = {"Recipe Name", "Ingredients", "Category"};
+    String searchByList[] = {"Recipe Name", "Ingredients"};
     String searchBy;
     AutoCompleteTextView autoCompleteTextView;
     ArrayAdapter<String> adapterItems;
