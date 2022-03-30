@@ -10,13 +10,15 @@ import comp3350.iRecipe.Persistence.RecipeListIT;
 import comp3350.iRecipe.Persistence.RecipeListUnitTest;
 
 
+// will run both unit tests and integration tests
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        RecipeListUnitTest.class,
-        RecipeTest.class,
-        SearchRecipeTest.class,
-        RecipeListIT.class,
-        CommentIT.class
+        RecipeListUnitTest.class, // unit
+        RecipeTest.class, // unit
+        SearchRecipeTest.class, // unit
+        RecipeListIT.class, // integration test
+        CommentIT.class // integration test
+
 })
 
 public class AllTests {
