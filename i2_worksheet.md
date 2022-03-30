@@ -10,7 +10,13 @@ Explain how your are paying off the technical debt.
 Show commits, links to lines in your commit where you paid off technical debt.
 Classify the debt, and justify why you chose that classification with 1-3 sentences.
 
-Example of how to link to a diff - click on he commit in the commit log, then click on the margin to the (line)[https://code.cs.umanitoba.ca/3350-winter-2021-a01/sample-project/-/commit/8e38ae9c3084d62adc4ac5fafa3b87d7d862dc26#72899361f89777662df76c5ce0ed847af04dff86_35_41]
+Example of how to link to a diff - click on he commit in the commit log, then click on the margin to the (line)[https://code.cs.umanitoba.ca/3350-winter-2021-a01/sample-project/-/commit/8e38ae9c3084d62adc4ac5fafa3b87d7d862dc26#72899361f89777662df76c5ce0ed847af04dff86_35_41]<br /><br />
+
+
+
+
+
+
 
 SOLID
 -----
