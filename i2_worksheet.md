@@ -51,14 +51,14 @@ Links to project where we use a well-known design pattern:
 
 - **Chain Of Responsibilities**:
 
-    - [Line 133](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java#L133) in MainActivity.java pass the "searchString" and "searchBy" value to
-      [Line 43](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L43) ListRecipeActivity.java, it passes the "search by which" responsibility to show search results
-      ([Line 76](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L76)) when click Search Icon on MainActivity.java
+    - [Line 133 MainActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java#L133) passes the "searchString" and "searchBy" value to
+      [Line 43 ListRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L43) , it passes the search-by-which responsibility to show search results on 
+      ([Line 76](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L76)) when click on search icon on MainActivity.java
 
-    - [Line 88](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/AdapterMainPage.java#L88) AdapterMainPage.java
-      pass the "type" to MainPage.java
-      [Line 42](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L42) in ListRecipeActivity.java
-      to be responsible for displaying proper list of recipes based on according category.
+    - [Line 89 AdapterMainPage.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5245c02c719f52cafc1e856f62d6ffc98b48651b/app/src/main/java/comp3350/iRecipe/Presentation/AdapterMainPage.java#L89)
+      passes the "type" to 
+      [Line 42 ListRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L42)
+       to be responsible for displaying proper list of recipes based on according category.
 
 Iteration 1 Feedback fixes
 --------------
