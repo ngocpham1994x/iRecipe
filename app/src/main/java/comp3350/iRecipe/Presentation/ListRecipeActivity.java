@@ -23,7 +23,7 @@ public class ListRecipeActivity extends AppCompatActivity {
 
     RecyclerView recyclerView_recipe;
     RecipeListInterface list;
-    String[] searchByList = {"Recipe Name", "Ingredients", "Category"};
+    String searchByList[] = {"Recipe Name", "Ingredients"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +46,19 @@ public class ListRecipeActivity extends AppCompatActivity {
         TextView tv = (TextView)findViewById(R.id.titleText);
 
 
-        if(category != null)        // category buttons
+        if (category != null)        // category buttons
             recipe_list = showRecipeByCategory(category, allRecipe, tv);
         else if (searchBy != null)  // search icon button
             recipe_list = showRecipeBySearchResult(searchBy, searchString ,allRecipe, tv);
-        else                        // in case no "search by" selection from dropdown menu
-            recipe_list = allRecipe;  // show all recipes
 
 
-        AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list , this);
-        recyclerView_recipe.setAdapter(adapter_recipe);
+        if (recipe_list != null) {
+            AdapterRecipe adapter_recipe = new AdapterRecipe(recipe_list, this);
+            recyclerView_recipe.setAdapter(adapter_recipe);
+        }
+        else
+            Toast.makeText(this, "Search By option was not selected",
+                    Toast.LENGTH_LONG).show();  // show message Search drop-down menu was not selected
     }
 
     public ArrayList<Recipe> showRecipeByCategory(String category, ArrayList<Recipe> allRecipe, TextView tv)
@@ -81,8 +84,6 @@ public class ListRecipeActivity extends AppCompatActivity {
             recipe_list = list.matchByName(searchString);
         else if (searchBy.equalsIgnoreCase(searchByList[1]))    // search by Ingredients
             recipe_list = list.searchByIngredients(searchString);
-        else if (searchBy.equalsIgnoreCase(searchByList[2]))    // search by Category
-            recipe_list = list.getRecipesByCategory(searchString);
 
         tv.setText("Search result by " + searchBy + ":\n \"" + searchString + "\"");
 
