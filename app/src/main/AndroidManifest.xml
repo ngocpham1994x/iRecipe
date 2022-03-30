@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".Presentation.AddRecipe"
+        <activity android:name=".Presentation.AddRecipeActivity"
             android:exported="false">
         </activity>
     </application>

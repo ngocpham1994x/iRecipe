@@ -32,11 +32,10 @@
     <string name="submit">Add my recipe!</string>
     <string name="drop_down_hint">Select options</string>
     <string-array name="categories">
-        <item>Main Dish</item>
-        <item>Soup/Salad</item>
+        <item>Main Dishes</item>
+        <item>Soup</item>
         <item>Dessert</item>
         <item>Drink</item>
-        <item>Appetizers</item>
     </string-array>
     <string-array name="levels">
         <item>Easy</item>

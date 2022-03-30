@@ -14,17 +14,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
-import comp3350.iRecipe.Business.SearchRecipe;
-import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -145,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showAddRecipe(View view)     // add recipe button onClick()
     {
-        Intent intent = new Intent(this, AddRecipe.class);
+        Intent intent = new Intent(this, AddRecipeActivity.class);
         startActivity(intent);
     }
 }
