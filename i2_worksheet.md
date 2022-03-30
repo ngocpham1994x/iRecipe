@@ -42,6 +42,17 @@ Links to project where we use a well-known design pattern:
 Iteration 1 Feedback fixes
 --------------
 
-Provide a link to an issue opened by the grader.
+- Fixed Search Problem: [first fixed](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/55)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/bfa69b59e50837c3e4a843c769b4be0a02afc4f4)
+, [second fixed](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/62)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/d144a207e2b78818f587d7f7240b413934c059ce)
+    
+    The problem with the code is that we seperate the Search funtion from the interface, it was pointed out that seraching for Recipe should be a part of the Interface as well. So I added the serach function to the interface, and modify the stub database
+    to use the SearchFunction already written for the old implementation. I also added the search function in the Real database to use query for the search. The second was to fix some error loading Recipe Object from database.
 
-Explain what the issue was, and why it was flagged. Explain what you did to refactor or fix your code to address the issue. Provide links to the commits where you fixed the issue.
+- OCP violation fixed: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/60)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/f671acd75740039815b3ce1eb8e2970d6628682b)
+
+    We have code that repeat itself and it is hard to make modification in the future. So we change the code to use a couple arrays to store the resources and let the program to iterate through them itself. So that if we want to add more resources, we can just 
+    add them to the array and don't have to modify the code
+
+- Fixed not using exists construtor to reduce code repeat: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/58)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/2479b4cfe13dfd395d0ab49188865dc1ed0cd224)
+
+
