@@ -19,6 +19,9 @@ DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate 
 - [changes for real database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/868b03b99c3f2866438ef8b16750d5a6f115edd4)
 - copying database to device (line40)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java] <br/>
 - Linking Real Database: (line 35)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java] <br/>
+- Removed Data Structure:[link to issue](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/c0a8f094733366be7c6d7defa3e9b5ba02fc7b63)<br/>
+
+DUPLICATE RECIPES:
 
 
 
