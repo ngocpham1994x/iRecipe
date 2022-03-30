@@ -17,6 +17,8 @@ import comp3350.iRecipe.Persistence.RecipeListUnitTest;
         SearchRecipeTest.class,
         RecipeListIT.class,
         CommentIT.class
+
+
 })
 
 public class AllTests {
