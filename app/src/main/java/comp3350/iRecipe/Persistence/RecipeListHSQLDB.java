@@ -36,28 +36,6 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             ResultSet rs = st.executeQuery("SELECT * FROM Recipe");
             while(rs.next()){
                 Recipe recipe = fromResultSet(rs,con);
-                PreparedStatement st2 = con.prepareStatement("SELECT * FROM INGREDIENTS WHERE RECIPENAME=?");
-                st2.setString(1,recipe.getName());
-
-                ResultSet rs2 = st2.executeQuery();
-                while(rs2.next()){
-                    String ingred = rs2.getString("INGREDIENT");
-                    recipe.addToIngredients(ingred);
-                }
-                rs2.close();
-                st2.close();
-
-                PreparedStatement st3 = con.prepareStatement("SELECT * FROM KEYINGREDIENTS WHERE RECIPENAME=?");
-                st3.setString(1,recipe.getName());
-
-                ResultSet rs3 = st3.executeQuery();
-                while(rs3.next()){
-                    String keyIngred = rs3.getString("KEYINGREDIENT");
-                    recipe.addToKeyIngredients(keyIngred);
-                }
-                rs3.close();
-                st3.close();
-
                 list_from_database.add(recipe);
 
             }
