@@ -27,6 +27,9 @@ Retrospective has helped a lot in improving the project-planning. Also all group
 The iteration0 was on time as expected but there were some issues in iteration1 which were pushed to iteration2 and following are the links:
 
 [Search recipe by key](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/3)
+[View recipe description](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/7)
+[View recipe estimate time](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/8)
+[View recipe ingredients](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/10)
 
 
 Design patterns
