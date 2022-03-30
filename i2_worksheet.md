@@ -29,33 +29,35 @@ Design patterns
 
 Links to project where we use a well-known design pattern:
 
-- Singleton: we use Database (HSQL)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f671acd75740039815b3ce1eb8e2970d6628682b/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java]
-  
-- Dependency Injection: mostly everywhere in the source codes. Examples: 
-  
-    - we use it most in Presentation Layer, where we pass the list of all recipes and filter based on category. (Line 27)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/AdapterRecipe.java/#L27] in AdapterRecipe.java, (Line 57)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57] in ListRecipeActivity.java
-      
-    - where we pass the searchByList to limit what we search by (name, ingredients, category). (Line 58)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58] in MainActivity.java
-  
-- Facade: we used Facade where we can search and add recipe easily
-  
-    - (searchByName() )[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java#L12]
-      
-    - (addRecipe())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33] to the end of the list
-      
-    - (addToIngredients())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Objects/Recipe.java#L78]
-      
-    - (removeRecipe())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33] using specified in parameter
-  
-- Chain Of Responsibilities: 
+- Singleton: we use Database [HSQL] (https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f671acd75740039815b3ce1eb8e2970d6628682b/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)
 
-    - (Line 133)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java#L133] in MainActivity.java pass the "searchString" and "searchBy" value to 
-      (Line 43)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L43] ListRecipeActivity.java, it passes the "search by which" responsibility to show search results 
-      ((Line 76)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L76]) when click Search Icon on MainActivity.java
-    
-    - (Line 88)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/AdapterMainPage.java#L88] AdapterMainPage.java 
-      pass the "type" to MainPage.java 
-      (Line 42)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L42] in ListRecipeActivity.java
+- Dependency Injection: mostly everywhere in the source codes. Examples:
+
+    - we use it most in Presentation Layer, where we pass the list of all recipes and filter based on category. [Line 27](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/AdapterRecipe.java/#L27) in AdapterRecipe.java,
+      [Line 57](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57) in ListRecipeActivity.java
+
+    - where we pass the searchByList to limit what we search by (name, ingredients, category).
+      [Line 58](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58) in MainActivity.java
+
+- Facade: we used Facade where we can search and add recipe easily
+
+    - [searchByName()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java#L12)
+
+    - [addRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33) to the end of the list
+
+    - [addToIngredients()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Objects/Recipe.java#L78)
+
+    - [removeRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33) using specified in parameter
+
+- Chain Of Responsibilities:
+
+    - [Line 133](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java#L133) in MainActivity.java pass the "searchString" and "searchBy" value to
+      [Line 43](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L43) ListRecipeActivity.java, it passes the "search by which" responsibility to show search results
+      ([Line 76](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L76)) when click Search Icon on MainActivity.java
+
+    - [Line 88](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/AdapterMainPage.java#L88) AdapterMainPage.java
+      pass the "type" to MainPage.java
+      [Line 42](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L42) in ListRecipeActivity.java
       to be responsible for displaying proper list of recipes based on according category.
 
 Iteration 1 Feedback fixes
