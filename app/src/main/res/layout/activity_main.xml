@@ -101,13 +101,26 @@
             tools:ignore="MissingConstraints" >
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
 
-                android:id="@+id/recyclerView"
-                />
+                android:layout_marginTop="30dp" />
         </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/addButton"
+            android:layout_width="75dp"
+            android:layout_height="74dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/round_button"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:onClick="showAddRecipe"
+            android:src="@drawable/plus_icon"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,UsingOnClickInXml"
+            android:focusable="true" />
 
     </RelativeLayout>
 
