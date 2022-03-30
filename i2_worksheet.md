@@ -24,6 +24,11 @@ Retrospective
 
 Retrospective has helped a lot in improving the project-planning. Also all group members are using Android studio and gitlab for the first time, so there was a bit of confusion especially with using gitlab during past iterations. But team members communicated well, helped each other and also switched the tasks if one was not able to complete it. To have team members on the same page we used google doc to track the workflow and new ideas. We used discord, telegram and sometimes zoom for meetings.
 
+The iteration0 was on time as expected but there were some issues in iteration1 which were pushed to iteration2 and following are the links:
+
+[Search recipe by key](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/3)
+
+
 Design patterns
 --------------
 
