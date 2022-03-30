@@ -5,6 +5,8 @@ import org.junit.runners.Suite;
 
 import comp3350.iRecipe.Business.SearchRecipeTest;
 import comp3350.iRecipe.Objects.RecipeTest;
+import comp3350.iRecipe.Persistence.CommentIT;
+import comp3350.iRecipe.Persistence.RecipeListIT;
 import comp3350.iRecipe.Persistence.RecipeListUnitTest;
 
 
@@ -12,7 +14,9 @@ import comp3350.iRecipe.Persistence.RecipeListUnitTest;
 @Suite.SuiteClasses({
         RecipeListUnitTest.class,
         RecipeTest.class,
-        SearchRecipeTest.class
+        SearchRecipeTest.class,
+        RecipeListIT.class,
+        CommentIT.class
 })
 
 public class AllTests {
