@@ -12,7 +12,10 @@ Classify the debt, and justify why you chose that classification with 1-3 senten
 
 Example of how to link to a diff - click on he commit in the commit log, then click on the margin to the (line)[https://code.cs.umanitoba.ca/3350-winter-2021-a01/sample-project/-/commit/8e38ae9c3084d62adc4ac5fafa3b87d7d862dc26#72899361f89777662df76c5ce0ed847af04dff86_35_41]<br /><br />
 
+There are many instances of our group paying off the techinal dept.Two of the main instances are:<br/>
 
+DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate techinal dept.We used fake Database because it was simpler and lighter weight implentation of functionality. We payed off this technical dept by implementing real Database with HSQLDB
+[Database file](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/63-retrospectice-paying-off-technical-depth/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)<br/>
 
 
 
