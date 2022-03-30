@@ -30,24 +30,27 @@ Design patterns
 Links to project where we use a well-known design pattern:
 
 - **Singleton**: we use Database [HSQL](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f671acd75740039815b3ce1eb8e2970d6628682b/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)
+    where we instantiate database connection once. 
 
 - **Dependency Injection**: mostly everywhere in the source codes. Examples:
 
     - we use it most in Presentation Layer, where we pass the list of all recipes and filter based on category. [Line 27](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/AdapterRecipe.java/#L27) in AdapterRecipe.java,
-      [Line 57](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57) in ListRecipeActivity.java
+      [Line 57 ListRecipeActivity.java](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57)
 
     - where we pass the searchByList to limit what we search by (name, ingredients).
-      [Line 58](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58) in MainActivity.java
+      [Line 58 MainActivity.java](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58)
 
-- **Facade**: we used Facade where we can search and add recipe easily
+- **Facade**: we used Facade where we can search and add recipe easily when building Presentation Layer (the low level codes are hidden)
 
-    - [searchByName()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java#L12)
+    - [searchByingredients()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Presentation/AddRecipe.java#L127) 
+      is used in [Line 86 of ListRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L86)
 
-    - [addRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33) to the end of the list
+    - [addRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java#L87)
+        is used in [Line 127 of AddRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Presentation/AddRecipe.java#L127)
 
     - [addToIngredients()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Objects/Recipe.java#L78)
 
-    - [removeRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33) using specified in parameter
+    - [removeRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java#L126) using specified in parameter
 
 - **Chain Of Responsibilities**:
 
