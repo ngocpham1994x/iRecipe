@@ -16,7 +16,7 @@ There are many instances of our group paying off the techinal dept.Two of the ma
 
 DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate techinal dept.We used fake Database because it was simpler and lighter weight implentation of functionality. We payed off this technical dept by implementing real Database with HSQL. Also we had to make changes in the project after implementing real Database like 
 - copying database to device (line40)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/868b03b99c3f2866438ef8b16750d5a6f115edd4] <br/>
-- Linking Real Database: (line 35)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java] <br/>
+- Linking Real Database: (line 35)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java] <br/>
 - [Link to Database file](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/63-retrospectice-paying-off-technical-depth/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)<br/>
 - [changes for real database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/868b03b99c3f2866438ef8b16750d5a6f115edd4)
 
