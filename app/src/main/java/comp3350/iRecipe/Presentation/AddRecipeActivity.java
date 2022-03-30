@@ -20,7 +20,7 @@ import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
 import comp3350.iRecipe.R;
 
-public class AddRecipe extends AppCompatActivity implements OnItemSelectedListener {
+public class AddRecipeActivity extends AppCompatActivity implements OnItemSelectedListener {
     String recipeName, category, level;
     int prepTime, cookTime, serving;
     String ingredients, keyIng, instructions;
@@ -93,12 +93,10 @@ public class AddRecipe extends AppCompatActivity implements OnItemSelectedListen
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddRecipe.class);
+                Intent intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
                 startActivity(intent);
 
                 recipeName = rName.getText().toString();
-                //category = cat.getText().toString();
-                //level = lev.getText().toString();
                 prepTime = Integer.parseInt(pt.getText().toString());
                 cookTime = Integer.parseInt(ct.getText().toString());
                 serving = Integer.parseInt(serv.getText().toString());
@@ -109,11 +107,12 @@ public class AddRecipe extends AppCompatActivity implements OnItemSelectedListen
                 String[] ingredTokens = ingredients.split("\\+");
                 ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
 
-                String[] keyTokens = ingredients.split("\\+");
+                String[] keyTokens = keyIng.split("\\+");
                 ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
 
                 Recipe newR = new Recipe(recipeName,category,level,prepTime,cookTime,serving,ingred,key,instructions );
                 addRecipe(newR);
+                finish();
             }
         });
     }
