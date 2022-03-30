@@ -50,13 +50,14 @@ public class CommentHSQLDB {
 
 
         try(Connection con = connection()){
-            PreparedStatement st = con.prepareStatement("INSERT INTO COMMENTS VALUES=(?,?,?,?))");
+            PreparedStatement st = con.prepareStatement("INSERT INTO COMMENTS VALUES(?,?,?,?)");
             st.setString(1,recipeName);
             st.setString(2,comment.getUserName());
             st.setString(3, comment.getComment());
             st.setInt(4,comment.getRating());
 
             st.executeUpdate();
+            st.close();
 
         }catch(SQLException e){
             return false;

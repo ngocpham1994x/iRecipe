@@ -1,4 +1,4 @@
-package comp3350.iRecipe;
+package comp3350.iRecipe.Business;
 
 import static org.junit.Assert.*;
 
@@ -37,12 +37,12 @@ public class SearchRecipeTest {
         recipeList.addRecipe(r2);
 
          //typical test , returns the recipe
-        assertEquals(r1 , SearchRecipe.searchByName("eggs",recipeList.getAllRecipes()));
+        assertEquals(r1 , recipeList.searchByName("eggs"));
 
         // case sensitivity test - should ignore case
-        assertEquals(r1 , SearchRecipe.searchByName("Eggs",recipeList.getAllRecipes()));
+        assertEquals(r1 , recipeList.searchByName("Eggs"));
 
-        assertNotNull(SearchRecipe.searchByName("Pancakes",recipeList.getAllRecipes()));
+        assertNotNull(recipeList.searchByName("Pancakes"));
     }
 
     @Test
@@ -56,10 +56,10 @@ public class SearchRecipeTest {
         recipeList.addRecipe(r2);
         recipeList.addRecipe(r3);
 
-        ArrayList<Recipe> category_list = SearchRecipe.getRecipesByCategory("Main dishes",recipeList.getAllRecipes());
+        ArrayList<Recipe> category_list = recipeList.getRecipesByCategory("Main dishes");
         assertEquals(0 , category_list.size());
 
-        ArrayList<Recipe> category_list_2 = SearchRecipe.getRecipesByCategory("Breakfast",recipeList.getAllRecipes());
+        ArrayList<Recipe> category_list_2 = recipeList.getRecipesByCategory("Breakfast");
         assertEquals(2 , category_list_2.size());
         assertTrue(category_list_2.contains(r1) && !category_list_2.contains(r2));
     }
@@ -80,7 +80,7 @@ public class SearchRecipeTest {
         r1.addToKeyIngredients("item 2");
         r3.addToIngredients("item 2");
 
-        ArrayList<Recipe> listByIngredient = SearchRecipe.searchByIngredients("Item 2", recipeList.getAllRecipes());
+        ArrayList<Recipe> listByIngredient = recipeList.searchByIngredients("Item 2");
         assertEquals(2 , listByIngredient.size());
 
         // Item 2 is not key ingredient in r3
@@ -106,15 +106,15 @@ public class SearchRecipeTest {
         recipeList.addRecipe(r4);
 
         //Should contain the upper four of them
-        ArrayList<Recipe> matchName_1 = SearchRecipe.matchByName("Test", recipeList.getAllRecipes());
+        ArrayList<Recipe> matchName_1 = recipeList.matchByName("Test");
         assertEquals(4,matchName_1.size());
 
         //Should still return 4, Case insensitive
-        ArrayList<Recipe> matchName_2 = SearchRecipe.matchByName("TEST", recipeList.getAllRecipes());
+        ArrayList<Recipe> matchName_2 = recipeList.matchByName("TEST");
         assertEquals(4,matchName_2.size());
 
         //Should still return 4, Even with just a part of the String
-        ArrayList<Recipe> matchName_3 = SearchRecipe.matchByName("TES", recipeList.getAllRecipes());
+        ArrayList<Recipe> matchName_3 = recipeList.matchByName("TES");
         assertEquals(4,matchName_3.size());
 
     }

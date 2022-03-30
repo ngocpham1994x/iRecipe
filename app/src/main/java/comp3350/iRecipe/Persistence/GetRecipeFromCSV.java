@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import comp3350.iRecipe.Objects.Recipe;
 
 
-//This class will be replaced by the Database
+
 public class GetRecipeFromCSV {
 
     //Column number in Recipe.csv
