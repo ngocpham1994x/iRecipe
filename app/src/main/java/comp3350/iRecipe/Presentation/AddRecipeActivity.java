@@ -18,6 +18,7 @@ import java.util.Arrays;
 
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
+import comp3350.iRecipe.Persistence.RecipeListInterface;
 import comp3350.iRecipe.R;
 
 public class AddRecipeActivity extends AppCompatActivity implements OnItemSelectedListener {
@@ -120,7 +121,7 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
     public void onNothingSelected(AdapterView<?> parent){}
 
     public void addRecipe(Recipe r){
-        RecipeListHSQLDB  rl = new RecipeListHSQLDB(MainActivity.getDBPathName());
+        RecipeListInterface rl = new RecipeListHSQLDB(MainActivity.getDBPathName());
         rl.addRecipe(r);
     }
 }
