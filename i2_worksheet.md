@@ -4,13 +4,25 @@ Iteration 2 Worksheet
 Paying off technical debt
 -----------------
 
-Show two instances of your group paying off technical debt. For these two instances:
+There are many instances of our group paying off the techinal dept.Two of the instances are:<br/>
 
-Explain how your are paying off the technical debt.
-Show commits, links to lines in your commit where you paid off technical debt.
-Classify the debt, and justify why you chose that classification with 1-3 sentences.
+DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate techinal dept.We used fake Database because it was simpler and lighter weight implentation of functionality. We payed off this technical dept by implementing real Database with HSQL. Also we had to make changes in the project after implementing real Database some of the links are below:
+- [Link to Database file](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/63-retrospectice-paying-off-technical-depth/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)<br/>
+- [changes for real database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/868b03b99c3f2866438ef8b16750d5a6f115edd4)
+- copying database to device (line40)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java] <br/>
+- Linking Real Database: (line 35)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java] <br/>
 
-Example of how to link to a diff - click on he commit in the commit log, then click on the margin to the (line)[https://code.cs.umanitoba.ca/3350-winter-2021-a01/sample-project/-/commit/8e38ae9c3084d62adc4ac5fafa3b87d7d862dc26#72899361f89777662df76c5ce0ed847af04dff86_35_41]
+DUPLICATE RECIPES:In iteration1, project was using data Structure and the real database. Because of this project was getting all the recipes twice.It was the Prudent and Deliberate debt because we didn't think about the data duplicacy and didn't removed it but when we get to know about it. We payed off the dept by removing the data structure. we had to make some changes in project and links are below:<br/> 
+- (line12)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java]<br/>
+- (line49)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java]<br/>
+- (line39)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/RecipeDetailActivity.java]<br/>
+- (line25)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/test/java/comp3350/iRecipe/SearchRecipeTest.java]<br/>
+- Removed Data Structure:[link to issue](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/c0a8f094733366be7c6d7defa3e9b5ba02fc7b63)<br/>
+
+
+
+
+
 
 SOLID
 -----
@@ -22,7 +34,15 @@ Provide a link to the issue you created here.
 Retrospective
 --------------
 
-Describe how the retrospective has changed the way you are doing your project. Is there evidence of the change in estimating/committing/peer review/timelines/testing? Provide those links and evidence here - or explain why there is not evidence.
+Retrospective has helped a lot in improving the project-planning. Also all group members are using Android studio and gitlab for the first time, so there was a bit of confusion especially with using gitlab during past iterations. But team members communicated well, helped each other and also switched the tasks if one was not able to complete it. To have team members on the same page we used google doc to track the workflow and new ideas. We used discord, telegram and sometimes zoom for meetings.
+
+The iteration0 was on time as expected but there were some issues in iteration1 which were pushed to iteration2 and following are the links:
+
+[Search recipe by key](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/3) <br />
+[View recipe description](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/7)<br />
+[View recipe estimate time](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/8)<br />
+[View recipe ingredients](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/10)<br />
+
 
 Design patterns
 --------------
@@ -79,4 +99,8 @@ Iteration 1 Feedback fixes
 
 - Fixed not using exists constructor to reduce code repeat: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/58)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/2479b4cfe13dfd395d0ab49188865dc1ed0cd224)
 
+
+i2_worksheet.md
+Explain what the issue was, and why it was flagged. Explain what you did to refactor or fix your code to address the issue. Provide links to the commits where you fixed the issue.
+=======
 
