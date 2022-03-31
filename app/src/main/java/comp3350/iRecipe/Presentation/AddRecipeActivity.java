@@ -21,36 +21,39 @@ import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
 import comp3350.iRecipe.R;
 
 public class AddRecipeActivity extends AppCompatActivity implements OnItemSelectedListener {
+    //variables for the recipe object
     String recipeName, category, level;
     int prepTime, cookTime, serving;
     String ingredients, keyIng, instructions;
 
-    EditText rName, cat, lev, pt, ct, serv, ingr, key, instr;
+    //variables for reading from the input
+    EditText recipeNameIn, categoryIn, levelIn, prepTimeIn, cookTimeIn, servingIn, ingredientsIn, keyIngIn, instructionsIn;
 
+    //other variables for button, spinners and arrays for populating spinner
     Button button;
-    Spinner one , two;
-    String[] cats, levs;
+    Spinner categorySelector , levelSelector;
+    String[] categoryArray, levelArray;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
 
-        rName = findViewById(R.id.recipeName);
+        recipeNameIn = findViewById(R.id.recipeName);
 
         /**Spinner for categories*/
-        cats = getResources().getStringArray(R.array.categories);
-        one = findViewById(R.id.recipeCategory);
+        categoryArray = getResources().getStringArray(R.array.categories);
+        categorySelector = findViewById(R.id.recipeCategory);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        one.setAdapter(adapter);
-        one.setOnItemSelectedListener(new OnItemSelectedListener() {
+        categorySelector.setAdapter(adapter);
+        categorySelector.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
                 category = (String) adapterView.getItemAtPosition(pos);
                 if(pos>0){
-                    Toast.makeText(adapterView.getContext(), (CharSequence) cat, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(adapterView.getContext(), (CharSequence) categoryIn, Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -61,17 +64,17 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
         });
 
         /**Spinner for levels*/
-        levs = getResources().getStringArray(R.array.levels);
-        two = findViewById(R.id.recipeLevel);
+        levelArray = getResources().getStringArray(R.array.levels);
+        levelSelector = findViewById(R.id.recipeLevel);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.levels, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        two.setAdapter(adapter2);
-        two.setOnItemSelectedListener(new OnItemSelectedListener() {
+        levelSelector.setAdapter(adapter2);
+        levelSelector.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
                 level = (String) adapterView.getItemAtPosition(pos);
                 if(pos>0) {
-                    Toast.makeText(adapterView.getContext(), (CharSequence) lev, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(adapterView.getContext(), (CharSequence) levelIn, Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -81,24 +84,24 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
             }
         });
 
-        pt = findViewById(R.id.prep_time);
-        ct = findViewById(R.id.cook_time);
-        serv = findViewById(R.id.servings);
-        ingr = findViewById(R.id.ingredients);
-        key = findViewById(R.id.keyIng);
-        instr = findViewById(R.id.instructions);
+        prepTimeIn = findViewById(R.id.prep_time);
+        cookTimeIn = findViewById(R.id.cook_time);
+        servingIn = findViewById(R.id.servings);
+        ingredientsIn = findViewById(R.id.ingredients);
+        keyIngIn = findViewById(R.id.keyIng);
+        instructionsIn = findViewById(R.id.instructions);
 
         button = findViewById(R.id.submitRecipe);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recipeName = rName.getText().toString();
-                prepTime = Integer.parseInt(pt.getText().toString());
-                cookTime = Integer.parseInt(ct.getText().toString());
-                serving = Integer.parseInt(serv.getText().toString());
-                ingredients = ingr.getText().toString();
-                keyIng = key.getText().toString();
-                instructions = instr.getText().toString();
+                recipeName = recipeNameIn.getText().toString();
+                prepTime = Integer.parseInt(prepTimeIn.getText().toString());
+                cookTime = Integer.parseInt(cookTimeIn.getText().toString());
+                serving = Integer.parseInt(servingIn.getText().toString());
+                ingredients = ingredientsIn.getText().toString();
+                keyIng = keyIngIn.getText().toString();
+                instructions = instructionsIn.getText().toString();
 
                 String[] ingredTokens = ingredients.split("[\\s,]+");
                 ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
