@@ -88,34 +88,43 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
             @Override
             public void onClick(View view) {
                 recipeName = recipeNameIn.getText().toString();
-                prepTime = Integer.parseInt(prepTimeIn.getText().toString());
-                cookTime = Integer.parseInt(cookTimeIn.getText().toString());
-                serving = Integer.parseInt(servingIn.getText().toString());
-                ingredients = ingredientsIn.getText().toString();
-                keyIng = keyIngIn.getText().toString();
-                instructions = instructionsIn.getText().toString();
+                try {
+                    prepTime = Integer.parseInt(prepTimeIn.getText().toString());
+                    cookTime = Integer.parseInt(cookTimeIn.getText().toString());
+                    serving = Integer.parseInt(servingIn.getText().toString());
 
-                String[] ingredTokens = ingredients.split("[\\s,]+");
-                ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
 
-                String[] keyTokens = keyIng.split("[\\s,]+");
-                ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
+                    ingredients = ingredientsIn.getText().toString();
+                    keyIng = keyIngIn.getText().toString();
+                    instructions = instructionsIn.getText().toString();
 
-                Recipe newR = new Recipe(recipeName,category,level,prepTime,cookTime,serving,ingred,key,instructions );
-                boolean added = addRecipe(newR);
-                Intent intent;
-                if(!added){
-                    CharSequence c = "A recipe with this name exists already! Try adding another.";
+                    String[] ingredTokens = ingredients.split("[\\s,]+");
+                    ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
+
+                    String[] keyTokens = keyIng.split("[\\s,]+");
+                    ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
+
+                    Recipe newR = new Recipe(recipeName, category, level, prepTime, cookTime, serving, ingred, key, instructions);
+                    boolean added = addRecipe(newR);
+                    Intent intent;
+                    if (!added) {
+                        CharSequence c = "A recipe with this name exists already! Try adding another.";
+                        Toast.makeText(getApplicationContext(), c, Toast.LENGTH_LONG).show();
+                        intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
+                    } else {
+                        CharSequence c = "Recipe added!";
+                        Toast.makeText(getApplicationContext(), c, Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getApplicationContext(), MainActivity.class);
+                    }
+                    startActivity(intent);
+                    finish();
+                }
+                catch(Exception e)
+                {
+                    CharSequence c = "Didn't enter valid PrepTime, CookTime or Serving Data";
                     Toast.makeText(getApplicationContext(), c , Toast.LENGTH_LONG).show();
-                    intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
                 }
-                else{
-                    CharSequence c = "Recipe added!";
-                    Toast.makeText(getApplicationContext(), c , Toast.LENGTH_SHORT).show();
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                }
-                startActivity(intent);
-                finish();
+
             }
         });
     }
