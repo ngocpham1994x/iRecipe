@@ -14,9 +14,32 @@
     <string name="search_by">Search By</string>
     <string name="cook_level">cook_level</string>
     <string name="prep_time">prep_time</string>
-    <string name="ingredients">ingredients</string>
-    <string name="directions">directions</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="directions">Directions</string>
     <string name="actual_description">actual_description</string>
     <string name="cook_time">cook_time</string>
     <string name="recipe_image">recipe_image</string>
+    <string name="add_recipe">Add your own recipe here!</string>
+    <string name="add_recipe_name">Enter recipe name</string>
+    <string name="add_category">Select the category</string>
+    <string name="add_level">Select the level</string>
+    <string name="add_prepT">Enter prep time in minutes</string>
+    <string name="add_cookingT">Enter cooking time in minutes</string>
+    <string name="add_servings">Enter number of servings</string>
+    <string name="add_ingredients">Enter ingredients of the recipe separated by commas</string>
+    <string name="add_keyIng">Enter the key ingredients of this recipe separated by commas</string>
+    <string name="add_instructions">Enter the instructions</string>
+    <string name="submit">Add my recipe!</string>
+    <string name="drop_down_hint">Select options</string>
+    <string-array name="categories">
+        <item>Main Dishes</item>
+        <item>Soup</item>
+        <item>Dessert</item>
+        <item>Drink</item>
+    </string-array>
+    <string-array name="levels">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
 </resources>

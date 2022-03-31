@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -96,7 +97,13 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
 
     @Override
     public int getItemCount() {
-        return card_image.length;
+        if (card_image.length == card_image1.length && card_image1.length == card_text.length && card_text.length == card_back.length && card_back.length == card_type.length)
+            return card_image.length;
+        else {
+            Toast.makeText(context, "Card Arrays have incorrect length",
+                    Toast.LENGTH_LONG).show();
+            return -1;
+        }
     }
 
     public class MyAdapter extends RecyclerView.ViewHolder {

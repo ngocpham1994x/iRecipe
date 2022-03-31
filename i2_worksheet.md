@@ -49,19 +49,58 @@ Design patterns
 
 Links to project where we use a well-known design pattern:
 
-- Singleton: we use Database (HSQL)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f671acd75740039815b3ce1eb8e2970d6628682b/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java]
-- Dependency Injection: mostly everywhere in the source codes. Examples: 
-    - we use it most in Presentation Layer, where we pass the list of all recipes and filter based on category. (Line 27)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/AdapterRecipe.java/#L27] in AdapterRecipe.java, (Line 57)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57] in ListRecipeActivity.java
-    - where we pass the searchByList to limit what we search by (name, ingredients, category). (Line 58)[https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58] in MainActivity.java
-- Facade: we used Facade where we can search and add recipe easily
-    - (searchByName() )[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java#L12]
-    - (addRecipe())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33] to the end of the list
-    - (addToIngredients())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Objects/Recipe.java#L78]
-    - (removeRecipe())[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Persistence/RecipeList.java#L33] using specified in parameter
-  
+- **Singleton**: we use Database [HSQL](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f671acd75740039815b3ce1eb8e2970d6628682b/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)
+    where we instantiate database connection once. 
+
+- **Dependency Injection**: mostly everywhere in the source codes. Examples:
+
+    - we use it most in Presentation Layer, where we pass the list of all recipes and filter based on category. [Line 27](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/AdapterRecipe.java/#L27) in AdapterRecipe.java,
+      [Line 57 ListRecipeActivity.java](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java/#L57)
+
+    - where we pass the searchByList to limit what we search by (name, ingredients).
+      [Line 58 MainActivity.java](https://code.cs.umanitoba.ca/-/ide/project/winter-2022-a02/group-10/irecipe/tree/main/-/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java/#L58)
+
+- **Facade**: we used Facade where we can search and add recipe easily when building Presentation Layer (the low level codes are hidden)
+
+    - [searchByingredients()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Presentation/AddRecipe.java#L127) 
+      is used in [Line 86 of ListRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L86)
+
+    - [addRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java#L87)
+        is used in [Line 127 of AddRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Presentation/AddRecipe.java#L127)
+
+    - [addToIngredients()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Objects/Recipe.java#L78)
+
+    - [removeRecipe()](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/f8221e547cda55cd2fe3416aa4866e565a1aeb92/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java#L126) using specified in parameter
+
+- **Chain Of Responsibilities**:
+
+    - [Line 133 MainActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/main/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java#L133) passes the "searchString" and "searchBy" value to
+      [Line 43 ListRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L43) , it passes the search-by-which responsibility to show search results on 
+      ([Line 76](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L76)) when click on search icon on MainActivity.java
+
+    - [Line 89 AdapterMainPage.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5245c02c719f52cafc1e856f62d6ffc98b48651b/app/src/main/java/comp3350/iRecipe/Presentation/AdapterMainPage.java#L89)
+      passes the "type" to 
+      [Line 42 ListRecipeActivity.java](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/5b3ca1ec9bc057f6b1b7988b8f7a9c65c908c4b0/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L42)
+       to be responsible for displaying proper list of recipes based on according category.
+
 Iteration 1 Feedback fixes
 --------------
 
-Provide a link to an issue opened by the grader.
+- Fixed Search Problem: [first fixed](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/55)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/bfa69b59e50837c3e4a843c769b4be0a02afc4f4)
+, [second fixed](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/62)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/d144a207e2b78818f587d7f7240b413934c059ce)
+    
+    The problem with the code is that we separate the Search function from the interface, it was pointed out that searching for Recipe should be a part of the Interface as well. So we added the search function to the interface, and modify the stub database
+    to use the SearchFunction already written for the old implementation. We also added the search function in the Real database to use query for the search. The second was to fix some error loading Recipe Object from database.
 
+- OCP violation fixed: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/60)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/f671acd75740039815b3ce1eb8e2970d6628682b)
+
+    We have code that repeat itself and it is hard to make modification in the future. So we change the code to use a couple arrays to store the resources and let the program to iterate through them itself. So that if we want to add more resources, we can just 
+    add them to the array and don't have to modify the code
+
+- Fixed not using exists constructor to reduce code repeat: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/58)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/2479b4cfe13dfd395d0ab49188865dc1ed0cd224)
+
+
+i2_worksheet.md
 Explain what the issue was, and why it was flagged. Explain what you did to refactor or fix your code to address the issue. Provide links to the commits where you fixed the issue.
+=======
+
