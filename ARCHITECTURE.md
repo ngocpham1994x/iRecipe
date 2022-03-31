@@ -1,4 +1,4 @@
-# ARCHITECTURE.md
+ # ARCHITECTURE.md
 
 ## SearchRecipe.java
 This file inplements the all different types of search, like search by Ingredients or by category or by name.
@@ -35,7 +35,7 @@ RecipeDetailActivity is for recipe Ingredients and instrucitons. It will be impl
 
 
 
-![flow chart]( img_source/chart.jpg)
+![flow chart]( chart.jpg)
 
 ## GUI templates
 
