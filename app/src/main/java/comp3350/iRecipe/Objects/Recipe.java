@@ -83,6 +83,11 @@ public class Recipe {
     public void addToKeyIngredients(String ingred){
         keyIngredients.add(ingred);
 
+        if(!ingredients.contains(ingred))
+        {
+            this.addToIngredients(ingred);
+        }
+
     }
 
     public void set_image_code(int code)

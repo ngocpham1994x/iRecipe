@@ -109,7 +109,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
             android:hint="@string/add_servings"
-            android:inputType="text"
+            android:inputType="number"
             android:textColorHint="#757575"
             android:textSize="30sp" />
 
