@@ -10,13 +10,13 @@ DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate 
 - [Link to Database file](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/63-retrospectice-paying-off-technical-depth/app/src/main/java/comp3350/iRecipe/Persistence/RecipeListHSQLDB.java)<br/>
 - [changes for real database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/868b03b99c3f2866438ef8b16750d5a6f115edd4)
 - copying database to device [line40 of mainActivity](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java#L40) <br/>
-- Linking Real Database: (line 35)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L35] <br/>
+- Linking Real Database: [line 35 of ListRecipeActivity](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L35) <br/>
 
 DUPLICATE RECIPES:In iteration1, project was using data Structure and the real database. Because of this project was getting all the recipes twice.It was the Prudent and Deliberate debt because we didn't think about the data duplicacy and didn't removed it but when we get to know about it. We payed off the dept by removing the data structure. we had to make some changes in project and links are below:<br/> 
-- (line12)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java]<br/>
-- (line49)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java]<br/>
-- (line39)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/RecipeDetailActivity.java]<br/>
-- (line25)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/test/java/comp3350/iRecipe/SearchRecipeTest.java]<br/>
+- [line12 of SearchRecipe](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java#L12)<br/>
+- [line49 of ListRecipeActivity](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java#L49)<br/>
+- [line39 of RecipeDetailActivity](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/RecipeDetailActivity.java)<br/>
+- [line25 of SearchRecipeTest](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/test/java/comp3350/iRecipe/SearchRecipeTest.java#L25)<br/>
 - Removed Data Structure:[link to issue](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/c0a8f094733366be7c6d7defa3e9b5ba02fc7b63)<br/>
 
 
