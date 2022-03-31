@@ -100,7 +100,4 @@ Iteration 1 Feedback fixes
 - Fixed not using exists constructor to reduce code repeat: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/58)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/2479b4cfe13dfd395d0ab49188865dc1ed0cd224)
 
 
-i2_worksheet.md
-Explain what the issue was, and why it was flagged. Explain what you did to refactor or fix your code to address the issue. Provide links to the commits where you fixed the issue.
-=======
 
