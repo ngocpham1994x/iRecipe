@@ -21,8 +21,8 @@
     <string name="recipe_image">recipe_image</string>
     <string name="add_recipe">Add your own recipe here!</string>
     <string name="add_recipe_name">Enter recipe name</string>
-    <string name="add_category">Select the category</string>
-    <string name="add_level">Select the level</string>
+    <string name="add_category">Select category. Default category is Main Dishes.</string>
+    <string name="add_level">Select level. Default level is Easy.</string>
     <string name="add_prepT">Enter prep time in minutes</string>
     <string name="add_cookingT">Enter cooking time in minutes</string>
     <string name="add_servings">Enter number of servings</string>

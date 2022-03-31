@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -52,15 +53,10 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
                 category = (String) adapterView.getItemAtPosition(pos);
-                if(pos>0){
-                    Toast.makeText(adapterView.getContext(), (CharSequence) categoryIn, Toast.LENGTH_SHORT).show();
-                }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+            public void onNothingSelected(AdapterView<?> adapterView){}
         });
 
         /**Spinner for levels*/
@@ -73,15 +69,10 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id) {
                 level = (String) adapterView.getItemAtPosition(pos);
-                if(pos>0) {
-                    Toast.makeText(adapterView.getContext(), (CharSequence) levelIn, Toast.LENGTH_SHORT).show();
-                }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+            public void onNothingSelected(AdapterView<?> adapterView) {}
         });
 
         prepTimeIn = findViewById(R.id.prep_time);
@@ -110,8 +101,18 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
                 ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
 
                 Recipe newR = new Recipe(recipeName,category,level,prepTime,cookTime,serving,ingred,key,instructions );
-                addRecipe(newR);
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                boolean added = addRecipe(newR);
+                Intent intent;
+                if(!added){
+                    CharSequence c = "A recipe with this name exists already! Try adding another.";
+                    Toast.makeText(getApplicationContext(), c , Toast.LENGTH_LONG).show();
+                    intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
+                }
+                else{
+                    CharSequence c = "Recipe added!";
+                    Toast.makeText(getApplicationContext(), c , Toast.LENGTH_SHORT).show();
+                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }
@@ -122,8 +123,8 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
 
     public void onNothingSelected(AdapterView<?> parent){}
 
-    public void addRecipe(Recipe r){
+    public boolean addRecipe(Recipe r){
         RecipeListHSQLDB  rl = new RecipeListHSQLDB(MainActivity.getDBPathName());
-        rl.addRecipe(r);
+        return rl.addRecipe(r);
     }
 }
