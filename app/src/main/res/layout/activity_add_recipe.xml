@@ -6,6 +6,7 @@
     android:background="#dedeff"
     tools:context=".Presentation.AddRecipeActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,11 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo2_semibold"
-            android:textStyle="bold"
             android:gravity="center"
             android:text="@string/add_recipe"
             android:textColor="#000000"
             android:textSize="40sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="20dp" />
 
@@ -39,6 +40,15 @@
             android:textSize="30sp"
             android:visibility="visible" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo2_medium"
+            android:text="@string/add_category"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"/>
+
         <Spinner
             android:id="@+id/recipeCategory"
             android:layout_width="148dp"
@@ -49,6 +59,15 @@
             android:fontFamily="sans-serif-black"
             android:spinnerMode="dropdown"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo2_medium"
+            android:text="@string/add_level"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"/>
 
         <Spinner
             android:id="@+id/recipeLevel"
@@ -139,9 +158,9 @@
             android:layout_marginTop="20dp"
             android:background="@android:color/holo_blue_dark"
             android:fontFamily="@font/baloo2_semibold"
-            android:textColor="@color/white"
-            android:textStyle="bold"
+            android:text="@string/submit"
             android:textAllCaps="true"
-            android:text="@string/submit" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>
