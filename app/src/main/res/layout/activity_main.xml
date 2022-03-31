@@ -32,7 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
-                android:hint="@string/drop_down_hint"
                 tools:ignore="SpeakableTextPresentCheck">
 
             </AutoCompleteTextView>
@@ -116,12 +115,12 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:background="@drawable/round_button"
-            android:scaleType="fitCenter"
             android:clickable="true"
+            android:focusable="true"
             android:onClick="showAddRecipe"
+            android:scaleType="fitCenter"
             android:src="@drawable/plus_icon"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,UsingOnClickInXml"
-            android:focusable="true" />
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,UsingOnClickInXml" />
 
     </RelativeLayout>
 
