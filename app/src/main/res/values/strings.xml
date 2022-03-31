@@ -26,8 +26,8 @@
     <string name="add_prepT">Enter prep time in minutes</string>
     <string name="add_cookingT">Enter cooking time in minutes</string>
     <string name="add_servings">Enter number of servings</string>
-    <string name="add_ingredients">Enter ingredients of the recipe with space between each (eg- chicken rice salt)</string>
-    <string name="add_keyIng">Enter the key ingredients of this recipe with space between each</string>
+    <string name="add_ingredients">Enter ingredients of the recipe separated by commas</string>
+    <string name="add_keyIng">Enter the key ingredients of this recipe separated by commas</string>
     <string name="add_instructions">Enter the instructions</string>
     <string name="submit">Add my recipe!</string>
     <string name="drop_down_hint">Select options</string>

@@ -69,8 +69,8 @@ Iteration 1 Feedback fixes
 - Fixed Search Problem: [first fixed](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/55)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/bfa69b59e50837c3e4a843c769b4be0a02afc4f4)
 , [second fixed](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/62)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/d144a207e2b78818f587d7f7240b413934c059ce)
     
-    The problem with the code is that we seperate the Search funtion from the interface, it was pointed out that seraching for Recipe should be a part of the Interface as well. So I added the serach function to the interface, and modify the stub database
-    to use the SearchFunction already written for the old implementation. I also added the search function in the Real database to use query for the search. The second was to fix some error loading Recipe Object from database.
+    The problem with the code is that we separate the Search function from the interface, it was pointed out that searching for Recipe should be a part of the Interface as well. So we added the search function to the interface, and modify the stub database
+    to use the SearchFunction already written for the old implementation. We also added the search function in the Real database to use query for the search. The second was to fix some error loading Recipe Object from database.
 
 - OCP violation fixed: [dev task](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/60)->[commit](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/f671acd75740039815b3ce1eb8e2970d6628682b)
 

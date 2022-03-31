@@ -34,7 +34,6 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
 
-
         rName = findViewById(R.id.recipeName);
 
         /**Spinner for categories*/
@@ -93,9 +92,6 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
-                startActivity(intent);
-
                 recipeName = rName.getText().toString();
                 prepTime = Integer.parseInt(pt.getText().toString());
                 cookTime = Integer.parseInt(ct.getText().toString());
@@ -104,14 +100,16 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
                 keyIng = key.getText().toString();
                 instructions = instr.getText().toString();
 
-                String[] ingredTokens = ingredients.split("\\+");
+                String[] ingredTokens = ingredients.split("[\\s,]+");
                 ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
 
-                String[] keyTokens = keyIng.split("\\+");
+                String[] keyTokens = keyIng.split("[\\s,]+");
                 ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
 
                 Recipe newR = new Recipe(recipeName,category,level,prepTime,cookTime,serving,ingred,key,instructions );
                 addRecipe(newR);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
