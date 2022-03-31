@@ -4,14 +4,6 @@ Iteration 2 Worksheet
 Paying off technical debt
 -----------------
 
-Show two instances of your group paying off technical debt. For these two instances:
-
-Explain how your are paying off the technical debt.
-Show commits, links to lines in your commit where you paid off technical debt.
-Classify the debt, and justify why you chose that classification with 1-3 sentences.
-
-Example of how to link to a diff - click on he commit in the commit log, then click on the margin to the (line)[https://code.cs.umanitoba.ca/3350-winter-2021-a01/sample-project/-/commit/8e38ae9c3084d62adc4ac5fafa3b87d7d862dc26#72899361f89777662df76c5ce0ed847af04dff86_35_41]<br /><br />
-
 There are many instances of our group paying off the techinal dept.Two of the instances are:<br/>
 
 DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate techinal dept.We used fake Database because it was simpler and lighter weight implentation of functionality. We payed off this technical dept by implementing real Database with HSQL. Also we had to make changes in the project after implementing real Database some of the links are below:
@@ -20,7 +12,7 @@ DATABASE:In iteration1 we were using fake Database which was Prudent Deliberate 
 - copying database to device (line40)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/MainActivity.java] <br/>
 - Linking Real Database: (line 35)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/868b03b99c3f2866438ef8b16750d5a6f115edd4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java] <br/>
 
-DUPLICATE RECIPES:In iteration1, project was using data Structure and the real database. Because of this project was getting all the recipes twice.It was the Prudent and Deliberate debt. We payed off the dept by removing the data structure and only using the HSQL.<br/> 
+DUPLICATE RECIPES:In iteration1, project was using data Structure and the real database. Because of this project was getting all the recipes twice.It was the Prudent and Deliberate debt because we didn't think about the data duplicacy and didn't removed it but when we get to know about it. We payed off the dept by removing the data structure. we had to make some changes in project and links are below:<br/> 
 - (line12)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Business/SearchRecipe.java]<br/>
 - (line49)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/ListRecipeActivity.java]<br/>
 - (line39)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/blob/59c5740af4a008ec3faf94cfbe13ed9819eae1a4/app/src/main/java/comp3350/iRecipe/Presentation/RecipeDetailActivity.java]<br/>
