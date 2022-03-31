@@ -48,7 +48,7 @@ RecipeDetailActivity is for recipe Ingredients and instrucitons. It will be impl
 
 
 
-![flow chart]( chart.jpg)
+![flow chart]( img_source/chart.jpg)
 
 ## GUI templates
 
