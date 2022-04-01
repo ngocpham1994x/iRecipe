@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:background="#dedeff"
     tools:context=".Presentation.AddRecipeActivity">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,18 +17,19 @@
         android:background="#25F783AF"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo2_semibold"
-            android:gravity="center"
-            android:text="@string/add_recipe"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="20dp" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:fontFamily="@font/baloo2_semibold"
+                android:gravity="center"
+                android:text="@string/add_recipe"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="20dp" />
 
         <EditText
             android:id="@+id/recipeName"
@@ -136,19 +139,22 @@
             android:textColorHint="#757575"
             android:textSize="30sp" />
 
-        <EditText
-            android:id="@+id/instructions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-black"
-            android:gravity="start|top"
-            android:hint="@string/add_instructions"
-            android:inputType="textMultiLine"
-            android:maxLines="20"
-            android:minLines="1"
-            android:textColorHint="#757575"
-            android:textSize="30sp" />
+
+
+            <EditText
+                android:id="@+id/instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="start|top"
+                android:hint="@string/add_instructions"
+                android:inputType="textMultiLine"
+                android:maxLines="20"
+                android:minLines="1"
+                android:textColorHint="#757575"
+                android:textSize="30sp" />
+
 
         <Button
             android:id="@+id/submitRecipe"
@@ -162,5 +168,7 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
