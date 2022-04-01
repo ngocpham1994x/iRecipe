@@ -98,11 +98,17 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
                     keyIng = keyIngIn.getText().toString();
                     instructions = instructionsIn.getText().toString();
 
-                    String[] ingredTokens = ingredients.split("[\\s,]+");
+                    String[] ingredTokens = ingredients.split(",");
                     ArrayList<String> ingred = new ArrayList<>(Arrays.asList(ingredTokens));
+                    for(int i=0; i<ingred.size(); i++){
+                        ingred.set(i, ingred.get(i).trim());
+                    }
 
-                    String[] keyTokens = keyIng.split("[\\s,]+");
+                    String[] keyTokens = keyIng.split(",");
                     ArrayList<String> key = new ArrayList<>(Arrays.asList(keyTokens));
+                    for(int i=0; i<key.size(); i++){
+                        key.set(i, key.get(i).trim());
+                    }
 
                     Recipe newR = new Recipe(recipeName, category, level, prepTime, cookTime, serving, ingred, key, instructions);
                     boolean added = addRecipe(newR);
