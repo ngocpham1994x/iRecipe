@@ -15,9 +15,7 @@ Example of how to link to a diff - click on he commit in the commit log, then cl
 SOLID
 -----
 
-Find a SOLID violation in the project of group with the same group number in the next class over - (n%3)+1 (A03 does A01) Open an issue in their project with the violation, clearly explaining the SOLID violation - specifying the type, provide a link to that issue. Be sure your links in the issues are to specific commits (not to main, or develop as those will be changed).
-
-Provide a link to the issue you created here.
+Solid Violation link: [issue](https://code.cs.umanitoba.ca/winter-2022-a02/group-9/chefsnotes/-/issues/73)
 
 Retrospective
 --------------
