@@ -86,6 +86,10 @@ public class RecipeListHSQLDB implements RecipeListInterface{
     //Return false when we already have a Recipe with the same name
     public boolean addRecipe(Recipe newRecipe){
 
+        if(searchByName(newRecipe.getName()) != null){
+            return false;
+        }
+
         try(Connection con = connection()){
             PreparedStatement st = con.prepareStatement("INSERT INTO Recipe VALUES(?,?,?,?,?,?,?)");
             st.setString(1,newRecipe.getName());
@@ -125,16 +129,16 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
     public boolean removeRecipe(Recipe toRemove){
         try(Connection con = connection()){
-            PreparedStatement st1 = con.prepareStatement("DELETE FROM Ingredients WHERE RecipeName = ?");
-            st1.setString(1,toRemove.getName());
+            PreparedStatement st1 = con.prepareStatement("DELETE FROM Ingredients WHERE UPPER(RecipeName) = ?");
+            st1.setString(1,toRemove.getName().toUpperCase());
             st1.executeUpdate();
 
-            PreparedStatement st2 = con.prepareStatement("DELETE FROM KeyIngredients WHERE RecipeName = ?");
-            st2.setString(1,toRemove.getName());
+            PreparedStatement st2 = con.prepareStatement("DELETE FROM KeyIngredients WHERE UPPER(RecipeName) = ?");
+            st2.setString(1,toRemove.getName().toUpperCase());
             st2.executeUpdate();
 
-            PreparedStatement st3 = con.prepareStatement("DELETE FROM Recipe WHERE RecipeName = ?");
-            st3.setString(1,toRemove.getName());
+            PreparedStatement st3 = con.prepareStatement("DELETE FROM Recipe WHERE UPPER(RecipeName) = ?");
+            st3.setString(1,toRemove.getName().toUpperCase());
             st3.executeUpdate();
 
         }catch(SQLException e){
@@ -148,8 +152,8 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         Recipe recipe = null;
         try(Connection con = connection()){
 
-            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE RECIPENAME = ?");
-            st.setString(1, nameOfRecipe);
+            PreparedStatement st = con.prepareStatement("SELECT * FROM RECIPE WHERE UPPER(RECIPENAME) = ?");
+            st.setString(1, nameOfRecipe.toUpperCase());
             ResultSet rs = st.executeQuery();
             rs.next();
             recipe = fromResultSet(rs,con);
