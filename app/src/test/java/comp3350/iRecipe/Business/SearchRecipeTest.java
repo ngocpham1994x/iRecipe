@@ -2,7 +2,7 @@ package comp3350.iRecipe.Business;
 
 import static org.junit.Assert.*;
 
-
+import android.util.Log;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,7 +39,7 @@ public class SearchRecipeTest {
          //typical test , returns the recipe
         assertEquals(r1 , recipeList.searchByName("eggs"));
 
-        // case sensitivity test - should ignore case
+        // case sensitivity test - should not ignore case
         assertEquals(r1 , recipeList.searchByName("Eggs"));
 
         assertNotNull(recipeList.searchByName("Pancakes"));
