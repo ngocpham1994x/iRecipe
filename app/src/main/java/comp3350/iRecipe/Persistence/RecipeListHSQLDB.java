@@ -161,7 +161,8 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.close();
 
         }catch(SQLException e){
-            Log.e("ErrorHere","Error",e);
+            //Log.e("ErrorHere","Error",e);
+
         }
         return recipe;
     }
@@ -204,7 +205,8 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.close();
 
         }catch(SQLException e){
-            Log.e("ERROR:",e.getMessage());
+            //Log.e("ERROR:",e.getMessage());
+            return list;
         }
 
         return list;
@@ -226,7 +228,8 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.close();
 
         }catch(SQLException e){
-            Log.e("ERROR:",e.getMessage());
+            //Log.e("ERROR:",e.getMessage());
+            return list;
         }
 
         return list;
