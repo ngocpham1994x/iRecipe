@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import comp3350.iRecipe.Objects.Comment;
 import comp3350.iRecipe.Objects.Recipe;
 
-public class CommentHSQLDB {
+public class CommentHSQLDB implements RecipeCommentInterface{
 
     private String dbPath;
 

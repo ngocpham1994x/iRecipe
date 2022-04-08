@@ -196,6 +196,19 @@
         app:layout_constraintTop_toBottomOf="@+id/ingredients"
         app:layout_constraintVertical_bias="0.564" />
 
+    <Button
+        android:id="@+id/viewComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Comment"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/ingredients"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_image"
+        app:layout_constraintVertical_bias="0.411" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

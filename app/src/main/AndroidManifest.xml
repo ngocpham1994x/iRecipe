@@ -9,26 +9,27 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
-
+        <activity
+            android:name=".Presentation.RecipeCommentActivity"
+            android:exported="false" />
         <activity
             android:name=".Presentation.RecipeDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Presentation.ListRecipeActivity"
             android:exported="false" /> <!-- <activity -->
-
         <activity
             android:name=".Presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity android:name=".Presentation.AddRecipeActivity"
-            android:exported="false">
-        </activity>
+        <activity
+            android:name=".Presentation.AddRecipeActivity"
+            android:exported="false"></activity>
     </application>
 
 </manifest>

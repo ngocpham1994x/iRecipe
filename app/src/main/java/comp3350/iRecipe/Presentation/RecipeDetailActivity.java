@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -97,13 +99,19 @@ public class RecipeDetailActivity extends AppCompatActivity {
         {
             System.out.println(e);
             System.out.println("Couldn't find Valid recipe ! Try again !");
-
         }
 
-
-
-
-
-
+        Button myButton = (Button) findViewById(R.id.viewComment);
+        myButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent i = new Intent(RecipeDetailActivity.this, RecipeCommentActivity.class);
+                i.putExtra("name", recipe.getName());
+                startActivity(i);
+            }
+        });
     }
+
+
+
 }
