@@ -95,6 +95,7 @@ public class RecipeCommentActivity extends AppCompatActivity {
                 nameInput.setLayoutParams(lp);
                 final EditText commentInput = new EditText(RecipeCommentActivity.this);
 
+
                 LinearLayout layout = new LinearLayout(RecipeCommentActivity.this);
                 layout.setOrientation(LinearLayout.VERTICAL);
                 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
