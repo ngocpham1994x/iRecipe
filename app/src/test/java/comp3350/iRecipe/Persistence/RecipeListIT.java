@@ -49,12 +49,12 @@ public class RecipeListIT {
         Recipe r1 = new Recipe("recipe 1" , "Main Dishes");
         assertTrue(list.addRecipe(r1));
         assertEquals(11 , list.getAllRecipes().size());
-        assertTrue(list.searchByName("recipe 1").getIngredients().contains("eggs"));
+        assertNotNull(list.searchByName("recipe 1"));
         assertTrue(list.addRecipe(new Recipe("" , "")));
 
         // adding not a valid recipe - duplicate recipe
         assertFalse(list.addRecipe(r1));
-        assertFalse(list.addRecipe(new Recipe(null , "")));
+
 
 
     }
@@ -79,14 +79,14 @@ public class RecipeListIT {
     public void testSearchByName()
     {
         Recipe r1 = new Recipe("RECIPE 1" , "MAIN DISHES");
-        Recipe r2 = new Recipe("recipe 1 " , "Main Dishes");
+        Recipe r2 = new Recipe("recipe 1" , "Main Dishes");
 
-        assertTrue(list.addRecipe(r1));
-        assertTrue(list.addRecipe(r2));
+          assertTrue(list.addRecipe(r1));
+          assertFalse(list.addRecipe(r2));
 
 
-        assertEquals("RECIPE 1" , list.searchByName("RECIPE 1").getName());
-        assertNotEquals("RECIPE 1" , list.searchByName("recipe 1").getName());
+          assertEquals("RECIPE 1" , list.searchByName("RECIPE 1").getName());
+          assertEquals("RECIPE 1" , list.searchByName("recipe 1").getName());
     }
 
     @Test
