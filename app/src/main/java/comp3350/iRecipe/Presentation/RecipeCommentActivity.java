@@ -81,7 +81,6 @@ public class RecipeCommentActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(RecipeCommentActivity.this);
                 builder.setTitle("Rate and Comment!");
 
-                final String[] theText = new String[4];
                 // Set up the input
                 EditText nameInput = new EditText(RecipeCommentActivity.this);
                 RatingBar myBar = new RatingBar(RecipeCommentActivity.this);
