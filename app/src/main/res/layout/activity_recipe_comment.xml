@@ -37,6 +37,7 @@
         app:layout_constraintVertical_bias="0.009" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="587dp"
         android:layout_height="600dp"
         android:background="@drawable/main_backdrop"
@@ -67,5 +68,18 @@
         </ScrollView>
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/commentThisRecipe"
+        android:layout_width="247dp"
+        android:layout_height="64dp"
+        android:text="Comment this Recipe!"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.659" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

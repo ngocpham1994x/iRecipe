@@ -4,10 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,6 +34,7 @@ public class RecipeCommentActivity extends AppCompatActivity {
     RecipeListInterface list;
     RecipeCommentInterface commentList;
     RecyclerView recyclerView_comment;
+    String recipeName;
     static int MAXRATING = 5;
 
     @Override
@@ -39,7 +50,7 @@ public class RecipeCommentActivity extends AppCompatActivity {
         commentList = new CommentHSQLDB(MainActivity.getDBPathName());
 
         Intent intent = getIntent();
-        String recipeName = intent.getStringExtra("name");
+        recipeName = intent.getStringExtra("name");
 
         ArrayList<Comment> comments = commentList.getComments(recipeName);
 
@@ -62,5 +73,77 @@ public class RecipeCommentActivity extends AppCompatActivity {
 
         AdapterComment adapter = new AdapterComment(comments,this);
         recyclerView_comment.setAdapter(adapter);
+
+        Button myButton = (Button) findViewById(R.id.commentThisRecipe);
+        myButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                AlertDialog.Builder builder = new AlertDialog.Builder(RecipeCommentActivity.this);
+                builder.setTitle("Rate and Comment!");
+
+                final String[] theText = new String[4];
+                // Set up the input
+                EditText nameInput = new EditText(RecipeCommentActivity.this);
+                RatingBar myBar = new RatingBar(RecipeCommentActivity.this);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+                myBar.setLayoutParams(lp);
+                myBar.setNumStars(MAXRATING);
+                myBar.setStepSize(1);
+
+                nameInput.setLayoutParams(lp);
+                final EditText commentInput = new EditText(RecipeCommentActivity.this);
+
+                LinearLayout layout = new LinearLayout(RecipeCommentActivity.this);
+                layout.setOrientation(LinearLayout.VERTICAL);
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
+                nameInput.setHint("Your name");
+                commentInput.setSingleLine(false);
+                commentInput.setHint("Your comment");
+                commentInput.setLayoutParams(lp);
+
+
+                layout.addView(nameInput);
+                layout.addView(myBar);
+                layout.addView(commentInput);
+
+                builder.setView(layout);
+
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String name = nameInput.getText().toString();
+                        int value = (int)myBar.getRating();
+                        String comment = commentInput.getText().toString();
+
+                        if( !commentList.addComments(recipeName, new Comment(value,comment,name)) ){
+                            CharSequence c = "You already made comment and rating to this Recipe!";
+                            Toast.makeText(getApplicationContext(), c, Toast.LENGTH_LONG).show();
+                        }else{
+                            CharSequence c = "Comment added!";
+                            Toast.makeText(getApplicationContext(), c, Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(), RecipeCommentActivity.class);
+                            intent.putExtra("name",recipeName);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+            }
+        });
     }
+
+
 }
