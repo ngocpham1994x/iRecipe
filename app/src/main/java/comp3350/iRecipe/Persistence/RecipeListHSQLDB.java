@@ -129,17 +129,20 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
     public boolean removeRecipe(Recipe toRemove){
         try(Connection con = connection()){
-            PreparedStatement st1 = con.prepareStatement("DELETE FROM Ingredients WHERE UPPER(RecipeName) = ?");
-            st1.setString(1,toRemove.getName().toUpperCase());
+            PreparedStatement st1 = con.prepareStatement("DELETE FROM INGREDIENTS WHERE RECIPENAME=?");
+            st1.setString(1,toRemove.getName());
             st1.executeUpdate();
 
-            PreparedStatement st2 = con.prepareStatement("DELETE FROM KeyIngredients WHERE UPPER(RecipeName) = ?");
-            st2.setString(1,toRemove.getName().toUpperCase());
+
+            PreparedStatement st2 = con.prepareStatement("DELETE FROM KEYINGREDIENTS WHERE RECIPENAME=?");
+            st2.setString(1,toRemove.getName());
             st2.executeUpdate();
 
-            PreparedStatement st3 = con.prepareStatement("DELETE FROM Recipe WHERE UPPER(RecipeName) = ?");
-            st3.setString(1,toRemove.getName().toUpperCase());
+
+            PreparedStatement st3 = con.prepareStatement("DELETE FROM RECIPE WHERE RECIPENAME=?");
+            st3.setString(1,toRemove.getName());
             st3.executeUpdate();
+
 
         }catch(SQLException e){
             return false;
@@ -183,7 +186,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
             st.close();
 
         }catch(SQLException e){
-            Log.e("ERROR:",e.getMessage());
+            return list;
         }
 
         return list;

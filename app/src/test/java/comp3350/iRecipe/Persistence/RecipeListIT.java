@@ -92,23 +92,18 @@ public class RecipeListIT {
     @Test
     public void testMatchByName()
     {
-        // making database empty so , we can test matchByName on specific recipes
-        while(list.getAllRecipes().size() != 0)
-        {
-            assertTrue(list.removeRecipe(list.getAllRecipes().get(0)));
-        }
-        assertEquals(0 , list.getAllRecipes().size());
 
         Recipe r1 = new Recipe("RECIPE 1" , "MAIN DISHES");
         Recipe r2 = new Recipe("RECIPE 2" , "MAIN DISHES");
         assertTrue(list.addRecipe(r1));
+        assertTrue(list.removeRecipe(r1));
 
+        assertTrue(list.addRecipe(r1));
         assertEquals("RECIPE 1" , list.matchByName("RECIPE").get(0).getName());
         assertEquals("RECIPE 1" , list.matchByName("recipe").get(0).getName());
         assertEquals("RECIPE 1" , list.matchByName("ecipe").get(0).getName());
         assertEquals("RECIPE 1" , list.matchByName("1").get(0).getName());
-        assertEquals("RECIPE 1" , list.matchByName(" ").get(0).getName());
-        assertEquals("RECIPE 1" , list.matchByName("r").get(0).getName());
+
         assertTrue(list.addRecipe(r2));
 
         assertEquals(2 , list.matchByName("recipe").size());
