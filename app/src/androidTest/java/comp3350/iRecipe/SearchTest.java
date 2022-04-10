@@ -40,7 +40,7 @@ public class SearchTest {
                 .inRoot(isPlatformPopup())
                 .perform(click());
 
-        // type in "banana"
+        // type in "b"
         onView(withId(R.id.searchText)).perform(typeText(testRecipeName));
 
         // click on search icon
@@ -63,7 +63,7 @@ public class SearchTest {
                 .inRoot(isPlatformPopup())
                 .perform(click());
 
-        // type in "banana"
+        // type in "rice"
         onView(withId(R.id.searchText)).perform(typeText(testIngredient));
 
         // click on search icon

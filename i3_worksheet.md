@@ -28,7 +28,7 @@ As a user, I would like to be able to find recipe by its name as well as by its 
 
 I ensure the flow of the test makes the most sense as from the user's point of view since the moment they freshly install and open the app.
 
-I ensure the user is able to view whichever recipe they want to from the search results.
+I ensure the user is able to view recipe they want to from the search results.
 
 Procedures for search by recipe name:
 - User installs the app (fresh install).
