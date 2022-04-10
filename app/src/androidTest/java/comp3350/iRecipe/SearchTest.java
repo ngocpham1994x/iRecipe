@@ -26,10 +26,11 @@ public class SearchTest {
     @Rule
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
 
-    private String testRecipeName = "banana";
+    private String testRecipeName = "b";
+    private String testIngredient = "rice";
 
     @Test
-    public void verifySearchResult()
+    public void verifySearchByRecipeName()
     {
         // select dropdown menu
         onView(withId(R.id.auto_complete_txt)).perform(click());
@@ -48,8 +49,31 @@ public class SearchTest {
         closeSoftKeyboard();
 
         // verify matching
-        onView(withId(R.id.card_recipe)).perform(click());
-        onView(withId(R.id.recipe)).check(matches(withText("Banana Pancakes")));
+        onView(withText("Lasagna Flatbread")).perform(click());
+        onView(withId(R.id.recipe)).check(matches(withText("Lasagna Flatbread")));
+    }
+
+    @Test
+    public void verifySearchByIngredient() {
+        // select dropdown menu
+        onView(withId(R.id.auto_complete_txt)).perform(click());
+
+        // select searchBy "Ingredients" option
+        onView(withText("Ingredients"))
+                .inRoot(isPlatformPopup())
+                .perform(click());
+
+        // type in "banana"
+        onView(withId(R.id.searchText)).perform(typeText(testIngredient));
+
+        // click on search icon
+        onView(withId(R.id.search_icon)).perform(click());
+
+        closeSoftKeyboard();
+
+        // verify matching
+        onView(withText("Chicken Fried Rice")).perform(click());
+        onView(withId(R.id.recipe)).check(matches(withText("Chicken Fried Rice")));
     }
 
 }
