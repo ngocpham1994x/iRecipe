@@ -42,7 +42,6 @@ dependencies {
     implementation group: 'org.hsqldb', name: 'hsqldb', version: '2.4.1'
     implementation 'androidx.navigation:navigation-fragment:2.4.1'
     implementation 'androidx.navigation:navigation-ui:2.4.1'
-    implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
 
