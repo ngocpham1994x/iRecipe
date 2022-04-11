@@ -20,6 +20,9 @@ public class ListAllRecipeTest {
     public void verifyListOfReciped(){
         //select the view all recipe card 
         onView(withText("View all recipes")).perform(click());
+
+        onView(withText("Butter chicken")).perform(click());
+        onView(withId(R.id.recipe)).check(matches(withText("Butter chicken")));
     }
 
 }
