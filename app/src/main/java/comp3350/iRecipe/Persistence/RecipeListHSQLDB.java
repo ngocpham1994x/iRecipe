@@ -129,18 +129,22 @@ public class RecipeListHSQLDB implements RecipeListInterface{
 
     public boolean removeRecipe(Recipe toRemove){
         try(Connection con = connection()){
-            PreparedStatement st1 = con.prepareStatement("DELETE FROM INGREDIENTS WHERE RECIPENAME=?");
-            st1.setString(1,toRemove.getName());
+            PreparedStatement st1 = con.prepareStatement("DELETE FROM INGREDIENTS WHERE UPPER(RECIPENAME)=?");
+            st1.setString(1,toRemove.getName().toUpperCase());
             st1.executeUpdate();
 
 
-            PreparedStatement st2 = con.prepareStatement("DELETE FROM KEYINGREDIENTS WHERE RECIPENAME=?");
-            st2.setString(1,toRemove.getName());
+            PreparedStatement st2 = con.prepareStatement("DELETE FROM KEYINGREDIENTS WHERE UPPER(RECIPENAME)=?");
+            st2.setString(1,toRemove.getName().toUpperCase());
             st2.executeUpdate();
 
+            PreparedStatement st4 = con.prepareStatement("DELETE FROM COMMENTS WHERE UPPER(RECIPENAME)=?");
+            st4.setString(1,toRemove.getName().toUpperCase());
+            st4.executeUpdate();
 
-            PreparedStatement st3 = con.prepareStatement("DELETE FROM RECIPE WHERE RECIPENAME=?");
-            st3.setString(1,toRemove.getName());
+
+            PreparedStatement st3 = con.prepareStatement("DELETE FROM RECIPE WHERE UPPER(RECIPENAME)=?");
+            st3.setString(1,toRemove.getName().toUpperCase());
             st3.executeUpdate();
 
 
