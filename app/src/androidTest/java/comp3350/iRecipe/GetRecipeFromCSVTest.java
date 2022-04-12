@@ -1,19 +1,17 @@
 package comp3350.iRecipe;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-
-
 import java.util.ArrayList;
 
-import comp3350.iRecipe.Persistence.GetRecipeFromCSV;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeList;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
