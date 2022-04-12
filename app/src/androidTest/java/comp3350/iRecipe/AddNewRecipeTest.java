@@ -44,12 +44,13 @@ public class AddNewRecipeTest {
         //number of serving
         onView(withId(R.id.servings)).perform(typeText("2"));
         //ingredients of recipe
-        onView(withId(R.id.ingredients)).perform(typeText("tuna, egg, lemon"));
+        onView(withId(R.id.ingredients)).perform(scrollTo(),typeText("tuna, egg, lemon"));
         //key ingredients
-//        onView(withId(R.id.keyIng)).perform(typeText("tuna"));
+       onView(withId(R.id.keyIng)).perform(scrollTo(),typeText("tuna"));
         //instructions
-//        onView(withId(R.id.instructions)).perform(typeText("Beat eggs and lemon juice in a bowl; stir in Parmesan cheese and bread crumbs to make a paste. Fold in tuna and onion until well-mixed. Season with black pepper. Shape tuna mixture into eight 1-inch-thick patties"));
+       onView(withId(R.id.instructions)).perform(scrollTo(),typeText("Beat eggs and lemon juice in a bowl; stir in Parmesan cheese and bread crumbs to make a paste. Fold in tuna and onion until well-mixed. Season with black pepper. Shape tuna mixture into eight 1-inch-thick patties"));
+       closeSoftKeyboard();
         //button to submit
-        onView(withId(R.id.submitRecipe)).perform(click());
+        onView(withId(R.id.submitRecipe)).perform(scrollTo(),click());
     }
 }
