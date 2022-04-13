@@ -7,8 +7,7 @@ that explain what debt was paid, and what its classification is.
 What technical debt did you leave?
 ==================================
 
-What one item would you like to fix, and can't? Anything you write will not
-be marked negatively. Classify this debt.
+Technical dept is the dept caused by adopting easy way to develop a product which later needs to be refactored. In our project, there are some of the technical depts and one of them is not having specific Id for all the cards in 'AdapterMainPage.java'. we are using array to store all the informaiton of cards and for positioning of the cards, because of this we are using 'withText' in system tesing files instead of using 'withId'. In future if developer's team wanted to change the GUI and edit the text on the cards, then they also have to modify the testing files otherwise the code will throw the error. We are not going to fix it because we have to change alot of things in our logic layer, so we decided to move forward with this technical dept.
 
 Discuss a Feature or User Story that was cut/re-prioritized
 ============================================
