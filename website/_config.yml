@@ -30,8 +30,9 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
+# Remove gem themes. Now using direct stellar theme.
 #theme: minima
-theme: jekyll-theme-stellar
+#theme: jekyll-theme-stellar
 plugins:
   - jekyll-feed
 
