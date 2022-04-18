@@ -1,8 +1,13 @@
 What technical debt has been cleaned up
 ========================================
 
-Show links to a commit where you paid off technical debt. Write 2-5 sentences
-that explain what debt was paid, and what its classification is.
+We had minor technical debt that could not be solved by the end of iteration 2 due to time constraint and higher priorities.
+Our addRecipe method that adds a new recipe to the database checks duplicate recipes by comparing their names only.
+When we would enter a duplicate recipe on our "Add your own recipe!" page to check that the system was successfully not adding
+a duplicate recipe, we found the method to be case sensitive.
+Due to this the system would add for example "chicken rice" and "Chicken rice" despite them being duplicates.
+This was prudent and deliberate. We have now fixed our code and removed the technical debt.
+Link to the commit: [here](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/commit/8acc8c03b7d826b280d660d0f3ac73d3d92820aa)
 
 What technical debt did you leave?
 ==================================
