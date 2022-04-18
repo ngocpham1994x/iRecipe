@@ -7,5 +7,4 @@ title: "iRecipe"
 subtitle: "Group 10"
 ---
 
-I think it's will be there. I think so.
-
+Please view the actual index.html in `_layouts\index.html`
