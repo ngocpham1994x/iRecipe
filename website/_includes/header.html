@@ -1,0 +1,9 @@
+<!-- Header -->
+<header id="header" class="alt">
+    <a href="{{ site.url }}"><span class="logo"><img src="{{ site.logo | absolute_url }}" alt="logo" /></span></a>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.subtitle }}<br />
+    {%- if page.layout == "default" -%}
+    built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
+    {%- endif -%}
+</header>
