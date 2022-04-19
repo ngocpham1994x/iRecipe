@@ -69,5 +69,8 @@ Therefore, Ngoc used `withText()` instead of `withId()` to be able to find and c
 Velocity/teamwork
 =================
 
-Did your estimates get better or worse through the course? Show some
-evidence of the estimates/actuals from tasks.
+Our estimate gets better as time progress in genral. At first, our estimation does not quite matches the time we actually spend, for example, most were short: [Creating Object](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/23), 
+[Creating interface](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/25),[Stub database with file](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/24),
+ [GUI for listing Recipe](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/29), [Move file into pacakages](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/33). 
+ 
+But for the next iteration, some of our task's estimation matches the actaull time spend: [Swithing to read Database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/49), [Refactor previous implementation](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/52), [Adding logic support for new feature](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/53). But some exceed because we are working with new stuffs, such as new GUI, so the estimation was not correct: [GUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/57), [Another GUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/50)
