@@ -25,6 +25,7 @@ public class CommentMockito {
         recipeGetter = mock(RecipeListInterface.class);
     }
 
+    // tests using mockito libraries
     @Test
     public void integrationTest()
     {
