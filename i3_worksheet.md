@@ -17,9 +17,12 @@ Technical dept is the dept caused by adopting easy way to develop a product whic
 Discuss a Feature or User Story that was cut/re-prioritized
 ============================================
 
-When did you change the priority of a Feature or User Story? Why was it
-re-prioritized? Provide a link to the Feature or User Story. This can be from any
-iteration.
+When we started working on the project, a feature about multi-user functionality was added to our list of features. while assigning priorities to all features, we have assigned multi-user functionality to iteration 3 with low priority. Because, we had other important features like RecipeDetail, SearchRecipe, and AddRecipe. Because we wanted to provide a strong recipe base to the users before allowing multiple user accounts.
+
+During iteration 3 planning, we found out that we will only be able to finish one feature for this iteration. Because we were expected to create system tests using espresso which was a completely new technology for us to implement. So, it took a considerable portion of our time. Moreover, we needed to build a static website and a presentation video for the application. Due to all these reasons, we chose to implement the only comment/rate recipe feature over multi-user functionality because the implementation of the comment/rate feature would help many recipe creators to improve their content.
+
+Link : [Multi-user functionality](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/13)
+
 
 Acceptance test/end-to-end
 ==========================
