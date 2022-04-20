@@ -120,7 +120,18 @@
                         </section>
 
                         <section>
-                        <p>Yixi Wu</p>
+                            <h3>Member: Yixi Wu</h3>
+                            <p>Responsibility: Back-end & some front-end</p>
+
+                            <ul class="points">
+                                <li>Implementing back-end with stub database, then change it to real databse with HSQLDB</li>
+                                <li>Provide logic support for getting and sending data between front-end and back-end</li>
+                                <li>Created one front-end page uinsg XML file and android activity class</li>
+                                <li>Wrote accpetance test to test through front-end to back-end</li>
+                                <li>Fixing bugs that came up during development</li>
+                                <li>Improving code quality using agile methodology</li>
+                            </ul>
+
                         </section>
 
                         <section>
@@ -189,6 +200,24 @@
             During iteration 1, we were expected to test logic layer using fake database of recipes. While discussing the implementation, one of our team members,
             Yixi Wu came up with an amazing idea of storing recipe data in .csv file. The reason of that is to make things easier while implementing actual database.
             Because, SQL server creates table directly by reading .csv file. As a result, we saved a lot of our time writing insert queries.
+        </p>
+
+        <h3>
+            What took the most time? The least? Any surprises?
+        </h3>
+
+        <p>
+            The things that took the most time was Database and GUI design. For Database, we need to have some default data that can populate our database(even the stub database), 
+            so that the app wouldn't look so dull. Creating and adding the Recipes for our app really took a long time. And setting up the database in android studio is time consuming
+            as well. Android studio's dependency makes it you have to be an Activity class to have access to assets folder, which creates difficulty for both testing and developing.
+            Another things is that, a changes to the assets folder will not be copied over to where the actual database is stored, you have to un-install the app to make the changes show,
+            which gives us unexpected bugs and took a really long time for us to figure out. For GUI design, most of us don't have enough experience with Android GUI Design, so we have to
+            learn a lot of new things to develop the GUI. It took us a really long time to find suitable component for our App. And leraning takes time, debugging takes time, so the process
+            for GUI is just really time-consuming. The things that took the least time is creating and designing object for the app. We were thinking that "Object belongs to a Data/Persitence Layer,
+            that sounds fancy so it must take us some time to design and implement it!". But in reality, it is not that hard, object is... just object in Java. Figuring out what field should
+            an Recipe Object to have is not that hard. The surprises part is that, creating an Interface is easier than it looks. "Dependency Injection" sounds really fancy, but in the end,
+            It was just using Interface and taking parameter as input. It is amazing that how simple a concept is, that can make our software development much easier in the future, if we can
+            do it right.
         </p>
 
 
