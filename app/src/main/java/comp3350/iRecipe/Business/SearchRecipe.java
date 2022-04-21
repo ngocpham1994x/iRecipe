@@ -6,6 +6,8 @@ import comp3350.iRecipe.Objects.Recipe;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+//This class in only used in iteration one to help us do the searching, for iteration 2 and 3 we are using
+// database to do the searching, please check RecipeListHSQLDB
 public class SearchRecipe {
 
 

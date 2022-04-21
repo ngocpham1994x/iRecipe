@@ -8,9 +8,8 @@ import comp3350.iRecipe.Presentation.MainActivity;
 public class Recipe {
     private String name;            //name of the recipe
 
-    //Maybe we should use enum for these two?
-    private String category;        //Drinks, Main dishes, Soup/Salad, Appetizers, Dessert
-    private String cookingLevel;    //Easy, Medium, hard
+    private Category category;        //Drinks, Main dishes, Soup/Salad, Appetizers, Dessert
+    private CookingLevel cookingLevel;    //Easy, Medium, hard
 
     private int prepTime;
     private int cookTime;
@@ -26,7 +25,7 @@ public class Recipe {
 
 
 
-    public Recipe(String newName, String newCate, String newLevel, int prepTime, int cookTime, int serving, ArrayList<String> newIngred, ArrayList<String> newKeyIngred, String newInstruct){
+    public Recipe(String newName, Category newCate, CookingLevel newLevel, int prepTime, int cookTime, int serving, ArrayList<String> newIngred, ArrayList<String> newKeyIngred, String newInstruct){
         name = newName;
         category = newCate;
         cookingLevel = newLevel;
@@ -40,12 +39,12 @@ public class Recipe {
     }
 
     // second constructor - just to make testing a bit easier
-    public Recipe(String recipeName , String newCategory)
+    public Recipe(String recipeName , Category newCategory)
     {
 
         this(recipeName ,
                 newCategory ,
-                "easy" ,
+                CookingLevel.getCookingLevel("easy") ,
                 10 ,
                 20 ,
                 2 ,
@@ -57,9 +56,9 @@ public class Recipe {
 
     public String getName(){ return name; }
 
-    public String getCategory(){ return category; }
+    public String getCategory(){ return category.toString(); }
 
-    public String getLevel(){ return cookingLevel; }
+    public String getLevel(){ return cookingLevel.toString(); }
 
     public int getCookTime(){ return cookTime;}
 
@@ -82,11 +81,6 @@ public class Recipe {
     //Add key ingredients to Recipe
     public void addToKeyIngredients(String ingred){
         keyIngredients.add(ingred);
-
-        if(!ingredients.contains(ingred))
-        {
-            this.addToIngredients(ingred);
-        }
 
     }
 

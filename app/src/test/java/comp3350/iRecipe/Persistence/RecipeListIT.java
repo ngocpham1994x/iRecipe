@@ -16,6 +16,7 @@ import java.util.Locale;
 
 
 import comp3350.iRecipe.CopyDB;
+import comp3350.iRecipe.Objects.Category;
 import comp3350.iRecipe.Objects.Recipe;
 
 import comp3350.iRecipe.Presentation.MainActivity;
@@ -46,11 +47,11 @@ public class RecipeListIT {
     public void testAddRecipe()
     {
         // adding a valid recipe.
-        Recipe r1 = new Recipe("recipe 1" , "Main Dishes");
+        Recipe r1 = new Recipe("recipe 1" , Category.getCategory("Main dishes"));
         assertTrue(list.addRecipe(r1));
         assertEquals(11 , list.getAllRecipes().size());
         assertNotNull(list.searchByName("recipe 1"));
-        assertTrue(list.addRecipe(new Recipe("" , "")));
+        assertTrue(list.addRecipe(new Recipe("" , Category.getCategory("Main dishes"))));
 
         // adding not a valid recipe - duplicate recipe
         assertFalse(list.addRecipe(r1));
@@ -63,7 +64,7 @@ public class RecipeListIT {
     public void testDeleteRecipe()
     {
         // adding a recipe to test delete
-        Recipe r1 = new Recipe("recipe 1" , "Main Dishes");
+        Recipe r1 = new Recipe("recipe 1" , Category.getCategory("Main dishes"));
         assertTrue(list.addRecipe(r1));
         assertEquals(11 , list.getAllRecipes().size());
 
@@ -78,8 +79,8 @@ public class RecipeListIT {
     @Test
     public void testSearchByName()
     {
-        Recipe r1 = new Recipe("RECIPE 1" , "MAIN DISHES");
-        Recipe r2 = new Recipe("recipe 1" , "Main Dishes");
+        Recipe r1 = new Recipe("RECIPE 1" , Category.getCategory("Main dishes"));
+        Recipe r2 = new Recipe("recipe 1" , Category.getCategory("Main dishes"));
 
           assertTrue(list.addRecipe(r1));
           assertFalse(list.addRecipe(r2));
@@ -93,8 +94,8 @@ public class RecipeListIT {
     public void testMatchByName()
     {
 
-        Recipe r1 = new Recipe("RECIPE 1" , "MAIN DISHES");
-        Recipe r2 = new Recipe("RECIPE 2" , "MAIN DISHES");
+        Recipe r1 = new Recipe("RECIPE 1" , Category.getCategory("Main dishes"));
+        Recipe r2 = new Recipe("RECIPE 2" , Category.getCategory("Main dishes"));
         assertTrue(list.addRecipe(r1));
         assertTrue(list.removeRecipe(r1));
 
