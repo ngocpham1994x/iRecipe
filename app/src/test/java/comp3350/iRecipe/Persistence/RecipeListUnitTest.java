@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import comp3350.iRecipe.Objects.Category;
 import comp3350.iRecipe.Persistence.GetRecipeFromCSV;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeList;
@@ -28,9 +29,9 @@ public class RecipeListUnitTest {
     public void addRecipe_test()
     {
 
-        Recipe r1 = new Recipe("eggs" , "breakfast");
-        Recipe r2 = new Recipe("pancakes" , "dinner");
-        Recipe r3 = new Recipe("pancakes 2" , "breakfast");
+        Recipe r1 = new Recipe("eggs" , Category.getCategory("Main dishes"));
+        Recipe r2 = new Recipe("pancakes" , Category.getCategory("Main dishes"));
+        Recipe r3 = new Recipe("pancakes 2" , Category.getCategory("Main dishes"));
 
         // typical cases
         assertTrue(recipeList.addRecipe(r1));
@@ -64,8 +65,8 @@ public class RecipeListUnitTest {
     @Test
     public void removeRecipeTest()
     {
-        Recipe r1 = new Recipe("eggs" , "breakfast");
-        Recipe r2 = new Recipe("pancakes" , "dinner");
+        Recipe r1 = new Recipe("eggs" , Category.getCategory("Main dishes"));
+        Recipe r2 = new Recipe("pancakes" , Category.getCategory("Main dishes"));
 
         // No recipes exists
         assertFalse("Should return False , r1 does not exists " , recipeList.removeRecipe(r1));
@@ -85,9 +86,9 @@ public class RecipeListUnitTest {
     @Test
     public void getRecipesTest()
     {
-        Recipe r1 = new Recipe("eggs" , "breakfast");
-        Recipe r2 = new Recipe("pancakes" , "dinner");
-        Recipe r3 = new Recipe("pancakes 2" , "breakfast");
+        Recipe r1 = new Recipe("eggs" , Category.getCategory("Main dishes"));
+        Recipe r2 = new Recipe("pancakes" , Category.getCategory("Main dishes"));
+        Recipe r3 = new Recipe("pancakes 2" , Category.getCategory("Main dishes"));
 
         recipeList.addRecipe(r1);
         recipeList.addRecipe(r2);

@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import comp3350.iRecipe.Objects.Category;
+import comp3350.iRecipe.Objects.CookingLevel;
 import comp3350.iRecipe.Objects.Recipe;
 
 
@@ -66,7 +68,7 @@ public class GetRecipeFromCSV {
                 readInstruct.close();
                 instrucIn.close();
 
-                Recipe recipe = new Recipe(data[RECIPENAME], data[CATEGORY], data[COOKINGLEVEL],
+                Recipe recipe = new Recipe(data[RECIPENAME], Category.getCategory(data[CATEGORY]), CookingLevel.getCookingLevel(data[COOKINGLEVEL]),
                         Integer.parseInt(data[PREPTIME]), Integer.parseInt(data[COOKINGTIME]),
                         Integer.parseInt(data[SERVING]), ingred, keyIngred, insturctions);
 

@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import comp3350.iRecipe.Objects.Category;
 import comp3350.iRecipe.Objects.Comment;
 import comp3350.iRecipe.Objects.Recipe;
 
@@ -34,7 +35,7 @@ public class CommentMockito {
 
         //Test for the recipe
         Recipe r1;
-        recipeList.add(new Recipe(recipeName , "Main dishes"));
+        recipeList.add(new Recipe(recipeName , Category.getCategory("Main dishes")));
         when(recipeGetter.searchByName(recipeName)).thenReturn(recipeList.get(0));
 
         r1 = recipeGetter.searchByName(recipeName);

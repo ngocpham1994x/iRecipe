@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import comp3350.iRecipe.Objects.Category;
+import comp3350.iRecipe.Objects.CookingLevel;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.RecipeListHSQLDB;
 import comp3350.iRecipe.Persistence.RecipeListInterface;
@@ -110,7 +112,7 @@ public class AddRecipeActivity extends AppCompatActivity implements OnItemSelect
                         key.set(i, key.get(i).trim());
                     }
 
-                    Recipe newR = new Recipe(recipeName, category, level, prepTime, cookTime, serving, ingred, key, instructions);
+                    Recipe newR = new Recipe(recipeName, Category.getCategory(category), CookingLevel.getCookingLevel(level), prepTime, cookTime, serving, ingred, key, instructions);
                     boolean added = addRecipe(newR);
                     Intent intent;
                     if (!added) {

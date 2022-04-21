@@ -14,8 +14,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
+import comp3350.iRecipe.Objects.Category;
 import comp3350.iRecipe.R;
 
 public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdapter> {
@@ -37,13 +39,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
         R.drawable.round_cocktail,
     };
 
-    String card_text[] = {
-            "View all recipes",
-            "Main dishes",
-            "Soups",
-            "Desserts",
-            "Drinks"
-    };
+    ArrayList<String> card_text;
 
     String card_back[] = {      // color
             "#D6E53935",
@@ -53,17 +49,15 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             "#D6E53935"
     };
 
-    String card_type[] = {
-            "All",
-            "Main dishes",
-            "Soup",
-            "Dessert",
-            "Drink"
-    };
-
-
     public AdapterMainPage(Context context) {
         this.context = context;
+
+        card_text = new ArrayList<>();
+        card_text.add("View all recipes");
+        for(Category e: Category.values()){
+            if(!e.equals(Category.INVALID_CATEGORY))
+                card_text.add(e.toString());
+        }
     }
 
     @NonNull
@@ -78,7 +72,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
 
         holder.image.setImageResource(card_image[position]);
         holder.image1.setImageResource(card_image1[position]);
-        holder.text.setText(card_text[position]);
+        holder.text.setText(card_text.get(position));
         holder.back.setBackgroundColor(Color.parseColor(card_back[position]));
 
         int finalI = position;
@@ -86,7 +80,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ListRecipeActivity.class);
-                intent.putExtra("type",card_type[finalI]);
+                intent.putExtra("type",card_text.get(finalI));
                 context.startActivity(intent);
             }
         });
@@ -97,7 +91,7 @@ public class AdapterMainPage extends RecyclerView.Adapter<AdapterMainPage.MyAdap
 
     @Override
     public int getItemCount() {
-        if (card_image.length == card_image1.length && card_image1.length == card_text.length && card_text.length == card_back.length && card_back.length == card_type.length)
+        if (card_image.length == card_image1.length && card_image1.length == card_text.size() && card_text.size() == card_back.length)
             return card_image.length;
         else {
             Toast.makeText(context, "Card Arrays have incorrect length",

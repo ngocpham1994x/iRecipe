@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import comp3350.iRecipe.Objects.Category;
+import comp3350.iRecipe.Objects.CookingLevel;
 import comp3350.iRecipe.Objects.Recipe;
 
 public class RecipeListHSQLDB implements RecipeListInterface{
@@ -61,7 +63,7 @@ public class RecipeListHSQLDB implements RecipeListInterface{
         ArrayList<String> keyIngred = new ArrayList<>();
         PreparedStatement st2 = con.prepareStatement("SELECT * FROM INGREDIENTS WHERE RECIPENAME=?");
         st2.setString(1,name);
-        Recipe recipe = new Recipe(name, category, cookingLevel, prepTime, cookingTime, serving, ingred, keyIngred, newInstr);
+        Recipe recipe = new Recipe(name, Category.getCategory(category), CookingLevel.getCookingLevel(cookingLevel), prepTime, cookingTime, serving, ingred, keyIngred, newInstr);
         ResultSet rs2 = st2.executeQuery();
         while(rs2.next()){
             String ingredStr = rs2.getString("INGREDIENT");

@@ -18,6 +18,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import comp3350.iRecipe.Objects.Category;
 import comp3350.iRecipe.Objects.Comment;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Persistence.CommentHSQLDB;
@@ -38,7 +39,7 @@ public class CommentAndRatingTest {
     public void setUpTestRecipeAndComment(){
         RecipeListInterface list = new RecipeListHSQLDB(MainActivity.getDBPathName());
 
-        testRecipe = new Recipe("ATestCommentRecipe","Main dishes");
+        testRecipe = new Recipe("ATestCommentRecipe", Category.getCategory("Main dishes"));
         list.addRecipe(testRecipe);
 
     }
