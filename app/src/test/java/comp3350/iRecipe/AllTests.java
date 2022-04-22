@@ -6,6 +6,7 @@ import org.junit.runners.Suite;
 import comp3350.iRecipe.Business.SearchRecipeTest;
 import comp3350.iRecipe.Objects.RecipeTest;
 import comp3350.iRecipe.Persistence.CommentIT;
+import comp3350.iRecipe.Persistence.CommentMockito;
 import comp3350.iRecipe.Persistence.RecipeListIT;
 import comp3350.iRecipe.Persistence.RecipeListUnitTest;
 
@@ -17,7 +18,8 @@ import comp3350.iRecipe.Persistence.RecipeListUnitTest;
         RecipeTest.class, // unit
         SearchRecipeTest.class, // unit
         RecipeListIT.class, // integration test
-        CommentIT.class // integration test
+        CommentIT.class,  // integration test
+        CommentMockito.class // tests using mockito library
 
 })
 
