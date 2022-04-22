@@ -11,6 +11,7 @@ import java.io.IOException;
 
 
 import comp3350.iRecipe.CopyDB;
+import comp3350.iRecipe.Objects.Category;
 import comp3350.iRecipe.Objects.Comment;
 import comp3350.iRecipe.Objects.Recipe;
 import comp3350.iRecipe.Presentation.MainActivity;
@@ -36,7 +37,7 @@ public class CommentIT {
     @Test
     public void testAddComments()
     {
-        Recipe r1 = new Recipe("recipe 1" , "Main dishes");
+        Recipe r1 = new Recipe("recipe 1" , Category.getCategory("Main dishes"));
         assertTrue(list.addRecipe(r1));
         Comment c1 = new Comment(4 , "nice recipe !" , "me");
 
@@ -54,7 +55,7 @@ public class CommentIT {
     @Test
     public void testGetComments()
     {
-        Recipe r1 = new Recipe("recipe 1" , "Main dishes");
+        Recipe r1 = new Recipe("recipe 1" , Category.getCategory("Main dishes"));
         assertTrue(list.addRecipe(r1));
         Comment c1 = new Comment(4 , "nice recipe !" , "user 1");
         Comment c2 = new Comment(5 ,  "Awesome" , "user 1");

@@ -20,15 +20,15 @@ public class RecipeTest {
         ArrayList<String> kIngredients = new ArrayList<>();
         ingredients.add("eggs");
         kIngredients.add("eggs");
-        recipe = new Recipe("1 Boiled egg" , "breakfast" , "easy" , 1 , 20 , 1 , ingredients , kIngredients , "Boil water and then eggs");
+        recipe = new Recipe("1 Boiled egg" , Category.getCategory("Main dishes") , CookingLevel.getCookingLevel("Easy") , 1 , 20 , 1 , ingredients , kIngredients , "Boil water and then eggs");
     }
 
     @Test
     public void TestGetters()
     {
 
-        assertEquals(recipe.getCategory() , "breakfast");
-        assertEquals(recipe.getLevel() , "easy");
+        assertEquals(recipe.getCategory() , "Main dishes");
+        assertEquals(recipe.getLevel() , "Easy");
         assertEquals(recipe.getPrepTime() , 1);
         assertEquals(recipe.getCookTime() , 20);
         assertEquals(recipe.getServing() , 1);
@@ -43,7 +43,7 @@ public class RecipeTest {
         assertTrue(recipe.getIngredients().contains("item 1") && !recipe.getKeyIngredients().contains("item 1"));
 
         recipe.addToKeyIngredients("Main item");
-        assertTrue(recipe.getKeyIngredients().contains("Main item") && recipe.getIngredients().contains("Main item") );
+        assertTrue(recipe.getKeyIngredients().contains("Main item") && !recipe.getIngredients().contains("Main item") );
     }
 
 

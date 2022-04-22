@@ -65,12 +65,12 @@ public class ListRecipeActivity extends AppCompatActivity {
     {
         ArrayList<Recipe> recipe_list;
 
-        if(category.equalsIgnoreCase("All")){
+        if(category.equalsIgnoreCase("View all recipes")){
             recipe_list = allRecipe;
             tv.setText("All Recipes");
         }else{
             recipe_list = list.getRecipesByCategory(category);
-            tv.setText("All " + category);
+            tv.setText("All " + (category.endsWith("s")? category : (category + "s")));
         }
 
         return recipe_list;
