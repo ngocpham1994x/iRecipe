@@ -60,9 +60,9 @@ or impossible to test?
 
 Challenges:
 
-Expresso test can be used with androidx library or android.support library.
+Espresso test can be used with androidx library or android.support library.
 
-android.support is depricating and Ngoc developed GUI using androidx library for RecyclerView and Card.
+android.support is deprecating and Ngoc developed GUI using androidx library for RecyclerView and Card.
 
 Using android.support on an androidx item is conflicting.
 
@@ -71,12 +71,12 @@ Therefore, Ngoc used `withText()` instead of `withId()` to be able to find and c
 Velocity/teamwork
 =================
 
-Our estimate gets better as time progress in genral. At first, our estimation does not quite matches the time we actually spend, for example, most were short: [Creating Object](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/23), 
+Our estimate gets better as time progress in general. At first, our estimation does not quite matches the time we actually spend, for example, most were short: [Creating Object](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/23), 
 [Creating interface](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/25),[Stub database with file](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/24),
  [GUI for listing Recipe](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/29), [Move file into pacakages](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/33). 
  
-But for the next iteration (iteration 2), some of our task's estimation matches the actaull time spend: [Swithing to read Database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/49), [Refactor previous implementation](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/52), [Adding logic support for new feature](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/53). But some exceed because we are working with new stuffs, such as new GUI, so the estimation was not correct: [GUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/57), [Another GUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/50)
+But for the next iteration (iteration 2), some of our task's estimation matches the actual time spend: [Swithing to read Database](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/49), [Refactor previous implementation](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/52), [Adding logic support for new feature](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/53). But some exceed because we are working with new stuffs, such as new GUI, so the estimation was not correct: [GUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/57), [Another GUI](https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/50)
 
-For iteration 3, the fixing part of the code can be estimated correctly: (Code refactor)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/70], but some of the estimation is not that good, mostly because we are dealing with new stuffs. For example, acceptence test that we have not written before: (Test 1)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/79], (Test 2)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/77], (Test 3)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/76]. Also, personally, I have to create another new GUI by myself, I was focusing on the backend stuff and this is new for me, so my time estimation was not good either (GUI page for comment for recipe)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/72]
+For iteration 3, the fixing part of the code can be estimated correctly: (Code refactor)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/70], but some of the estimation is not that good, mostly because we are dealing with new stuffs. For example, acceptance test that we have not written before: (Test 1)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/79], (Test 2)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/77], (Test 3)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/76]. Also, personally, I have to create another new GUI by myself, I was focusing on the backend stuff and this is new for me, so my time estimation was not good either (GUI page for comment for recipe)[https://code.cs.umanitoba.ca/winter-2022-a02/group-10/irecipe/-/issues/72]
 
 So overall, if we are estimating the things we have done before, our time spend match our estimation. But we are not so good at estimating things that we have never done before.
