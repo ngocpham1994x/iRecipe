@@ -46,7 +46,7 @@ RecipeDetailActivity is for recipe Ingredients and instrucitons. It will be impl
 AddRecipeActivity.java is java file used to have GUI for page where user can add new recipe to database.
 
 
-![flow chart]( img_source/chart.jpg)
+![flow chart]( img_source/Cross_Functional_Flow_Chart_Template.jpg)
 
 ## GUI templates
 
