@@ -20,6 +20,9 @@ Iteration2 [Worksheet](i2_worksheet.md)
 
 Iteration3 [Worksheet](i3_worksheet.md)
 
+## Maintance
+We have a few features that couldn't come to fruition due to time constraint and higher priorities. Some of them include user being able to rate the recipe, change the theme of the app, content label, multi-user functionality and sort recipes by rating. The remaining features are marked as "future features" under milestones for potential future development.
+
 Insturction for marker when using our app for iteration_3 marking:
 ===================================================================
 
