@@ -1,4 +1,4 @@
-# ![logo width=100 height=100](./website/logo.png)
+# <img src="/website/logo.png" width=100 height=100> iRecipe 
 
 - App Demo videos: [here](https://youtube.com/playlist?list=PL25XFi5JMg37o57rh6Z8LwqshCvPmC5Fx)
 
