@@ -8,7 +8,7 @@
 
   - open a web browser
 
-  - locate and run [index.html](./website/index.html) from the address bar
+  - locate and run [index.html](./website/index.html) from the address bar (example: `file:///E:/irecipe/website/index.html`)
 
 ## VISION STATEMENT
 
