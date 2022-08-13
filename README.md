@@ -1,6 +1,6 @@
 # iRecipe
 
-## INTRO
+**INTRO**
 
 - App Demo videos: [here](https://youtube.com/playlist?list=PL25XFi5JMg37o57rh6Z8LwqshCvPmC5Fx)
 
