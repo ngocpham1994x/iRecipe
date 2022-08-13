@@ -1,5 +1,17 @@
 # iRecipe
 
+## INTRO
+
+- App Demo videos: https://youtube.com/playlist?list=PL25XFi5JMg37o57rh6Z8LwqshCvPmC5Fx
+
+- Static website: 
+
+  - clone project to your computer
+
+  - open a web browser
+
+  - locate and run [index.html](website\index.html) from the address bar
+
 ## VISION STATEMENT
 
 [vision.md](vision.md)
