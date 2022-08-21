@@ -1,5 +1,7 @@
 # <img src="/website/logo.png" width=30 height=30> iRecipe 
 
+An Android app for storing favourite recipes.
+
 - App Demo videos: [here](https://youtube.com/playlist?list=PL25XFi5JMg37o57rh6Z8LwqshCvPmC5Fx)
 
 - Static website: 
@@ -18,11 +20,11 @@
 
 [Architecture.md](ARCHITECTURE.md)
 
-## Branching strategy
+## BRANCHING STRATEGY
 
 we used gitflow in [Branching strategy](BranchingStrategy.md)
 
-## Worksheet
+## WORKSHEET
 
 Iteration1 [Worksheet](i1_worksheet.md)
 
@@ -30,20 +32,56 @@ Iteration2 [Worksheet](i2_worksheet.md)
 
 Iteration3 [Worksheet](i3_worksheet.md)
 
-## Maintance
+## MAINTENANCE
 We have a few features that couldn't come to fruition due to time constraint and higher priorities. Some of them include changing the theme of the app, content label, multi-user functionality and sort recipes by rating. The remaining features are marked as "future features" under milestones for potential future development.
 
-Insturction for marker when using our app for iteration_3 marking:
-===================================================================
-
-Dear marker:
-
-Hi!
-
-If you have marked our app previously and still have our app installed in your emulator, please uninstall the app and reinstall it before using and marking it.
-Our new feature involves creating new table in the database and populating the database with new data, the changes in the script file will not be copied over
-unless the app is uninstalled and reinstalled again. For the purpose of making the app works properly, please do so to get the best experience.
-
-Sincerely,
-
-Group 10
+## CONTRIBUTORS:
+<table>
+<tr>
+    <td style="text-align: center;">
+        <a href="https://github.com/ngocpham1994x">
+            <img src="./website/NgocPham_headshot.jpg" width="100px;"/>
+            <br/>
+            <sub>
+                <b>Ngoc Pham </b>
+            </sub>
+        </a>
+    </td>
+    <td style="text-align: center;">
+        <a href="">
+            <img src="./website/Yixi_Wu_Picture.jpg" width="100px;"/>
+            <br/>
+            <sub>
+                <b>Yixi Wu</b>
+            </sub>
+        </a>
+    </td>
+    <td style="text-align: center;">
+        <a href="https://github.com/bhautiksojitra">
+            <img src="./website/Bhautik_Sojitra_Photo.jpg" width="100px;"/>
+            <br/>
+            <sub>
+                <b>Bhautik Sojitra</b>
+            </sub>
+        </a>
+    </td>
+    <td style="text-align: center;">
+        <a href="https://github.com/simkaurd">
+            <img src="./website/SimranKaur_Profile.jpg" width="100px;"/>
+            <br/>
+            <sub>
+                <b>Simran Kaur</b>
+            </sub>
+        </a>
+    </td>
+    <td style="text-align: center;">
+        <a href="https://github.com/Dilpunjab">
+            <img src="./website/IMG_2413.jpg" width="100px;"/>
+            <br/>
+            <sub>
+                <b>Diljot Singh</b>
+            </sub>
+        </a>
+    </td>
+</tr>
+</table>
