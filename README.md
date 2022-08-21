@@ -40,7 +40,7 @@ We have a few features that couldn't come to fruition due to time constraint and
 <tr>
     <td style="text-align: center;">
         <a href="https://github.com/ngocpham1994x">
-            <img src="./website/NgocPham_headshot.jpg" width="100px;"/>
+            <img src="./website/NgocPham_headshot.JPG" width="100px;"/>
             <br/>
             <sub>
                 <b>Ngoc Pham </b>
@@ -67,7 +67,7 @@ We have a few features that couldn't come to fruition due to time constraint and
     </td>
     <td style="text-align: center;">
         <a href="https://github.com/simkaurd">
-            <img src="./website/SimranKaur_Profile.jpg" width="100px;"/>
+            <img src="./website/SimranKaur_Profile.JPG" width="100px;"/>
             <br/>
             <sub>
                 <b>Simran Kaur</b>
