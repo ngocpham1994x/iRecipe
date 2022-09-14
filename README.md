@@ -48,7 +48,7 @@ We have a few features that couldn't come to fruition due to time constraint and
         </a>
     </td>
     <td style="text-align: center;">
-        <a href="">
+        <a href="https://github.com/LimitlessJesse">
             <img src="./website/Yixi_Wu_Picture.jpg" width="100px;"/>
             <br/>
             <sub>
